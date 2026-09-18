@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ceq6qnv5yaaeu"]
+
+[ext_resource type="Script" uid="uid://bgh0wentgnvrs" path="res://entities/ingredient/ingredient_block.gd" id="1_4pvkf"]
+[ext_resource type="Texture2D" uid="uid://d2etyceqogomi" path="res://icon.svg" id="2_wd34q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qkos"]
+size = Vector2(128, 124)
+
+[node name="Ingredient" type="CharacterBody2D" unique_id=439704425]
+script = ExtResource("1_4pvkf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1840670139]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_wd34q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=72822558]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_7qkos")

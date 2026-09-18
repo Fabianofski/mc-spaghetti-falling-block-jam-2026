@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="McSpaghetti"
+run/main_scene="uid://hmlvunrl8aov"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SignalBus="*uid://dbih3rw04nwrq"
+OrderBook="*uid://cer271o1rvpl8"
 
 [display]
 

@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://hmlvunrl8aov"]
+
+[ext_resource type="Script" uid="uid://bn2axi1blko2p" path="res://entities/portal.gd" id="1_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://d2etyceqogomi" path="res://icon.svg" id="2_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://ceq6qnv5yaaeu" path="res://entities/ingredient/ingredient_block.tscn" id="3_lnu2h"]
+[ext_resource type="Script" uid="uid://cg60dwapmdsd8" path="res://entities/meal_creator.gd" id="4_lbhrr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qkos"]
+size = Vector2(412, 150)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bkh6n"]
+size = Vector2(415, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhrr"]
+size = Vector2(33.5, 145)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jww15"]
+size = Vector2(214, 30)
+
+[node name="Game" type="Node2D" unique_id=1532299903]
+
+[node name="Mixer" type="StaticBody2D" parent="." unique_id=1575278052]
+position = Vector2(747, 413)
+
+[node name="MealCreator" type="Area2D" parent="Mixer" unique_id=620458846]
+script = ExtResource("4_lbhrr")
+metadata/_custom_type_script = "uid://cg60dwapmdsd8"
+
+[node name="Sprite2D" type="Sprite2D" parent="Mixer/MealCreator" unique_id=1878397170]
+scale = Vector2(3.234375, 1.171875)
+texture = ExtResource("2_lnu2h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mixer/MealCreator" unique_id=1364476210]
+shape = SubResource("RectangleShape2D_7qkos")
+
+[node name="bottom" type="CollisionShape2D" parent="Mixer" unique_id=1271060047]
+position = Vector2(0, 63)
+shape = SubResource("RectangleShape2D_bkh6n")
+
+[node name="right" type="CollisionShape2D" parent="Mixer" unique_id=1351369644]
+position = Vector2(190.75, 0.5)
+shape = SubResource("RectangleShape2D_lbhrr")
+
+[node name="left" type="CollisionShape2D" parent="Mixer" unique_id=1501434149]
+position = Vector2(-191, 0.5)
+shape = SubResource("RectangleShape2D_lbhrr")
+
+[node name="Portal" type="Node2D" parent="." unique_id=1754100449]
+
+[node name="PortalTop" type="Node2D" parent="Portal" unique_id=732552670]
+position = Vector2(150, 40)
+
+[node name="Sprite2D" type="Sprite2D" parent="Portal/PortalTop" unique_id=713015530]
+scale = Vector2(1.640625, 0.234375)
+texture = ExtResource("2_lnu2h")
+
+[node name="PortalBottom" type="Area2D" parent="Portal" unique_id=1401221238]
+position = Vector2(150, 584)
+script = ExtResource("1_yqjtg")
+spawnPos = Vector2(150, 40)
+metadata/_custom_type_script = "uid://bn2axi1blko2p"
+
+[node name="Sprite2D" type="Sprite2D" parent="Portal/PortalBottom" unique_id=2061339358]
+scale = Vector2(1.640625, 0.234375)
+texture = ExtResource("2_lnu2h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/PortalBottom" unique_id=1000407855]
+shape = SubResource("RectangleShape2D_jww15")
+
+[node name="Ingredients" type="Node2D" parent="." unique_id=968851795]
+
+[node name="Ingredient2" parent="Ingredients" unique_id=439704425 instance=ExtResource("3_lnu2h")]
+position = Vector2(655, 177)
+id = "spaghetti"
+
+[node name="Ingredient" parent="Ingredients" unique_id=1012719060 instance=ExtResource("3_lnu2h")]
+position = Vector2(795, 218)
+id = "cheese"
