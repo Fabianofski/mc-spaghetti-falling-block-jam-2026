@@ -44,8 +44,10 @@ func create_meal():
 			if meal.completed: continue
 			if recipe_is_correct(meal):
 				print("Correct Recipe")
+				meal.complete_meal()
+				order.update()
 				SignalBus.add_meal_to_order.emit(order.id, meal.id)
-				break ;
+				break
 
 	for i in ingredients:
 		i.queue_free()

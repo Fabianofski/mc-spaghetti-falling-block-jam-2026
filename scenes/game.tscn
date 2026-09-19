@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ceq6qnv5yaaeu" path="res://entities/ingredient/ingredient_block.tscn" id="3_lnu2h"]
 [ext_resource type="Script" uid="uid://cg60dwapmdsd8" path="res://entities/meal/meal_creator.gd" id="4_lbhrr"]
 [ext_resource type="Script" uid="uid://dbacan28pfyig" path="res://entities/meal/plate.gd" id="5_iywne"]
+[ext_resource type="Script" uid="uid://daso08kqcvbp0" path="res://ui/order_viewer/orders_manager.gd" id="6_u5sy4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7qkos"]
 size = Vector2(412, 150)
@@ -84,3 +85,15 @@ id = "cheese"
 position = Vector2(760, 605)
 script = ExtResource("5_iywne")
 metadata/_custom_type_script = "uid://dbacan28pfyig"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1429990996]
+
+[node name="OrdersManager" type="HBoxContainer" parent="CanvasLayer" unique_id=1157811170]
+custom_minimum_size = Vector2(0, 150)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 110.0
+grow_horizontal = 2
+alignment = 2
+script = ExtResource("6_u5sy4")
+metadata/_custom_type_script = "uid://daso08kqcvbp0"

@@ -1,13 +1,9 @@
 extends Node 
 
 @export var orders: Dictionary[int, Order]
-@onready var spaghetti: Meal = preload("res://resources/meals/spaghetti.tres")
 var total_orders: int = 0
 
-func _ready() -> void:
-	var order = Order.new()
-	order.meals.append(spaghetti)
-	add_order(order)
+signal new_order(order: Order)
 
 func _process(delta: float) -> void:
 	for order_id in orders:
@@ -21,6 +17,7 @@ func add_order(order: Order):
 	order.timer = order.time
 
 	orders[order.id] = order
+	new_order.emit(order)
 
 func get_order(id: int):
 	orders.get(id)
@@ -30,5 +27,5 @@ func get_orders():
 
 func complete_order(id: int):
 	var order = orders.get(id)
-	print("completed!", order.id)
+	order.complete_order()
 	orders.erase(id)

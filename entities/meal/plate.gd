@@ -12,19 +12,9 @@ func add_meal_to_order(order_id: int, meal_id: String):
 
     if order.id != order_id: 
         return
-
-    var checked_order = false
-    var meal_complete = true
-    for meal in order.meals:
-        if meal.completed: continue
-        if not checked_order and meal.id == meal_id:
-            meal.completed = true
-            checked_order = true
-        else:
-            meal_complete = false
-        
-    print("Meal Completed: ", meal_complete)
-    if meal_complete:
+    
+    var order_complete = order.meals.all(func(m): return m.completed)
+    if order_complete:
         OrderBook.complete_order(order.id)
         order = null
         

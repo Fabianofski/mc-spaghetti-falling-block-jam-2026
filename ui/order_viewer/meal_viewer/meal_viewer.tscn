@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cc4l3wf0q16q1"]
+
+[ext_resource type="Script" uid="uid://b4w8hkll1u4w7" path="res://ui/order_viewer/meal_viewer/meal_viewer.gd" id="1_74xa5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jww15"]
+font_size = 10
+font_color = Color(0, 0, 0, 1)
+
+[node name="MealViewer" type="VBoxContainer" unique_id=1797635482]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_74xa5")
+
+[node name="MealLabel" type="Label" parent="." unique_id=174808261]
+layout_mode = 2
+text = "#1 Spaghetti"
+label_settings = SubResource("LabelSettings_jww15")
+
+[node name="IngredientLabel" type="Label" parent="." unique_id=121089128]
+layout_mode = 2
+text = "Spaghetti 
+Cheese"
+label_settings = SubResource("LabelSettings_jww15")
