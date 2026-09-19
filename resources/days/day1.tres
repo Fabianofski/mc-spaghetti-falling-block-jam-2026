@@ -9,6 +9,6 @@ script = ExtResource("2_b5d11")
 available_meals = Array[ExtResource("1_pkvef")]([ExtResource("2_b34we")])
 total_orders = 3
 meals_per_order = 1
-time_per_order = 10.0
+time_per_order = 20.0
 max_parallel_orders = 3
 metadata/_custom_type_script = "uid://chnd07y2wn61j"
