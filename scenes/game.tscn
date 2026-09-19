@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cyd67odrg1hd5" path="res://art_assets/bar.png" id="14_sww3w"]
 [ext_resource type="Resource" uid="uid://d6w15sgpdrdm" path="res://resources/ingredients/sauce.tres" id="15_bt5mj"]
 [ext_resource type="Resource" uid="uid://dduldpc8c0kwe" path="res://resources/days/day2.tres" id="15_ir15t"]
+[ext_resource type="Texture2D" uid="uid://bdipqc1u8v3m1" path="res://art_assets/holder.png" id="15_suyxu"]
 [ext_resource type="PackedScene" uid="uid://c1djhbpqkow8s" path="res://ui/game_over_screen/game_over_screen.tscn" id="16_ca42v"]
 [ext_resource type="Resource" uid="uid://d2h1shatcp4bs" path="res://resources/ingredients/parsley.tres" id="16_e1j6l"]
 [ext_resource type="Resource" uid="uid://dwl3md6i4qm6m" path="res://resources/ingredients/cream.tres" id="17_pl11u"]
@@ -119,13 +120,23 @@ metadata/_custom_type_script = "uid://dnfn4fyka5r8c"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1429990996]
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=825059141]
+[node name="Bar" type="TextureRect" parent="CanvasLayer" unique_id=825059141]
 z_index = -1
 offset_left = -15.139038
 offset_top = -53.61905
 offset_right = 1413.0
 offset_bottom = 62.0
 texture = ExtResource("14_sww3w")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Holder" type="TextureRect" parent="CanvasLayer" unique_id=600436741]
+z_index = -1
+offset_left = 274.0
+offset_top = -30.0
+offset_right = 947.7533
+offset_bottom = 128.61905
+texture = ExtResource("15_suyxu")
 expand_mode = 3
 stretch_mode = 4
 
@@ -142,20 +153,13 @@ alignment = 2
 script = ExtResource("6_u5sy4")
 metadata/_custom_type_script = "uid://daso08kqcvbp0"
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1363404402]
-offset_left = 292.0
-offset_top = 10.0
-offset_right = 949.0
-offset_bottom = 116.0
-color = Color(0.17, 0.17, 0.17, 0.5019608)
-
 [node name="IngredientGenerator" type="FlowContainer" parent="CanvasLayer" unique_id=303003603 node_paths=PackedStringArray("ingredient_parent")]
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 257.0
-offset_top = 26.0
-offset_right = -424.0
-offset_bottom = 144.0
+offset_left = 249.0
+offset_top = 18.0
+offset_right = -432.0
+offset_bottom = 136.0
 grow_horizontal = 2
 theme_override_constants/h_separation = 32
 theme_override_constants/v_separation = 8
