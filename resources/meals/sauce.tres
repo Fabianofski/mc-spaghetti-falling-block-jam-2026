@@ -9,6 +9,6 @@
 [resource]
 script = ExtResource("5_r57ik")
 id = "spagnsauce"
-name = "With Sauce"
+name = "Cheese and Sauce"
 ingredients = Array[ExtResource("1_il7oq")]([ExtResource("2_y10vw"), ExtResource("4_hkli4"), ExtResource("4_il7oq")])
 metadata/_custom_type_script = "uid://djqtt882te1b"
