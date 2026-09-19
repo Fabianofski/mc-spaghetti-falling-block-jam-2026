@@ -25,6 +25,7 @@ bg_color = Color(0.53, 0.063599996, 0.063599996, 1)
 bg_color = Color(0.77, 0.100099996, 0.49087474, 1)
 
 [node name="GameOverScreen" type="Control" unique_id=296855279]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -1,7 +1,10 @@
 extends Control
 
+@onready var restart_button: JuicyButtonAwwYiss = $"VBoxContainer/Restart Button"
+
 func _ready() -> void:
 	SignalBus.game_over.connect(func(): visible = true)
+	restart_button.should_oscillate = true
 
 func restart():
 	GameManager.reload_scene(true)

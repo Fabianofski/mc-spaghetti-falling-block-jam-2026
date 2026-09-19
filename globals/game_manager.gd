@@ -18,6 +18,7 @@ func reload_scene(is_loss: bool = false):
 		score = 0
 		lost = false
 	Engine.time_scale = 1
+	get_tree().paused = false
 	ScreenFader.change_scene("RELOAD")
 
 func get_day(): 
@@ -25,4 +26,4 @@ func get_day():
 
 func on_game_over():
 	lost = true
-	Engine.time_scale = 0.1
+	get_tree().paused = true
