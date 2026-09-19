@@ -106,7 +106,6 @@ text = "Quit"
 script = ExtResource("3_bqqt6")
 
 [node name="Credits" type="ColorRect" parent="." unique_id=960400610]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

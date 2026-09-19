@@ -9,6 +9,7 @@ const ANIM_TIME: float = 0.4
 var constant_offset_time: float = 0.0
 var random_offset: float = 0.0
 
+var should_oscillate: bool = false
 var _tween: Tween = null
 
 func _ready() -> void:
@@ -22,8 +23,9 @@ func _ready() -> void:
 	button_down.connect(_on_button_down)
 
 func _process(delta: float) -> void:
-	constant_offset_time += delta + (random_offset / 8)
-	offset_transform_rotation = (sin(constant_offset_time * ANIM_TIME) * 0.15) - (random_offset / 16)
+	if should_oscillate:
+		constant_offset_time += delta + (random_offset / 8)
+		offset_transform_rotation = (sin(constant_offset_time * ANIM_TIME) * 0.15) - (random_offset / 16)
 
 func _on_button_mouse_entered() -> void:
 	if _tween: _tween.kill()

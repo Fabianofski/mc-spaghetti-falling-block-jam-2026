@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c1djhbpqkow8s"]
 
 [ext_resource type="Script" uid="uid://ct1c1uowhntwi" path="res://ui/game_over_screen/game_over_screen.gd" id="1_bkcqb"]
+[ext_resource type="Script" uid="uid://70m8ylps8i4p" path="res://ui/button.gd" id="2_oh0l1"]
 
 [node name="GameOverScreen" type="Control" unique_id=296855279]
 layout_mode = 3
@@ -34,5 +35,6 @@ offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Restart"
+script = ExtResource("2_oh0l1")
 
 [connection signal="pressed" from="Button" to="." method="restart"]

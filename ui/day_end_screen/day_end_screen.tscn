@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bf0hmwpaoa6xu"]
 
 [ext_resource type="Script" uid="uid://ce436ewbqnir8" path="res://ui/day_end_screen/day_end_screen.gd" id="1_7kuju"]
+[ext_resource type="Script" uid="uid://70m8ylps8i4p" path="res://ui/button.gd" id="2_odw1e"]
 
 [node name="DayEndScreen" type="Control" unique_id=1980167072]
 layout_mode = 3
@@ -34,5 +35,6 @@ offset_bottom = 27.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Next Day"
+script = ExtResource("2_odw1e")
 
 [connection signal="pressed" from="Button" to="." method="finish_day"]
