@@ -9,7 +9,16 @@ var order: Order
 @onready var sprite: TextureRect = $Sprite
 var _tween: Tween = null
 
+var completed: bool = false
+
 func on_order_completed(): 
+	completed = true
+	if _tween: _tween.kill()
+	_tween = create_tween().set_parallel()
+	_tween.tween_property(self, "modulate", Color(0.67, 0.67, 0.67, 0.0), 0.25)
+	_tween.tween_property(self, "global_position", Vector2(global_position.x, global_position.y + 16), 0.5).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART)
+	await _tween.finished
+	_tween.kill()
 	queue_free()
 
 func set_order(_order: Order):
@@ -34,7 +43,7 @@ func set_order(_order: Order):
 	_tween.kill()
 
 func _process(_delta: float) -> void:
-	time_left.value = order.timer / order.time
+	if not completed: time_left.value = order.timer / order.time
 	
 	if time_left.value > 0: time_left_percentage.text = str(int(time_left.value * 100)) + "%"
 	else: time_left_percentage.text = "MISSED"

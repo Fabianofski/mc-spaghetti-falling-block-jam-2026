@@ -30,7 +30,9 @@ func _input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	if is_dragging:
 		global_position = get_global_mouse_position() + drag_offset
+		sprite.scale = Vector2(0.6, 0.6)
 		return
+	elif sprite.scale != Vector2(0.5, 0.5) and not is_dragging: sprite.scale = Vector2(0.5, 0.5)
 
 	if not is_on_floor():
 			velocity.y = gravity * delta
