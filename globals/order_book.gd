@@ -6,10 +6,13 @@ var total_orders: int = 0
 signal new_order(order: Order)
 signal orders_changed()
 
+func _ready() -> void:
+	SignalBus.game_over.connect(func(): orders = {})
+
 func _process(delta: float) -> void:
 	for order_id in orders:
-		var order = orders[order_id]
-		order.timer -= delta
+		var order = orders.get(order_id)
+		if order: order.update_timer(delta)
 
 func add_order(order: Order): 
 	total_orders += 1

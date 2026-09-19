@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bf0hmwpaoa6xu" path="res://ui/day_end_screen/day_end_screen.tscn" id="11_trtic"]
 [ext_resource type="PackedScene" uid="uid://c7xy4ib56hesm" path="res://ui/meta_data_display/meta_data_display.tscn" id="12_ca42v"]
 [ext_resource type="Resource" uid="uid://dduldpc8c0kwe" path="res://resources/days/day2.tres" id="15_ir15t"]
+[ext_resource type="PackedScene" uid="uid://c1djhbpqkow8s" path="res://ui/game_over_screen/game_over_screen.tscn" id="16_ca42v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7qkos"]
 size = Vector2(412, 150)
@@ -88,6 +89,13 @@ position = Vector2(760, 605)
 script = ExtResource("5_iywne")
 metadata/_custom_type_script = "uid://dbacan28pfyig"
 
+[node name="OrderGenerator" type="Node2D" parent="." unique_id=182280238]
+script = ExtResource("7_u5sy4")
+days = Array[ExtResource("8_0tnpc")]([ExtResource("9_vtaks"), ExtResource("15_ir15t")])
+metadata/_custom_type_script = "uid://dnfn4fyka5r8c"
+
+[node name="OrderTimer" type="Timer" parent="OrderGenerator" unique_id=831792266]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1429990996]
 
 [node name="OrdersManager" type="HBoxContainer" parent="CanvasLayer" unique_id=1157811170]
@@ -115,9 +123,5 @@ visible = false
 
 [node name="MetaDataDisplay" parent="CanvasLayer" unique_id=239118666 instance=ExtResource("12_ca42v")]
 
-[node name="OrderGenerator" type="Node2D" parent="." unique_id=182280238]
-script = ExtResource("7_u5sy4")
-days = Array[ExtResource("8_0tnpc")]([ExtResource("9_vtaks"), ExtResource("15_ir15t")])
-metadata/_custom_type_script = "uid://dnfn4fyka5r8c"
-
-[node name="OrderTimer" type="Timer" parent="OrderGenerator" unique_id=831792266]
+[node name="GameOverScreen" parent="CanvasLayer" unique_id=296855279 instance=ExtResource("16_ca42v")]
+visible = false

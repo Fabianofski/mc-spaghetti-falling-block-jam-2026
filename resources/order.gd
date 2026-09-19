@@ -30,4 +30,9 @@ func complete_order():
     updated.emit()
     completed.emit()
 
+func update_timer(delta: float):
+    timer -= delta
+    if timer <= 0:
+        timer = 0
+        SignalBus.game_over.emit()
 
