@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://cn57ssydvrhmt"]
+
+[ext_resource type="Script" uid="uid://dscs8lqnmfsik" path="res://resources/ingredient.gd" id="1_u0gnr"]
+[ext_resource type="PackedScene" uid="uid://b6o4vfirb7uca" path="res://resources/ingredients/pesto.tscn" id="1_xvkyo"]
+
+[resource]
+script = ExtResource("1_u0gnr")
+id = "pesto"
+name = "Pesto"
+prefab = ExtResource("1_xvkyo")
+metadata/_custom_type_script = "uid://dscs8lqnmfsik"

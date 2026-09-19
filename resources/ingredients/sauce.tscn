@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://lc65nqe2luk4"]
+
+[ext_resource type="PackedScene" uid="uid://ceq6qnv5yaaeu" path="res://entities/ingredient/ingredient_block.tscn" id="1_6yhe1"]
+
+[node name="sauce" unique_id=439704425 instance=ExtResource("1_6yhe1")]
+texture_file = "uid://cvatk46qc7nk"

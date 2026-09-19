@@ -6,7 +6,7 @@ var order: Order
 @onready var meal_viewer: PackedScene = preload("res://ui/order_viewer/meal_viewer/meal_viewer.tscn")
 @onready var time_left : ProgressBar = $TimeLeft
 @onready var time_left_percentage: Label = $TimeLeft/Label
-@onready var sprite: Sprite2D = $Sprite2D
+@onready var sprite: TextureRect = $Sprite
 var _tween: Tween = null
 
 func on_order_completed(): 
@@ -16,19 +16,23 @@ func set_order(_order: Order):
 	order = _order
 	order.completed.connect(on_order_completed)
 
+	for idx in len(order.meals): 
+		var meal = order.meals[idx]
+		var mv = meal_viewer.instantiate()
+		meals.add_child(mv)
+		mv.set_meal(idx + 1, meal)
+
+	self.global_position.y += randf_range(-8, 8) # NOTE: Doesn't work for some reason...
+
 	sprite.self_modulate = Color.YELLOW
 	sprite.scale = Vector2(0.55, 0.55)
 	if _tween: _tween.kill()
 	_tween = create_tween().set_parallel()
 	_tween.tween_property(sprite, "self_modulate", Color.WHITE, 0.5)
 	_tween.tween_property(sprite, "scale", Vector2(0.5, 0.5), 0.5).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART)
+	await _tween.finished
+	_tween.kill()
 
-	for idx in len(order.meals): 
-		var meal = order.meals[idx]
-		var mv = meal_viewer.instantiate()
-		meals.add_child(mv)
-		mv.set_meal(idx + 1, meal)
-		
 func _process(_delta: float) -> void:
 	time_left.value = order.timer / order.time
 	

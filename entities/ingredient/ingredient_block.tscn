@@ -1,17 +1,29 @@
 [gd_scene format=3 uid="uid://ceq6qnv5yaaeu"]
 
 [ext_resource type="Script" uid="uid://bgh0wentgnvrs" path="res://entities/ingredient/ingredient_block.gd" id="1_4pvkf"]
-[ext_resource type="Texture2D" uid="uid://d2etyceqogomi" path="res://icon.svg" id="2_wd34q"]
+[ext_resource type="Shader" uid="uid://0cuaxjj0l0qa" path="res://art_assets/ingredient_block.gdshader" id="2_leheb"]
+[ext_resource type="Texture2D" uid="uid://h6tklhrt5xq4" path="res://art_assets/block.png" id="3_7fb5q"]
+[ext_resource type="Texture2D" uid="uid://cgx1idtb7jkpv" path="res://art_assets/ingredients/cheese.png" id="3_bdc1b"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_leheb"]
+shader = ExtResource("2_leheb")
+shader_parameter/image = ExtResource("3_bdc1b")
+shader_parameter/image_scale = Vector2(0.5, 0.5)
+shader_parameter/image_offset = Vector2(0, 0)
+shader_parameter/min_alpha = 0.1
+shader_parameter/target_color = Color(1, 1, 1, 1)
+shader_parameter/color_match_threshold = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7qkos"]
-size = Vector2(128, 124)
+size = Vector2(128, 128)
 
 [node name="Ingredient" type="CharacterBody2D" unique_id=439704425]
 script = ExtResource("1_4pvkf")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1840670139]
+material = SubResource("ShaderMaterial_leheb")
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_wd34q")
+texture = ExtResource("3_7fb5q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=72822558]
 scale = Vector2(0.5, 0.5)

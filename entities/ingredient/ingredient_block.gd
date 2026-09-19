@@ -7,8 +7,14 @@ var gravity = 15000.0
 var is_dragging: bool = false
 var drag_offset: Vector2 = Vector2.ZERO
 
+@export_file("*.png") var texture_file: String = "res://art_assets/ingredients/cheese.png"
+var image_texture: Texture2D = null
+@onready var sprite: Sprite2D = $Sprite2D
+
 func _ready() -> void:
 	input_pickable = true
+	image_texture = load(texture_file)
+	sprite.material.set_shader_parameter("image", image_texture) # NOTE: Remember to make the material unique per ingredient!!
 
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:

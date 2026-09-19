@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://do7hnw56odo8u"]
+[gd_scene format=3 uid="uid://btbk52cl2gbl0"]
 
 [ext_resource type="PackedScene" uid="uid://ceq6qnv5yaaeu" path="res://entities/ingredient/ingredient_block.tscn" id="1_qmfib"]
 [ext_resource type="Shader" uid="uid://0cuaxjj0l0qa" path="res://art_assets/ingredient_block.gdshader" id="2_3v72c"]
@@ -13,8 +13,8 @@ shader_parameter/min_alpha = 0.1
 shader_parameter/target_color = Color(1, 1, 1, 1)
 shader_parameter/color_match_threshold = 0.0
 
-[node name="spaghetti" unique_id=439704425 instance=ExtResource("1_qmfib")]
-texture_file = "uid://csmt2xaiibf7y"
+[node name="meat" unique_id=439704425 instance=ExtResource("1_qmfib")]
+texture_file = "uid://du50qc4j72ret"
 
 [node name="Sprite2D" parent="." index="0" unique_id=1840670139]
 material = SubResource("ShaderMaterial_nqrq0")

@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://b4w8hkll1u4w7" path="res://ui/order_viewer/meal_viewer/meal_viewer.gd" id="1_74xa5"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_74xa5"]
+font_size = 12
+font_color = Color(0.23033306, 0.19378072, 0, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_jww15"]
 font_size = 10
 font_color = Color(0, 0, 0, 1)
@@ -18,7 +22,7 @@ script = ExtResource("1_74xa5")
 [node name="MealLabel" type="Label" parent="." unique_id=174808261]
 layout_mode = 2
 text = "#1 Spaghetti"
-label_settings = SubResource("LabelSettings_jww15")
+label_settings = SubResource("LabelSettings_74xa5")
 
 [node name="IngredientLabel" type="Label" parent="." unique_id=121089128]
 layout_mode = 2
