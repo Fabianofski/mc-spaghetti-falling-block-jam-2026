@@ -14,7 +14,7 @@ var image_texture: Texture2D = null
 func _ready() -> void:
 	input_pickable = true
 	image_texture = load(texture_file)
-	sprite.material.set_shader_parameter("image", image_texture) # NOTE: Remember to make the material unique per ingredient!!
+	sprite.material.set_shader_parameter("image", image_texture) # NOTE: Remember to make the shader and material unique per ingredient!!
 
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
