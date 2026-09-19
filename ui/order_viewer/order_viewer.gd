@@ -6,6 +6,8 @@ var order: Order
 @onready var meal_viewer: PackedScene = preload("res://ui/order_viewer/meal_viewer/meal_viewer.tscn")
 @onready var time_left : ProgressBar = $TimeLeft
 @onready var time_left_percentage: Label = $TimeLeft/Label
+@onready var sprite: Sprite2D = $Sprite2D
+var _tween: Tween = null
 
 func on_order_completed(): 
 	queue_free()
@@ -13,6 +15,13 @@ func on_order_completed():
 func set_order(_order: Order):
 	order = _order
 	order.completed.connect(on_order_completed)
+
+	sprite.self_modulate = Color.YELLOW
+	sprite.scale = Vector2(0.55, 0.55)
+	if _tween: _tween.kill()
+	_tween = create_tween().set_parallel()
+	_tween.tween_property(sprite, "self_modulate", Color.WHITE, 0.5)
+	_tween.tween_property(sprite, "scale", Vector2(0.5, 0.5), 0.5).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART)
 
 	for idx in len(order.meals): 
 		var meal = order.meals[idx]
