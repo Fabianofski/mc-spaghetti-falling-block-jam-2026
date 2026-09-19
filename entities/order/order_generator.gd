@@ -15,6 +15,7 @@ func _ready() -> void:
 
 func get_current_day():
 	var idx = min(GameManager.get_day(), len(days)-1)
+	print(days[idx])
 	return days[idx]
 
 func check_day_end_condition():

@@ -13,8 +13,12 @@
 [ext_resource type="Resource" uid="uid://5h1boir8njxf" path="res://resources/ingredients/cheese.tres" id="9_trtic"]
 [ext_resource type="Resource" uid="uid://c7wxt8xyhqc3p" path="res://resources/days/day1.tres" id="9_vtaks"]
 [ext_resource type="Resource" uid="uid://cytrklkalx1xp" path="res://resources/ingredients/spaghetti.tres" id="10_ir15t"]
+[ext_resource type="Resource" uid="uid://b5d3m8w3qeqke" path="res://resources/days/day3.tres" id="10_qnb83"]
+[ext_resource type="Resource" uid="uid://dpn28001v8aaw" path="res://resources/days/day4.tres" id="11_sww3w"]
 [ext_resource type="PackedScene" uid="uid://bf0hmwpaoa6xu" path="res://ui/day_end_screen/day_end_screen.tscn" id="11_trtic"]
 [ext_resource type="PackedScene" uid="uid://c7xy4ib56hesm" path="res://ui/meta_data_display/meta_data_display.tscn" id="12_ca42v"]
+[ext_resource type="Resource" uid="uid://bu0w8yjcqfmxm" path="res://resources/days/day5.tres" id="12_suyxu"]
+[ext_resource type="Resource" uid="uid://dno7uwd47igid" path="res://resources/days/day6.tres" id="13_sgl2t"]
 [ext_resource type="Resource" uid="uid://d6w15sgpdrdm" path="res://resources/ingredients/sauce.tres" id="15_bt5mj"]
 [ext_resource type="Resource" uid="uid://dduldpc8c0kwe" path="res://resources/days/day2.tres" id="15_ir15t"]
 [ext_resource type="PackedScene" uid="uid://c1djhbpqkow8s" path="res://ui/game_over_screen/game_over_screen.tscn" id="16_ca42v"]
@@ -107,7 +111,7 @@ metadata/_custom_type_script = "uid://dbacan28pfyig"
 
 [node name="OrderGenerator" type="Node2D" parent="." unique_id=182280238]
 script = ExtResource("7_u5sy4")
-days = Array[ExtResource("8_0tnpc")]([ExtResource("9_vtaks"), ExtResource("15_ir15t")])
+days = Array[ExtResource("8_0tnpc")]([ExtResource("9_vtaks"), ExtResource("15_ir15t"), ExtResource("10_qnb83"), ExtResource("11_sww3w"), ExtResource("12_suyxu"), ExtResource("13_sgl2t")])
 metadata/_custom_type_script = "uid://dnfn4fyka5r8c"
 
 [node name="OrderTimer" type="Timer" parent="OrderGenerator" unique_id=831792266]
