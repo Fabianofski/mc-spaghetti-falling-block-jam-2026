@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://bn2axi1blko2p" path="res://entities/portal.gd" id="1_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://d2etyceqogomi" path="res://icon.svg" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://ceq6qnv5yaaeu" path="res://entities/ingredient/ingredient_block.tscn" id="3_lnu2h"]
-[ext_resource type="Script" uid="uid://cg60dwapmdsd8" path="res://entities/meal_creator.gd" id="4_lbhrr"]
+[ext_resource type="Script" uid="uid://cg60dwapmdsd8" path="res://entities/meal/meal_creator.gd" id="4_lbhrr"]
+[ext_resource type="Script" uid="uid://dbacan28pfyig" path="res://entities/meal/plate.gd" id="5_iywne"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7qkos"]
 size = Vector2(412, 150)
@@ -32,6 +33,8 @@ texture = ExtResource("2_lnu2h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mixer/MealCreator" unique_id=1364476210]
 shape = SubResource("RectangleShape2D_7qkos")
+
+[node name="CookTimer" type="Timer" parent="Mixer/MealCreator" unique_id=1985368380]
 
 [node name="bottom" type="CollisionShape2D" parent="Mixer" unique_id=1271060047]
 position = Vector2(0, 63)
@@ -76,3 +79,8 @@ id = "spaghetti"
 [node name="Ingredient" parent="Ingredients" unique_id=1012719060 instance=ExtResource("3_lnu2h")]
 position = Vector2(795, 218)
 id = "cheese"
+
+[node name="Plate" type="Node2D" parent="." unique_id=1751171745]
+position = Vector2(760, 605)
+script = ExtResource("5_iywne")
+metadata/_custom_type_script = "uid://dbacan28pfyig"
