@@ -10,8 +10,10 @@ func change_scene(path: String) -> void:
 		-1.0, 1.0, 0.5)
 	await tween.finished
 	
-	if path != "QUIT": get_tree().change_scene_to_file(path)
-	else: get_tree().quit()
+	match path:
+		"RELOAD": get_tree().reload_current_scene()
+		"QUIT": get_tree().quit()
+		_: get_tree().change_scene_to_file(path)
 	
 	if tween: tween.kill()
 	fade.mouse_filter = Control.MOUSE_FILTER_IGNORE

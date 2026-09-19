@@ -3,6 +3,8 @@ extends Node2D
 var current_day: int = 0
 var score: int = 0
 
+var lost: bool
+
 func _ready() -> void:
 	SignalBus.game_over.connect(on_game_over)
 
@@ -14,11 +16,13 @@ func reload_scene(is_loss: bool = false):
 	if is_loss:
 		current_day = 0
 		score = 0
-	get_tree().reload_current_scene()
+		lost = false
 	Engine.time_scale = 1
-	
+	ScreenFader.change_scene("RELOAD")
+
 func get_day(): 
 	return current_day
 
-func on_game_over(): 
+func on_game_over():
+	lost = true
 	Engine.time_scale = 0.1

@@ -43,7 +43,7 @@ func set_order(_order: Order):
 	_tween.kill()
 
 func _process(_delta: float) -> void:
-	if not completed: time_left.value = order.timer / order.time
+	if not completed and not GameManager.lost: time_left.value = order.timer / order.time
 	
 	if time_left.value > 0: time_left_percentage.text = str(int(time_left.value * 100)) + "%"
 	else: time_left_percentage.text = "MISSED"
