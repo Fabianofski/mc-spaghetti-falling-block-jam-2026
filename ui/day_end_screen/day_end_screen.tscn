@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://bf0hmwpaoa6xu"]
 
 [ext_resource type="Script" uid="uid://ce436ewbqnir8" path="res://ui/day_end_screen/day_end_screen.gd" id="1_7kuju"]
+[ext_resource type="Theme" uid="uid://ciyqg57wnrs08" path="res://art_assets/theme.tres" id="2_575jq"]
 [ext_resource type="Script" uid="uid://70m8ylps8i4p" path="res://ui/button.gd" id="2_odw1e"]
+[ext_resource type="Texture2D" uid="uid://blgqmgclejiat" path="res://art_assets/congrats.png" id="4_l3xin"]
 
 [node name="DayEndScreen" type="Control" unique_id=1980167072]
 layout_mode = 3
@@ -19,22 +21,52 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 1, 0.5254902)
+color = Color(0.93700004, 1, 0.79, 0.06666667)
 
 [node name="Button" type="Button" parent="." unique_id=663724380]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -86.36365
+offset_top = -98.0
+offset_right = 86.36365
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_575jq")
+text = "Go to the next day"
+script = ExtResource("2_odw1e")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1899530997]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -317.72144
+offset_top = 32.0
+offset_right = 317.72144
+offset_bottom = 328.0
+grow_horizontal = 2
+texture = ExtResource("4_l3xin")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="." unique_id=29459340]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -95.0
-offset_top = -27.5
-offset_right = 95.0
-offset_bottom = 27.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Next Day"
-script = ExtResource("2_odw1e")
+text = "ok so imagine here that you get the score, the dishes you made so far, and how many days you've completed. :)"
 
 [connection signal="pressed" from="Button" to="." method="finish_day"]
