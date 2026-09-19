@@ -1,0 +1,4 @@
+This game uses the following third-party assets:
+"Halftone directional fading transition" by Joey_Bland (https://godotshaders.com/shader/halftone-directional-fading-transition/), licensed under the MIT license (https://mit-license.org/).
+
+This game was made using Godot Engine, licensed under the MIT license (https://godotengine.org/license/).
