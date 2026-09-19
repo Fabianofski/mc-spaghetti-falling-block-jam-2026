@@ -24,6 +24,8 @@ ScreenFader="*uid://blyietqyg41lh"
 
 [display]
 
+window/size/viewport_width=1408
+window/size/viewport_height=792
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"
 

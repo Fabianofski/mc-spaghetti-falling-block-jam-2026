@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bn2axi1blko2p" path="res://entities/portal.gd" id="1_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://d2etyceqogomi" path="res://icon.svg" id="2_lnu2h"]
 [ext_resource type="Script" uid="uid://cg60dwapmdsd8" path="res://entities/meal/meal_creator.gd" id="4_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://dstio4vdku543" path="res://art_assets/pipes.png" id="4_rysoc"]
 [ext_resource type="Script" uid="uid://dbacan28pfyig" path="res://entities/meal/plate.gd" id="5_iywne"]
 [ext_resource type="Script" uid="uid://daso08kqcvbp0" path="res://ui/order_viewer/orders_manager.gd" id="6_u5sy4"]
 [ext_resource type="Script" uid="uid://dnfn4fyka5r8c" path="res://entities/order/order_generator.gd" id="7_u5sy4"]
@@ -60,26 +61,35 @@ position = Vector2(-191, 0.5)
 shape = SubResource("RectangleShape2D_lbhrr")
 
 [node name="Portal" type="Node2D" parent="." unique_id=1754100449]
+position = Vector2(24, 88)
 
 [node name="PortalTop" type="Node2D" parent="Portal" unique_id=732552670]
 position = Vector2(150, 40)
 
 [node name="Sprite2D" type="Sprite2D" parent="Portal/PortalTop" unique_id=713015530]
+visible = false
 scale = Vector2(1.640625, 0.234375)
 texture = ExtResource("2_lnu2h")
 
 [node name="PortalBottom" type="Area2D" parent="Portal" unique_id=1401221238]
-position = Vector2(150, 584)
+position = Vector2(150, 608)
 script = ExtResource("1_yqjtg")
 spawnPos = Vector2(150, 40)
 metadata/_custom_type_script = "uid://bn2axi1blko2p"
 
 [node name="Sprite2D" type="Sprite2D" parent="Portal/PortalBottom" unique_id=2061339358]
+visible = false
 scale = Vector2(1.640625, 0.234375)
 texture = ExtResource("2_lnu2h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/PortalBottom" unique_id=1000407855]
 shape = SubResource("RectangleShape2D_jww15")
+
+[node name="Sprite2D" type="Sprite2D" parent="Portal" unique_id=430973036]
+z_index = 1
+position = Vector2(138.55153, 307.39996)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_rysoc")
 
 [node name="Ingredients" type="Node2D" parent="." unique_id=968851795]
 position = Vector2(150, 58)
@@ -102,7 +112,10 @@ metadata/_custom_type_script = "uid://dnfn4fyka5r8c"
 custom_minimum_size = Vector2(0, 150)
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 110.0
+offset_left = 26.0
+offset_top = 24.0
+offset_right = -26.0
+offset_bottom = 174.0
 grow_horizontal = 2
 alignment = 2
 script = ExtResource("6_u5sy4")

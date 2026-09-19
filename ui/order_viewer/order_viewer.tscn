@@ -1,6 +1,17 @@
 [gd_scene format=3 uid="uid://kr3y7n3yi20h"]
 
 [ext_resource type="Script" uid="uid://b6oh5f08dkqrx" path="res://ui/order_viewer/order_viewer.gd" id="1_606jx"]
+[ext_resource type="Texture2D" uid="uid://drmud3eslwyex" path="res://art_assets/order.png" id="2_vda4r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fcidt"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_630qs"]
+bg_color = Color(1, 0.20999998, 0.23633331, 1)
+
+[sub_resource type="Theme" id="Theme_1dcve"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_fcidt")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_630qs")
 
 [node name="OrderViewer" type="Control" unique_id=265169241]
 custom_minimum_size = Vector2(120, 110)
@@ -12,30 +23,40 @@ offset_right = 872.0
 offset_bottom = 113.0
 script = ExtResource("1_606jx")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1996397689]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=893775074]
+position = Vector2(40, 72)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_vda4r")
+
+[node name="TimeLeft" type="ProgressBar" parent="." unique_id=1854271322]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_right = -3.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme = SubResource("Theme_1dcve")
+max_value = 1.0
+value = 1.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="TimeLeft" unique_id=1155980088]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 3.0
 grow_horizontal = 2
 grow_vertical = 2
+text = "100%"
+vertical_alignment = 1
 
 [node name="Meals" type="VBoxContainer" parent="." unique_id=1770113054]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 25.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="TimeLeft" type="ProgressBar" parent="." unique_id=1854271322]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -27.0
-grow_horizontal = 2
-grow_vertical = 0
-max_value = 1.0
-value = 1.0
