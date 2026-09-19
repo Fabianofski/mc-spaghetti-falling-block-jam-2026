@@ -6,6 +6,9 @@
 [ext_resource type="Script" uid="uid://cg60dwapmdsd8" path="res://entities/meal/meal_creator.gd" id="4_lbhrr"]
 [ext_resource type="Script" uid="uid://dbacan28pfyig" path="res://entities/meal/plate.gd" id="5_iywne"]
 [ext_resource type="Script" uid="uid://daso08kqcvbp0" path="res://ui/order_viewer/orders_manager.gd" id="6_u5sy4"]
+[ext_resource type="Script" uid="uid://dnfn4fyka5r8c" path="res://entities/order/OrderGenerator.gd" id="7_u5sy4"]
+[ext_resource type="Script" uid="uid://chnd07y2wn61j" path="res://resources/day.gd" id="8_0tnpc"]
+[ext_resource type="Resource" uid="uid://c7wxt8xyhqc3p" path="res://resources/days/day1.tres" id="9_vtaks"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7qkos"]
 size = Vector2(412, 150)
@@ -97,3 +100,10 @@ grow_horizontal = 2
 alignment = 2
 script = ExtResource("6_u5sy4")
 metadata/_custom_type_script = "uid://daso08kqcvbp0"
+
+[node name="OrderGenerator" type="Node2D" parent="." unique_id=182280238]
+script = ExtResource("7_u5sy4")
+days = Array[ExtResource("8_0tnpc")]([ExtResource("9_vtaks")])
+metadata/_custom_type_script = "uid://dnfn4fyka5r8c"
+
+[node name="OrderTimer" type="Timer" parent="OrderGenerator" unique_id=831792266]
