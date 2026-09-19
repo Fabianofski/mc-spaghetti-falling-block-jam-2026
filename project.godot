@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="McSpaghetti"
-run/main_scene="uid://hmlvunrl8aov"
+run/main_scene="uid://c5yip7h64612y"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -20,11 +20,12 @@ config/icon="res://icon.svg"
 SignalBus="*uid://dbih3rw04nwrq"
 OrderBook="*uid://cer271o1rvpl8"
 GameManager="*uid://rh8w4mcbiwru"
+ScreenFader="*uid://blyietqyg41lh"
 
 [display]
 
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/stretch/aspect="keep_width"
 
 [physics]
 
