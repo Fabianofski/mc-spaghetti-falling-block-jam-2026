@@ -21,7 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.93700004, 1, 0.79, 0.06666667)
+color = Color(0.028110001, 0.03, 0.0237, 0.7254902)
 
 [node name="Button" type="Button" parent="." unique_id=663724380]
 layout_mode = 1
