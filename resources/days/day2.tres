@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Day" format=3 uid="uid://dduldpc8c0kwe"]
+
+[ext_resource type="Script" uid="uid://djqtt882te1b" path="res://resources/meal.gd" id="1_jus2c"]
+[ext_resource type="Resource" uid="uid://bjhikw6164o4d" path="res://resources/meals/spaghetti.tres" id="2_vocys"]
+[ext_resource type="Script" uid="uid://chnd07y2wn61j" path="res://resources/day.gd" id="3_sutbr"]
+
+[resource]
+script = ExtResource("3_sutbr")
+available_meals = Array[ExtResource("1_jus2c")]([ExtResource("2_vocys")])
+total_orders = 4
+meals_per_order = 1
+time_per_order = 10.0
+max_parallel_orders = 3
+metadata/_custom_type_script = "uid://chnd07y2wn61j"

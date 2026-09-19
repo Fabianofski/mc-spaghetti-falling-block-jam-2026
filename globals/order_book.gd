@@ -4,6 +4,7 @@ extends Node
 var total_orders: int = 0
 
 signal new_order(order: Order)
+signal order_complete(order: Order)
 
 func _process(delta: float) -> void:
     for order_id in orders:
@@ -31,4 +32,5 @@ func get_parallel_order_count():
 func complete_order(id: int):
     var order = orders.get(id)
     order.complete_order()
+    order_complete.emit(order)
     orders.erase(id)

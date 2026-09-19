@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SignalBus="*uid://dbih3rw04nwrq"
 OrderBook="*uid://cer271o1rvpl8"
+GameManager="*uid://rh8w4mcbiwru"
 
 [display]
 

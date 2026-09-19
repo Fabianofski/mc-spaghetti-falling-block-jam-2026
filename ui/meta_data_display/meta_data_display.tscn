@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c7xy4ib56hesm"]
+
+[ext_resource type="Script" uid="uid://d3thc8ijwx4ss" path="res://ui/meta_data_display/meta_data_display.gd" id="1_7wywd"]
+
+[node name="MetaDataDisplay" type="Control" unique_id=239118666]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 125.0
+offset_bottom = 93.0
+script = ExtResource("1_7wywd")
+
+[node name="DayLabel" type="Label" parent="." unique_id=2002767639]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Day 1"
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1335757610]
+layout_mode = 0
+offset_top = 29.0
+offset_right = 61.0
+offset_bottom = 52.0
+text = "Score: 0"
