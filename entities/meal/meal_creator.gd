@@ -12,7 +12,7 @@ func _ready() -> void:
     timer.timeout.connect(func(): cooking = false)
     
 func _process(_delta: float) -> void:
-    if Input.is_key_pressed(KEY_SPACE):
+    if Input.is_key_pressed(KEY_C):
         create_meal()
     
 func on_ingredient_entered(ingredient: IngredientBlock):
@@ -39,13 +39,12 @@ func create_meal():
     var correct_recipe: bool = false
     for order_id in orders:
         var order = orders[order_id]
-        for meal in order.meals:
-            if meal.completed: continue
-            if recipe_is_correct(meal):
-                correct_recipe = true
-                meal.complete_meal()
-                SignalBus.add_meal_to_order.emit(order.id, meal.id)
-                break
+
+        var meal_idx = order.needs_ingredients(ingredients)
+        if meal_idx != -1: 
+            order.complete_meal(meal_idx)
+            correct_recipe = true
+            break
             
     if correct_recipe: 
         print("Correct")

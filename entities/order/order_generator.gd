@@ -11,10 +11,11 @@ func _ready() -> void:
 	timer.timeout.connect(create_order)
 	timer.start()
 	
-	OrderBook.order_complete.connect(func(_o): check_day_end_condition())
+	OrderBook.orders_changed.connect(check_day_end_condition)
 
 func get_current_day():
-	return days[GameManager.get_day()]
+	var idx = min(GameManager.get_day(), len(days)-1)
+	return days[idx]
 
 func check_day_end_condition():
 	var day = get_current_day()
@@ -33,13 +34,13 @@ func create_order():
 
 	if total_orders >= day.total_orders: 
 		return
-	print("ORDER!!!!")
 
-	var meal_idx = randi_range(0, len(day.available_meals) - 1)
-	var meal = day.available_meals[meal_idx].duplicate()
-	
 	var order = Order.new()
-	order.meals.append(meal)
+	var total_meals = randi_range(1, day.meals_per_order)
+	for _i in total_meals:
+		var meal_idx = randi_range(0, len(day.available_meals) - 1)
+		var meal = day.available_meals[meal_idx].duplicate()
+		order.meals.append(meal)
 	order.time = day.time_per_order
 	
 	OrderBook.add_order(order)

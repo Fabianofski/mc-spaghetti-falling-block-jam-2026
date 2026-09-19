@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name IngredientBlock
 
-@export var id: String
+var id: String
 var gravity = 15000.0
 
 var is_dragging: bool = false

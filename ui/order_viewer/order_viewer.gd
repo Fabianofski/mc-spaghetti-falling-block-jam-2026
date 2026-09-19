@@ -10,7 +10,7 @@ func on_order_completed():
 
 func set_order(_order: Order):
 	order = _order
-	order.order_completed.connect(on_order_completed)
+	order.completed.connect(on_order_completed)
 
 	for idx in len(order.meals): 
 		var meal = order.meals[idx]

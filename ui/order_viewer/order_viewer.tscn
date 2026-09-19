@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b6oh5f08dkqrx" path="res://ui/order_viewer/order_viewer.gd" id="1_606jx"]
 
 [node name="OrderViewer" type="Control" unique_id=265169241]
-custom_minimum_size = Vector2(80, 110)
+custom_minimum_size = Vector2(120, 110)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 792.0

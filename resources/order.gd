@@ -1,19 +1,33 @@
 extends Resource
 class_name Order
 
-var timer: float 
-
-signal updated()
-signal order_completed()
-
-func update():
-    updated.emit()
-    
-func complete_order():
-    updated.emit()
-    order_completed.emit()
-
 @export var id: int 
 @export var time: float
 @export var meals: Array[Meal]
+var timer: float 
+
+signal updated()
+signal completed()
+
+func check_completion():
+    if meals.all(func(m): return m.complete):
+        complete_order()
+
+func needs_ingredients(available: Array[IngredientBlock]):
+    for idx in len(meals):
+        var meal = meals[idx]
+        if meal.complete: continue 
+        if meal.recipe_correct(available):
+            return idx
+    return -1
+
+func complete_meal(meal_idx: int):
+    var meal = meals[meal_idx]
+    meal.complete_meal()
+    check_completion()
+    
+func complete_order():
+    updated.emit()
+    completed.emit()
+
 
