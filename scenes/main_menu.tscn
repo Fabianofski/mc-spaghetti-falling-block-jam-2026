@@ -2,10 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bo7vd6b5p115" path="res://scenes/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://dycqljg44p4lj" path="res://art_assets/logo.png" id="1_l6cm7"]
+[ext_resource type="Theme" uid="uid://ciyqg57wnrs08" path="res://art_assets/theme.tres" id="3_8ln24"]
 [ext_resource type="Script" uid="uid://70m8ylps8i4p" path="res://ui/button.gd" id="3_bqqt6"]
 [ext_resource type="Script" uid="uid://h4d834rrxttq" path="res://ui/credits_from_the_main_menu_yaknow.gd" id="4_wu84c"]
-
-[sub_resource type="Theme" id="Theme_ca42v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rysoc"]
 bg_color = Color(0.22745098, 0.93333334, 0.60784316, 1)
@@ -75,7 +74,7 @@ alignment = 1
 [node name="Start Button" type="Button" parent="HBoxContainer" unique_id=1659008832]
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
-theme = SubResource("Theme_ca42v")
+theme = ExtResource("3_8ln24")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_rysoc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
@@ -86,7 +85,7 @@ script = ExtResource("3_bqqt6")
 [node name="Credits Button" type="Button" parent="HBoxContainer" unique_id=1269747638]
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
-theme = SubResource("Theme_ca42v")
+theme = ExtResource("3_8ln24")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_tbmy8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jk1qb")
@@ -97,7 +96,7 @@ script = ExtResource("3_bqqt6")
 [node name="Quit Button" type="Button" parent="HBoxContainer" unique_id=1505208725]
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
-theme = SubResource("Theme_ca42v")
+theme = ExtResource("3_8ln24")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_8ln24")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rtw2f")
@@ -146,7 +145,7 @@ offset_left = -16.0
 offset_top = -16.0
 offset_right = 24.0
 offset_bottom = 23.0
-theme = SubResource("Theme_ca42v")
+theme = ExtResource("3_8ln24")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_8ln24")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rtw2f")

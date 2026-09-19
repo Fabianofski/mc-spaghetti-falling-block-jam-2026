@@ -15,6 +15,8 @@ var _tween: Tween = null
 func _ready() -> void:
 	offset_transform_enabled = true
 	
+	theme = load("res://art_assets/theme.tres")
+	
 	random_offset = randf()
 	
 	mouse_entered.connect(_on_button_mouse_entered)
