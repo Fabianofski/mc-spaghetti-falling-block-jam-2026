@@ -14,7 +14,9 @@ func change_scene(path: String) -> void:
 		"RELOAD": get_tree().reload_current_scene()
 		"QUIT": get_tree().quit()
 		_: get_tree().change_scene_to_file(path)
-	
+
+	get_tree().paused = false
+
 	if tween: tween.kill()
 	fade.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	tween = create_tween()
