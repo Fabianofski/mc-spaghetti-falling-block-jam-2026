@@ -48,6 +48,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = " Text text text text"
+autowrap_mode = 3
+visible_characters_behavior = 1
 
 [node name="Character" type="TextureRect" parent="Dialogue" unique_id=1114553050]
 layout_mode = 1
