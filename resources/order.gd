@@ -8,6 +8,7 @@ var timer: float
 
 signal updated()
 signal completed()
+signal failed()
 
 func check_completion():
     if meals.all(func(m): return m.complete):
@@ -29,10 +30,20 @@ func complete_meal(meal_idx: int):
 func complete_order():
     updated.emit()
     completed.emit()
+    
+func calc_max_score() -> int: 
+    var score = 0 
+    for meal in meals: 
+        score += meal.calc_score()
+    return score * 100
+    
+func calc_score() -> int:
+    var time_factor = min(1, timer / (time * 0.6)) # Finishing Order with 60% time left is A+ Score
+    return calc_max_score() * time_factor
 
 func update_timer(delta: float):
     timer -= delta
     if timer <= 0:
         timer = 0
-        SignalBus.game_over.emit()
+        failed.emit()
 

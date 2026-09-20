@@ -1,39 +1,60 @@
 extends Node 
 
-@export var orders: Dictionary[int, Order]
+var orders: Dictionary[int, Order]
+var finished_orders: Dictionary[int, Order]
+
 var total_orders: int = 0
 
 signal new_order(order: Order)
-signal orders_changed()
+signal order_finished()
 
-func _ready() -> void:
-	SignalBus.game_over.connect(func(): orders = {})
+func reset_orders():
+    orders = {}
+    finished_orders = {}
+    total_orders = 0
 
 func _process(delta: float) -> void:
-	for order_id in orders:
-		var order = orders.get(order_id)
-		if order: order.update_timer(delta)
+    var day = GameManager.get_day()
+    if day.state == Day.DayState.Failed: return
+    for order_id in orders:
+        var order = orders.get(order_id)
+        if order: order.update_timer(delta)
 
 func add_order(order: Order): 
-	total_orders += 1
+    total_orders += 1
 
-	order.id = total_orders
-	order.timer = order.time
+    order.id = total_orders
+    order.timer = order.time
 
-	orders[order.id] = order
-	new_order.emit(order)
-	
-	order.completed.connect(func(): remove_order(order.id))
+    orders[order.id] = order
+    new_order.emit(order)
+    
+    order.completed.connect(func(): finish_order(order.id))
+    order.failed.connect(fail_day)
 
 func get_order(id: int):
-	orders.get(id)
-	
+    orders.get(id)
+    
 func get_orders():
-	return orders
+    return orders
 
 func get_parallel_order_count():
-	return len(orders)
+    return len(orders)
 
-func remove_order(id: int):
-	orders.erase(id)
-	orders_changed.emit()
+func fail_day():
+    var day = GameManager.get_day()
+    day.fail()
+
+func finish_order(id: int):
+    var order = orders.get(id) 
+    finished_orders[id] = order
+    
+    GameManager.add_score(order.calc_score())
+
+    orders.erase(id)
+    order_finished.emit()
+    
+    var day = GameManager.get_day()
+    day.add_max_score(order.calc_max_score())
+    if len(finished_orders) >= day.total_orders:
+        day.success()

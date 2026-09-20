@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ck1yy6gmxosxw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jww15"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="Day" type="ColorRect" unique_id=1288587303]
+custom_minimum_size = Vector2(64, 64)
+
+[node name="DayLabel" type="Label" parent="." unique_id=782489240]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Day 1"
+label_settings = SubResource("LabelSettings_jww15")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DayGrade" type="Label" parent="." unique_id=1794462626]
+layout_mode = 1
+offset_right = 9.0
+offset_bottom = 23.0
+text = "F"
+label_settings = SubResource("LabelSettings_jww15")
+horizontal_alignment = 1
+vertical_alignment = 1

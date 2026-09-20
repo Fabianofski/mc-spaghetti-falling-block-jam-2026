@@ -9,7 +9,7 @@ func _ready() -> void:
 	credits.hide()
 
 func _on_start_button_button_up() -> void:
-	GameManager.lost = false
+	GameManager.reset()
 	ScreenFader.change_scene("res://scenes/game.tscn")
 
 func _on_credits_button_button_up() -> void:

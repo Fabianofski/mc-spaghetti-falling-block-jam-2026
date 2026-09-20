@@ -1,18 +1,28 @@
 extends FlowContainer
 
-@export var ingredients: Array[Ingredient]
 @export var ingredient_parent: Node2D
 
 func _ready() -> void:
-	for ingredient in ingredients: 
-		var btn = JuicyButtonAwwYiss.new()
-		add_child(btn)
-		btn.text = ingredient.name
-		btn.pressed.connect(generate_ingredient.bind(ingredient))
-		btn.custom_minimum_size = Vector2(128, 32)
-		
+    var day = GameManager.get_day()
+    var needed_ingredients: Array[Ingredient] = []
+    for meal in day.available_meals:
+        needed_ingredients.append_array(meal.ingredients)
+    print(needed_ingredients)
+
+    for ingredient_file in ResourceLoader.list_directory("res://resources/ingredients"):
+        if not ingredient_file.ends_with("tres"): continue
+        var ingredient_path = "res://resources/ingredients/" + ingredient_file
+        var ingredient = ResourceLoader.load(ingredient_path)
+
+        var btn = JuicyButtonAwwYiss.new()
+        add_child(btn)
+        btn.text = ingredient.name
+        btn.pressed.connect(generate_ingredient.bind(ingredient))
+        btn.custom_minimum_size = Vector2(128, 32)
+        btn.disabled = needed_ingredients.find_custom(func(i): return i.id == ingredient.id) == -1
+        
 func generate_ingredient(ingredient: Ingredient): 
-	var i = ingredient.prefab.instantiate()
-	ingredient_parent.add_child(i)
-	i.id = ingredient.id
-	i.global_position = ingredient_parent.global_position
+    var i = ingredient.prefab.instantiate()
+    ingredient_parent.add_child(i)
+    i.id = ingredient.id
+    i.global_position = ingredient_parent.global_position

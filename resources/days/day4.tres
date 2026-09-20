@@ -8,6 +8,7 @@
 
 [resource]
 script = ExtResource("3_h511q")
+day = 4
 available_meals = Array[ExtResource("1_77nkn")]([ExtResource("2_l8qg4"), ExtResource("4_h511q"), ExtResource("4_c3wlq")])
 total_orders = 6
 meals_per_order = 2

@@ -20,6 +20,9 @@ func recipe_correct(available: Array[IngredientBlock]):
     print(available_ingredients, "==", needed_ingredients)
     return available_ingredients == needed_ingredients
 
+func calc_score(): 
+    return len(ingredients)
+
 func complete_meal():
     completed.emit()
     complete = true
