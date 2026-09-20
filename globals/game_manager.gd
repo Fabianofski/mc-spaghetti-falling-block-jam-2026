@@ -37,6 +37,3 @@ func get_day_idx():
 
 func on_game_over():
     get_tree().paused = true
-
-func add_score(add: int): 
-    get_day().score += add

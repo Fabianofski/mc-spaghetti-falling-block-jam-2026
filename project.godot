@@ -29,6 +29,11 @@ window/size/viewport_height=792
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"
 
+[layer_names]
+
+2d_physics/layer_1="Default"
+2d_physics/layer_2="Ingredients"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

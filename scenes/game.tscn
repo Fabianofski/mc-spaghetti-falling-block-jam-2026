@@ -8,20 +8,11 @@
 [ext_resource type="Script" uid="uid://daso08kqcvbp0" path="res://ui/order_viewer/orders_manager.gd" id="6_u5sy4"]
 [ext_resource type="Script" uid="uid://dnfn4fyka5r8c" path="res://entities/order/order_generator.gd" id="7_u5sy4"]
 [ext_resource type="Script" uid="uid://twvd32ropr1r" path="res://entities/ingredient/ingredient_generator.gd" id="7_vtaks"]
-[ext_resource type="Script" uid="uid://dscs8lqnmfsik" path="res://resources/ingredient.gd" id="8_kvuet"]
-[ext_resource type="Resource" uid="uid://5h1boir8njxf" path="res://resources/ingredients/cheese.tres" id="9_trtic"]
-[ext_resource type="Resource" uid="uid://cytrklkalx1xp" path="res://resources/ingredients/spaghetti.tres" id="10_ir15t"]
 [ext_resource type="PackedScene" uid="uid://bf0hmwpaoa6xu" path="res://ui/day_end_screen/day_end_screen.tscn" id="11_trtic"]
 [ext_resource type="PackedScene" uid="uid://c7xy4ib56hesm" path="res://ui/meta_data_display/meta_data_display.tscn" id="12_ca42v"]
 [ext_resource type="Texture2D" uid="uid://cyd67odrg1hd5" path="res://art_assets/bar.png" id="14_sww3w"]
-[ext_resource type="Resource" uid="uid://d6w15sgpdrdm" path="res://resources/ingredients/sauce.tres" id="15_bt5mj"]
 [ext_resource type="Texture2D" uid="uid://bdipqc1u8v3m1" path="res://art_assets/holder.png" id="15_suyxu"]
 [ext_resource type="PackedScene" uid="uid://c1djhbpqkow8s" path="res://ui/game_over_screen/game_over_screen.tscn" id="16_ca42v"]
-[ext_resource type="Resource" uid="uid://d2h1shatcp4bs" path="res://resources/ingredients/parsley.tres" id="16_e1j6l"]
-[ext_resource type="Resource" uid="uid://dwl3md6i4qm6m" path="res://resources/ingredients/cream.tres" id="17_pl11u"]
-[ext_resource type="Resource" uid="uid://b3mj3gon6cokc" path="res://resources/ingredients/meat.tres" id="18_bhx41"]
-[ext_resource type="Resource" uid="uid://bwtbldxoew3ft" path="res://resources/ingredients/pancetta.tres" id="19_qnb83"]
-[ext_resource type="Resource" uid="uid://cn57ssydvrhmt" path="res://resources/ingredients/pesto.tres" id="20_sww3w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7qkos"]
 size = Vector2(412, 150)
@@ -39,8 +30,12 @@ size = Vector2(214, 30)
 
 [node name="Mixer" type="StaticBody2D" parent="." unique_id=1575278052]
 position = Vector2(747, 413)
+collision_layer = 3
+collision_mask = 3
 
 [node name="MealCreator" type="Area2D" parent="Mixer" unique_id=620458846]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("4_lbhrr")
 metadata/_custom_type_script = "uid://cg60dwapmdsd8"
 
@@ -78,6 +73,8 @@ texture = ExtResource("2_lnu2h")
 
 [node name="PortalBottom" type="Area2D" parent="Portal" unique_id=1401221238]
 position = Vector2(150, 608)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_yqjtg")
 spawnPos = Vector2(150, 40)
 metadata/_custom_type_script = "uid://bn2axi1blko2p"
@@ -157,7 +154,6 @@ theme_override_constants/h_separation = 32
 theme_override_constants/v_separation = 8
 alignment = 1
 script = ExtResource("7_vtaks")
-ingredients = Array[ExtResource("8_kvuet")]([ExtResource("10_ir15t"), ExtResource("9_trtic"), ExtResource("15_bt5mj"), ExtResource("16_e1j6l"), ExtResource("17_pl11u"), ExtResource("18_bhx41"), ExtResource("19_qnb83"), ExtResource("20_sww3w")])
 ingredient_parent = NodePath("../../Ingredients")
 
 [node name="DayEndScreen" parent="CanvasLayer" unique_id=1980167072 instance=ExtResource("11_trtic")]

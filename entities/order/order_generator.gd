@@ -3,21 +3,20 @@ class_name OrderGenerator
 
 @onready var timer: Timer = $OrderTimer
 
-var total_orders: int = 0
-
 func _ready() -> void:
     timer.timeout.connect(create_order)
     timer.start()
 
 func create_order(): 
     var day = GameManager.get_day()
+
+    if OrderBook.total_orders >= day.total_orders: 
+        return
     
     if OrderBook.get_parallel_order_count() >= day.max_parallel_orders:
         timer.start()
         return
-
-    if total_orders >= day.total_orders: 
-        return
+    print("Create Order")
 
     var order = Order.new()
     var total_meals = randi_range(1, day.meals_per_order)
@@ -28,5 +27,4 @@ func create_order():
     order.time = day.time_per_order
     
     OrderBook.add_order(order)
-    total_orders += 1
     timer.start()

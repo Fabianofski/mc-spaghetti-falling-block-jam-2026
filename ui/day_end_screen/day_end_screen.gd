@@ -1,7 +1,6 @@
 extends Control
 
 @onready var button: JuicyButtonAwwYiss = $Button
-@onready var grade_label: Label = $Grade
 
 func _ready() -> void:
     var day = GameManager.get_day()

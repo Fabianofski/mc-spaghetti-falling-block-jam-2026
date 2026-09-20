@@ -48,13 +48,11 @@ func fail_day():
 func finish_order(id: int):
     var order = orders.get(id) 
     finished_orders[id] = order
-    
-    GameManager.add_score(order.calc_score())
-
     orders.erase(id)
     order_finished.emit()
     
     var day = GameManager.get_day()
     day.add_max_score(order.calc_max_score())
+    day.add_score(order.calc_score())
     if len(finished_orders) >= day.total_orders:
         day.success()
