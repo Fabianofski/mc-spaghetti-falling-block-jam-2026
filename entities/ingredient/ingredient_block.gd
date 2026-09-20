@@ -13,19 +13,24 @@ var drag_offset: Vector2 = Vector2.ZERO
 var last_position: Vector2 = Vector2.ZERO
 var scale_tween: Tween 
 
-@export_file("*.png") var texture_file: String = "res://art_assets/ingredients/cheese.png"
-var image_texture: Texture2D = null
 @onready var sprite: Sprite2D = $Sprite2D
+
+@onready var grab_sound = $GrabSound
+@onready var grab_release_sound = $GrabReleaseSound
 
 func _ready() -> void:
     input_pickable = true
-    image_texture = load(texture_file)
-    sprite.material.set_shader_parameter("image", image_texture)
+    
+func set_texture(tex: Texture): 
+    var mat = sprite.material.duplicate()
+    mat.set_shader_parameter("image", tex)
+    sprite.material = mat
 
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
     if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
         if event.pressed and currently_dragged == null:
             currently_dragged = self
+            grab_sound.play()
             is_dragging = true
             drag_offset = global_position - get_global_mouse_position()
             last_position = global_position 
@@ -36,6 +41,7 @@ func _input(event: InputEvent) -> void:
         if not event.pressed and currently_dragged == self:
             currently_dragged = null
             is_dragging = false
+            grab_release_sound.play()
             _apply_bouncy_scale(Vector2(0.5, 0.5))
 
 func _apply_bouncy_scale(target_scale: Vector2) -> void:

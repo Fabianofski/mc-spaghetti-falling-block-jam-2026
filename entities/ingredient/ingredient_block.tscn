@@ -4,6 +4,8 @@
 [ext_resource type="Shader" uid="uid://0cuaxjj0l0qa" path="res://art_assets/ingredient_block.gdshader" id="2_leheb"]
 [ext_resource type="Texture2D" uid="uid://h6tklhrt5xq4" path="res://art_assets/block.png" id="3_7fb5q"]
 [ext_resource type="Texture2D" uid="uid://cgx1idtb7jkpv" path="res://art_assets/ingredients/cheese.png" id="3_bdc1b"]
+[ext_resource type="AudioStream" uid="uid://ckd8aur30ay2w" path="res://audio/grab.ogg" id="5_ep3m6"]
+[ext_resource type="AudioStream" uid="uid://8iecbcikrur6" path="res://audio/drag_release.ogg" id="5_s7gwm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_leheb"]
 shader = ExtResource("2_leheb")
@@ -29,3 +31,11 @@ texture = ExtResource("3_7fb5q")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=72822558]
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_7qkos")
+
+[node name="GrabSound" type="AudioStreamPlayer2D" parent="." unique_id=502744652]
+stream = ExtResource("5_ep3m6")
+pitch_scale = 3.0
+
+[node name="GrabReleaseSound" type="AudioStreamPlayer2D" parent="." unique_id=907179588]
+stream = ExtResource("5_s7gwm")
+pitch_scale = 3.0

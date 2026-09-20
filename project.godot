@@ -21,6 +21,7 @@ SignalBus="*uid://dbih3rw04nwrq"
 OrderBook="*uid://cer271o1rvpl8"
 GameManager="*uid://rh8w4mcbiwru"
 ScreenFader="*uid://blyietqyg41lh"
+Jukebox="*uid://v6yapnneoa3s"
 
 [display]
 

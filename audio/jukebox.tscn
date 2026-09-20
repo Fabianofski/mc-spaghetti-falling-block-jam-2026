@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://v6yapnneoa3s"]
+
+[ext_resource type="AudioStream" uid="uid://lttce34ha6yt" path="res://audio/italian.ogg" id="1_cgbwi"]
+[ext_resource type="Script" uid="uid://dh8eaqntcfb48" path="res://audio/jukebox.gd" id="2_02n6l"]
+
+[node name="Jukebox" type="AudioStreamPlayer2D" unique_id=3539258]
+stream = ExtResource("1_cgbwi")
+volume_db = -15.0
+autoplay = true
+script = ExtResource("2_02n6l")

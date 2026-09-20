@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://5h1boir8njxf"]
 
-[ext_resource type="PackedScene" uid="uid://cdq8q1j7xioch" path="res://resources/ingredients/cheese.tscn" id="1_7untq"]
 [ext_resource type="Script" uid="uid://dscs8lqnmfsik" path="res://resources/ingredient.gd" id="1_u0gnr"]
+[ext_resource type="Texture2D" uid="uid://cgx1idtb7jkpv" path="res://art_assets/ingredients/cheese.png" id="2_7untq"]
 
 [resource]
 script = ExtResource("1_u0gnr")
 id = "cheese"
 name = "Cheese"
-prefab = ExtResource("1_7untq")
+texture = ExtResource("2_7untq")
 metadata/_custom_type_script = "uid://dscs8lqnmfsik"
