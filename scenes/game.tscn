@@ -215,6 +215,10 @@ ingredient_parent = NodePath("../../Ingredients")
 visible = false
 
 [node name="MetaDataDisplay" parent="CanvasLayer" unique_id=239118666 instance=ExtResource("12_ca42v")]
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 285.0
+offset_bottom = 56.0
 
 [node name="GameOverScreen" parent="CanvasLayer" unique_id=296855279 instance=ExtResource("16_ca42v")]
 visible = false
