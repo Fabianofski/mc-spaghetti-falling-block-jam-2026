@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://70m8ylps8i4p" path="res://ui/button.gd" id="3_bqqt6"]
 [ext_resource type="Script" uid="uid://h4d834rrxttq" path="res://ui/credits_from_the_main_menu_yaknow.gd" id="4_wu84c"]
 [ext_resource type="Texture2D" uid="uid://b1apc3lvmiaac" path="res://art_assets/clouds.png" id="7_oa1go"]
+[ext_resource type="Texture2D" uid="uid://bv77um23bl6ft" path="res://art_assets/poof.png" id="8_tbmy8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rysoc"]
 bg_color = Color(0.22745098, 0.93333334, 0.60784316, 1)
@@ -36,6 +37,26 @@ bg_color = Color(0.53, 0.063599996, 0.063599996, 1)
 bg_color = Color(0.77, 0.100099996, 0.49087474, 1)
 
 [sub_resource type="Theme" id="Theme_bqqt6"]
+
+[sub_resource type="Curve" id="Curve_jk1qb"]
+_data = [Vector2(0, 1), 0.0, -0.21308218, 0, 0, Vector2(1, 0.06741583), -4.5457444, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_fcidt"]
+curve = SubResource("Curve_jk1qb")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1dcve"]
+particle_flag_disable_z = true
+direction = Vector3(1, 0.25, 0)
+spread = 25.0
+initial_velocity_min = 35.0
+initial_velocity_max = 35.0
+angular_velocity_min = 53.99998
+angular_velocity_max = 53.99998
+gravity = Vector3(98, 0, 0)
+scale_min = 0.25
+scale_max = 0.75
+scale_curve = SubResource("CurveTexture_fcidt")
 
 [node name="Main Menu" type="Control" unique_id=1029204496]
 layout_mode = 3
@@ -172,6 +193,14 @@ script = ExtResource("3_bqqt6")
 modulate = Color(1, 1, 1, 0.5019608)
 position = Vector2(2690, 720)
 texture = ExtResource("7_oa1go")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1182997669]
+modulate = Color(1, 1, 1, 0.3764706)
+position = Vector2(-51, 21)
+texture = ExtResource("8_tbmy8")
+lifetime = 6.0
+explosiveness = 0.25
+process_material = SubResource("ParticleProcessMaterial_1dcve")
 
 [connection signal="button_up" from="HBoxContainer/Start Button" to="." method="_on_start_button_button_up"]
 [connection signal="button_up" from="HBoxContainer/Credits Button" to="." method="_on_credits_button_button_up"]

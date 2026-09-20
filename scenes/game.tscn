@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dstio4vdku543" path="res://art_assets/pipes.png" id="4_rysoc"]
 [ext_resource type="Texture2D" uid="uid://d1x8wlcu3qv1k" path="res://art_assets/pull_thingy.png" id="4_ssvqc"]
 [ext_resource type="Script" uid="uid://dbacan28pfyig" path="res://entities/meal/plate.gd" id="5_iywne"]
+[ext_resource type="Texture2D" uid="uid://bv77um23bl6ft" path="res://art_assets/poof.png" id="6_ssvqc"]
 [ext_resource type="Script" uid="uid://daso08kqcvbp0" path="res://ui/order_viewer/orders_manager.gd" id="6_u5sy4"]
 [ext_resource type="Script" uid="uid://dnfn4fyka5r8c" path="res://entities/order/order_generator.gd" id="7_u5sy4"]
 [ext_resource type="Script" uid="uid://twvd32ropr1r" path="res://entities/ingredient/ingredient_generator.gd" id="7_vtaks"]
@@ -32,6 +33,25 @@ size = Vector2(415, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhrr"]
 size = Vector2(33.5, 145)
+
+[sub_resource type="Curve" id="Curve_264po"]
+_data = [Vector2(0.016949147, 0.06741583), 0.0, 2.5043693, 0, 0, Vector2(0.3333333, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.093634, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ssvqc"]
+curve = SubResource("Curve_264po")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rysoc"]
+particle_flag_disable_z = true
+direction = Vector3(2, 0, 0)
+spread = 180.0
+initial_velocity_min = -90.0
+initial_velocity_max = 90.0
+angular_velocity_min = -90.000015
+angular_velocity_max = 89.999985
+gravity = Vector3(0, 180, 0)
+scale_min = 0.25
+scale_curve = SubResource("CurveTexture_ssvqc")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jww15"]
 size = Vector2(214, 30)
@@ -114,6 +134,23 @@ shape = SubResource("RectangleShape2D_lbhrr")
 position = Vector2(-375, -207.5)
 shape = SubResource("RectangleShape2D_lbhrr")
 
+[node name="Plate" type="Node2D" parent="." unique_id=1751171745]
+position = Vector2(560, 749)
+script = ExtResource("5_iywne")
+metadata/_custom_type_script = "uid://dbacan28pfyig"
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Plate" unique_id=1207550542]
+modulate = Color(0.83, 0.83, 0.83, 1)
+z_index = -1
+position = Vector2(0, -5)
+emitting = false
+texture = ExtResource("6_ssvqc")
+one_shot = true
+explosiveness = 0.9
+randomness = 0.5
+fixed_fps = 12
+process_material = SubResource("ParticleProcessMaterial_rysoc")
+
 [node name="Portal" type="Node2D" parent="." unique_id=1754100449]
 position = Vector2(8, 120)
 
@@ -149,11 +186,6 @@ texture = ExtResource("4_rysoc")
 
 [node name="Ingredients" type="Node2D" parent="." unique_id=968851795]
 position = Vector2(150, 58)
-
-[node name="Plate" type="Node2D" parent="." unique_id=1751171745]
-position = Vector2(760, 605)
-script = ExtResource("5_iywne")
-metadata/_custom_type_script = "uid://dbacan28pfyig"
 
 [node name="OrderGenerator" type="Node2D" parent="." unique_id=182280238]
 script = ExtResource("7_u5sy4")

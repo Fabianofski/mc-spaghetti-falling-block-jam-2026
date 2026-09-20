@@ -61,4 +61,5 @@ func finish_meal():
 	_pull_tween = create_tween()
 	_pull_tween.tween_property(pull_thingy, "position:y", -315.0, 0.45).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
 
+	SignalBus.done_cooking.emit()
 	cooking = false
