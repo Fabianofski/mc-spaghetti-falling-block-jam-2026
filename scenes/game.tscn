@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://hmlvunrl8aov"]
 
 [ext_resource type="Script" uid="uid://bn2axi1blko2p" path="res://entities/portal.gd" id="1_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://nnl58e8ravcv" path="res://art_assets/cooker.png" id="2_ir15t"]
 [ext_resource type="Texture2D" uid="uid://d2etyceqogomi" path="res://icon.svg" id="2_lnu2h"]
+[ext_resource type="Theme" uid="uid://ciyqg57wnrs08" path="res://art_assets/theme.tres" id="2_rysoc"]
 [ext_resource type="Script" uid="uid://cg60dwapmdsd8" path="res://entities/meal/meal_creator.gd" id="4_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://dstio4vdku543" path="res://art_assets/pipes.png" id="4_rysoc"]
+[ext_resource type="Texture2D" uid="uid://d1x8wlcu3qv1k" path="res://art_assets/pull_thingy.png" id="4_ssvqc"]
 [ext_resource type="Script" uid="uid://dbacan28pfyig" path="res://entities/meal/plate.gd" id="5_iywne"]
 [ext_resource type="Script" uid="uid://daso08kqcvbp0" path="res://ui/order_viewer/orders_manager.gd" id="6_u5sy4"]
 [ext_resource type="Script" uid="uid://dnfn4fyka5r8c" path="res://entities/order/order_generator.gd" id="7_u5sy4"]
@@ -15,8 +18,13 @@
 [ext_resource type="Texture2D" uid="uid://bdipqc1u8v3m1" path="res://art_assets/holder.png" id="15_suyxu"]
 [ext_resource type="PackedScene" uid="uid://c1djhbpqkow8s" path="res://ui/game_over_screen/game_over_screen.tscn" id="16_ca42v"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ir15t"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ca42v"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7qkos"]
-size = Vector2(412, 150)
+size = Vector2(412, 547)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bkh6n"]
 size = Vector2(415, 20)
@@ -35,45 +43,74 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="MealCreator" type="Area2D" parent="Mixer" unique_id=620458846]
+position = Vector2(-40, 0)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("4_lbhrr")
 metadata/_custom_type_script = "uid://cg60dwapmdsd8"
 
-[node name="Sprite2D" type="Sprite2D" parent="Mixer/MealCreator" unique_id=1878397170]
-scale = Vector2(3.234375, 1.171875)
-texture = ExtResource("2_lnu2h")
+[node name="ProgressBar" type="ProgressBar" parent="Mixer/MealCreator" unique_id=1227769236]
+offset_left = -337.0
+offset_top = -264.0
+offset_right = 48.0
+offset_bottom = 238.0
+theme = ExtResource("2_rysoc")
+theme_override_styles/background = SubResource("StyleBoxFlat_ir15t")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ca42v")
+max_value = 1.0
+fill_mode = 3
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Cooker" type="Sprite2D" parent="Mixer/MealCreator" unique_id=2024456692]
+position = Vector2(-143, -8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ir15t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mixer/MealCreator" unique_id=1364476210]
+position = Vector2(-144, -14.5)
 shape = SubResource("RectangleShape2D_7qkos")
+debug_color = Color(0.7, 0.40833336, 0, 0.41960785)
 
 [node name="CookTimer" type="Timer" parent="Mixer/MealCreator" unique_id=1985368380]
 one_shot = true
 
-[node name="CookButton" type="Button" parent="Mixer/MealCreator" unique_id=1284183421]
-offset_left = -65.0
-offset_top = 82.0
-offset_right = 73.0
-offset_bottom = 113.0
-text = "Cook"
+[node name="PullThingy" type="Sprite2D" parent="Mixer/MealCreator" unique_id=1107324357]
+position = Vector2(136, -315)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_ssvqc")
 
-[node name="ProgressBar" type="ProgressBar" parent="Mixer/MealCreator" unique_id=1227769236]
-offset_left = -160.0
-offset_top = 119.0
-offset_right = 164.0
-offset_bottom = 146.0
-max_value = 1.0
+[node name="Button" type="Button" parent="Mixer/MealCreator" unique_id=246252056]
+modulate = Color(1, 1, 1, 0)
+offset_left = 76.0
+offset_top = -280.0
+offset_right = 200.0
+offset_bottom = -187.0
+text = "cook"
+metadata/_edit_use_anchors_ = true
 
 [node name="bottom" type="CollisionShape2D" parent="Mixer" unique_id=1271060047]
-position = Vector2(0, 63)
+position = Vector2(-184, 247)
+shape = SubResource("RectangleShape2D_bkh6n")
+
+[node name="top" type="CollisionShape2D" parent="Mixer" unique_id=310799442]
+position = Vector2(-184, -273)
 shape = SubResource("RectangleShape2D_bkh6n")
 
 [node name="right" type="CollisionShape2D" parent="Mixer" unique_id=1351369644]
-position = Vector2(190.75, 0.5)
+position = Vector2(6.75, 184.5)
 shape = SubResource("RectangleShape2D_lbhrr")
 
 [node name="left" type="CollisionShape2D" parent="Mixer" unique_id=1501434149]
-position = Vector2(-191, 0.5)
+position = Vector2(-375, 184.5)
+shape = SubResource("RectangleShape2D_lbhrr")
+
+[node name="right2" type="CollisionShape2D" parent="Mixer" unique_id=1499541379]
+position = Vector2(6.75, -207.5)
+shape = SubResource("RectangleShape2D_lbhrr")
+
+[node name="left2" type="CollisionShape2D" parent="Mixer" unique_id=343530124]
+position = Vector2(-375, -207.5)
 shape = SubResource("RectangleShape2D_lbhrr")
 
 [node name="Portal" type="Node2D" parent="." unique_id=1754100449]
@@ -154,6 +191,7 @@ offset_top = 24.0
 offset_right = -26.0
 offset_bottom = 288.0
 grow_horizontal = 2
+mouse_filter = 2
 alignment = 2
 script = ExtResource("6_u5sy4")
 metadata/_custom_type_script = "uid://daso08kqcvbp0"
@@ -182,4 +220,4 @@ visible = false
 
 [node name="DialogueManager" parent="CanvasLayer" unique_id=1039098274 instance=ExtResource("14_trtic")]
 
-[connection signal="pressed" from="Mixer/MealCreator/CookButton" to="Mixer/MealCreator" method="create_meal"]
+[connection signal="button_up" from="Mixer/MealCreator/Button" to="Mixer/MealCreator" method="create_meal"]

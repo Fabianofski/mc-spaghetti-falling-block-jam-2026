@@ -6,6 +6,7 @@ func _ready() -> void:
 	var day = GameManager.get_day()
 	day.failed.connect(func(): visible = true)
 	restart_button.should_oscillate = true
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 func restart():
 	GameManager.reload_scene(true)

@@ -5,9 +5,9 @@ extends Node
 var day: Day 
 
 func _ready() -> void:
-    day = GameManager.get_day()
-    day_label.text = "Day %d" % [day.day]
-    day.score_changed.connect(update_score)
+	day = GameManager.get_day()
+	day_label.text = "Day %d" % [day.day]
+	day.score_changed.connect(update_score)
 
 func update_score(score: int):
-    score_label.text = "Score: %d" % [score]
+	score_label.text = "Score: %d" % [score]

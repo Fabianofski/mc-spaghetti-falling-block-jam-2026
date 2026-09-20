@@ -6,6 +6,9 @@ var cooking: bool = false
 @onready var timer: Timer = $CookTimer
 @onready var progress_bar: ProgressBar = $ProgressBar
 
+@onready var pull_thingy: Sprite2D = $PullThingy
+var _pull_tween: Tween = null
+
 func _ready() -> void:
 	body_entered.connect(on_ingredient_entered)
 	body_exited.connect(on_ingredient_exited)
@@ -33,6 +36,10 @@ func recipe_is_correct(meal: Meal) -> bool:
 func create_meal():
 	if (cooking): return
 
+	if _pull_tween: _pull_tween.kill()
+	_pull_tween = create_tween()
+	_pull_tween.tween_property(pull_thingy, "position:y", -215.0, 0.45).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
+
 	print("Cooking")
 	cooking = true
 	timer.start()
@@ -49,5 +56,9 @@ func finish_meal():
 
 	for i in ingredients:
 		i.queue_free()
+
+	if _pull_tween: _pull_tween.kill()
+	_pull_tween = create_tween()
+	_pull_tween.tween_property(pull_thingy, "position:y", -315.0, 0.45).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
 
 	cooking = false
