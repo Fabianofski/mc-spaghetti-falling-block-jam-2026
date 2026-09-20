@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Day" format=3 uid="uid://c16gia18k5xiy"]
+
+[ext_resource type="Script" uid="uid://djqtt882te1b" path="res://resources/meal.gd" id="1_o8j4u"]
+[ext_resource type="Resource" uid="uid://16vtgk38acdj" path="res://resources/meals/cheese.tres" id="2_a3tnt"]
+[ext_resource type="Resource" uid="uid://bwstuka6fnshc" path="res://resources/meals/carbonara.tres" id="3_0kv8m"]
+[ext_resource type="Resource" uid="uid://cekv1lfgh86eo" path="res://resources/meals/sauce.tres" id="4_dkaun"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="5_a3tnt"]
+[ext_resource type="Resource" uid="uid://dg6d2rbihk72a" path="res://resources/meals/cheese_snack.tres" id="5_osigx"]
+[ext_resource type="Script" uid="uid://chnd07y2wn61j" path="res://resources/day.gd" id="5_tpfuw"]
+[ext_resource type="Resource" uid="uid://bjhikw6164o4d" path="res://resources/meals/spaghetti.tres" id="6_urpny"]
+[ext_resource type="Resource" uid="uid://maibagr2ifjh" path="res://resources/meals/bolognese.tres" id="7_qyub0"]
+[ext_resource type="Resource" uid="uid://bua1x5ti8f6kx" path="res://resources/meals/pesto.tres" id="8_2qshe"]
+[ext_resource type="Resource" uid="uid://c5rtk4bsgcxs7" path="res://resources/meals/vegan.tres" id="9_14ior"]
+[ext_resource type="Resource" uid="uid://ck7hit4cbmbxt" path="res://resources/meals/carnivore.tres" id="10_alvod"]
+
+[resource]
+script = ExtResource("5_tpfuw")
+day = 11
+available_meals = Array[ExtResource("1_o8j4u")]([ExtResource("2_a3tnt"), ExtResource("3_0kv8m"), ExtResource("4_dkaun"), ExtResource("5_osigx"), ExtResource("6_urpny"), ExtResource("7_qyub0"), ExtResource("8_2qshe"), ExtResource("9_14ior"), ExtResource("10_alvod")])
+total_orders = 6
+meals_per_order = 1
+time_per_order = 15.0
+max_parallel_orders = 3
+metadata/_custom_type_script = "uid://chnd07y2wn61j"

@@ -22,6 +22,7 @@
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ca42v"]
+bg_color = Color(0.28235295, 0.09803922, 0.02745098, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7qkos"]
 size = Vector2(412, 547)
@@ -76,15 +77,15 @@ debug_color = Color(0.7, 0.40833336, 0, 0.41960785)
 one_shot = true
 
 [node name="PullThingy" type="Sprite2D" parent="Mixer/MealCreator" unique_id=1107324357]
-position = Vector2(136, -315)
+position = Vector2(152, -315)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_ssvqc")
 
 [node name="Button" type="Button" parent="Mixer/MealCreator" unique_id=246252056]
 modulate = Color(1, 1, 1, 0)
-offset_left = 76.0
+offset_left = 92.0
 offset_top = -280.0
-offset_right = 200.0
+offset_right = 216.0
 offset_bottom = -187.0
 text = "cook"
 metadata/_edit_use_anchors_ = true

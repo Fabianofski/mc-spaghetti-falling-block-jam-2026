@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Day" format=3 uid="uid://dxb7t7g10rcki"]
+
+[ext_resource type="Script" uid="uid://djqtt882te1b" path="res://resources/meal.gd" id="1_tswoa"]
+[ext_resource type="Resource" uid="uid://16vtgk38acdj" path="res://resources/meals/cheese.tres" id="2_o8onl"]
+[ext_resource type="Resource" uid="uid://bwstuka6fnshc" path="res://resources/meals/carbonara.tres" id="3_6pwg8"]
+[ext_resource type="Resource" uid="uid://cekv1lfgh86eo" path="res://resources/meals/sauce.tres" id="4_78jw1"]
+[ext_resource type="Script" uid="uid://chnd07y2wn61j" path="res://resources/day.gd" id="5_5mvk1"]
+[ext_resource type="Resource" uid="uid://maibagr2ifjh" path="res://resources/meals/bolognese.tres" id="5_o8onl"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="6_6pwg8"]
+[ext_resource type="Resource" uid="uid://ck7hit4cbmbxt" path="res://resources/meals/carnivore.tres" id="6_axs5o"]
+[ext_resource type="Resource" uid="uid://c5rtk4bsgcxs7" path="res://resources/meals/vegan.tres" id="7_akmwy"]
+[ext_resource type="Resource" uid="uid://bua1x5ti8f6kx" path="res://resources/meals/pesto.tres" id="8_l3o3v"]
+[ext_resource type="Resource" uid="uid://bjhikw6164o4d" path="res://resources/meals/spaghetti.tres" id="9_xv73l"]
+[ext_resource type="Resource" uid="uid://dg6d2rbihk72a" path="res://resources/meals/cheese_snack.tres" id="10_oltf8"]
+[ext_resource type="Resource" uid="uid://cdedpvdlcfq6t" path="res://resources/meals/chesto.tres" id="11_l4qev"]
+
+[resource]
+script = ExtResource("5_5mvk1")
+day = 12
+available_meals = Array[ExtResource("1_tswoa")]([ExtResource("2_o8onl"), ExtResource("3_6pwg8"), ExtResource("4_78jw1"), ExtResource("5_o8onl"), ExtResource("6_axs5o"), ExtResource("7_akmwy"), ExtResource("8_l3o3v"), ExtResource("9_xv73l"), ExtResource("10_oltf8"), ExtResource("11_l4qev"), ExtResource("2_o8onl")])
+total_orders = 16
+meals_per_order = 2
+time_per_order = 12.0
+max_parallel_orders = 3
+metadata/_custom_type_script = "uid://chnd07y2wn61j"

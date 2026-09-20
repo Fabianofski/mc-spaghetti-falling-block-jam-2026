@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Meal" format=3 uid="uid://dg6d2rbihk72a"]
+
+[ext_resource type="Script" uid="uid://dscs8lqnmfsik" path="res://resources/ingredient.gd" id="1_omnlh"]
+[ext_resource type="Resource" uid="uid://5h1boir8njxf" path="res://resources/ingredients/cheese.tres" id="3_31ong"]
+[ext_resource type="Script" uid="uid://djqtt882te1b" path="res://resources/meal.gd" id="4_7t6g0"]
+
+[resource]
+script = ExtResource("4_7t6g0")
+id = "justcheese"
+name = "Cheese Snack"
+ingredients = Array[ExtResource("1_omnlh")]([ExtResource("3_31ong"), ExtResource("3_31ong")])
+metadata/_custom_type_script = "uid://djqtt882te1b"

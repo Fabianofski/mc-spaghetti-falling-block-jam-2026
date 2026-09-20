@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://chnd07y2wn61j" path="res://resources/day.gd" id="3_h511q"]
 [ext_resource type="Resource" uid="uid://maibagr2ifjh" path="res://resources/meals/bolognese.tres" id="4_c3wlq"]
 [ext_resource type="Resource" uid="uid://cekv1lfgh86eo" path="res://resources/meals/sauce.tres" id="4_h511q"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="5_c3wlq"]
 
 [resource]
 script = ExtResource("3_h511q")
@@ -12,6 +13,6 @@ day = 4
 available_meals = Array[ExtResource("1_77nkn")]([ExtResource("2_l8qg4"), ExtResource("4_h511q"), ExtResource("4_c3wlq")])
 total_orders = 6
 meals_per_order = 2
-time_per_order = 15.0
+time_per_order = 18.0
 max_parallel_orders = 2
 metadata/_custom_type_script = "uid://chnd07y2wn61j"
