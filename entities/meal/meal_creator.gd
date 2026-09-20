@@ -4,16 +4,16 @@ class_name MealCreator
 var ingredients: Array[IngredientBlock]
 var cooking: bool = false
 @onready var timer: Timer = $CookTimer
+@onready var progress_bar: ProgressBar = $ProgressBar
 
 func _ready() -> void:
     body_entered.connect(on_ingredient_entered)
     body_exited.connect(on_ingredient_exited)
     
-    timer.timeout.connect(func(): cooking = false)
+    timer.timeout.connect(finish_meal)
     
 func _process(_delta: float) -> void:
-    if Input.is_key_pressed(KEY_C):
-        create_meal()
+    progress_bar.value = 1 - timer.time_left / timer.wait_time
     
 func on_ingredient_entered(ingredient: Node):
     if ingredient is IngredientBlock:
@@ -36,22 +36,18 @@ func create_meal():
     print("Cooking")
     cooking = true
     timer.start()
+        
+func finish_meal(): 
     var orders = OrderBook.get_orders()
-
-    var correct_recipe: bool = false
     for order_id in orders:
         var order = orders[order_id]
 
         var meal_idx = order.needs_ingredients(ingredients)
         if meal_idx != -1: 
             order.complete_meal(meal_idx)
-            correct_recipe = true
             break
-            
-    if correct_recipe: 
-        print("Correct")
-    else:
-        print("What is this????")
 
     for i in ingredients:
         i.queue_free()
+
+    cooking = false

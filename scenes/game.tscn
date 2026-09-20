@@ -48,6 +48,21 @@ texture = ExtResource("2_lnu2h")
 shape = SubResource("RectangleShape2D_7qkos")
 
 [node name="CookTimer" type="Timer" parent="Mixer/MealCreator" unique_id=1985368380]
+one_shot = true
+
+[node name="CookButton" type="Button" parent="Mixer/MealCreator" unique_id=1284183421]
+offset_left = -65.0
+offset_top = 82.0
+offset_right = 73.0
+offset_bottom = 113.0
+text = "Cook"
+
+[node name="ProgressBar" type="ProgressBar" parent="Mixer/MealCreator" unique_id=1227769236]
+offset_left = -160.0
+offset_top = 119.0
+offset_right = 164.0
+offset_bottom = 146.0
+max_value = 1.0
 
 [node name="bottom" type="CollisionShape2D" parent="Mixer" unique_id=1271060047]
 position = Vector2(0, 63)
@@ -166,3 +181,5 @@ visible = false
 visible = false
 
 [node name="DialogueManager" parent="CanvasLayer" unique_id=1039098274 instance=ExtResource("14_trtic")]
+
+[connection signal="pressed" from="Mixer/MealCreator/CookButton" to="Mixer/MealCreator" method="create_meal"]
