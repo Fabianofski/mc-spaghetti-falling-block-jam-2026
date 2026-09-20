@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://deu4fbpu0wdfa"]
+
+[ext_resource type="Resource" uid="uid://bmxclcj627pwm" path="res://resources/character/system.tres" id="1_hkp7e"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_evpri"]
+
+[resource]
+script = ExtResource("2_evpri")
+character = ExtResource("1_hkp7e")
+text = "Click on Spaghetti"
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

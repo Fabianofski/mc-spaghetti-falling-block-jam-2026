@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://do31tdp4kplr6"]
+
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="1_3tlbh"]
+[ext_resource type="Resource" uid="uid://bmxclcj627pwm" path="res://resources/character/system.tres" id="1_hwsl8"]
+
+[resource]
+script = ExtResource("1_3tlbh")
+character = ExtResource("1_hwsl8")
+text = "Hello"
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

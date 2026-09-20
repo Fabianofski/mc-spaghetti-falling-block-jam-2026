@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://ctc7356vtrgcu"]
+
+[ext_resource type="Script" uid="uid://dn4wsvvjgpu48" path="res://ui/dialogue_manager/dialogue_manager.gd" id="1_gs814"]
+[ext_resource type="Texture2D" uid="uid://bjwgximx8mp4q" path="res://resources/character/character.png" id="1_s4mrb"]
+
+[node name="DialogueManager" type="Control" unique_id=1039098274]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_gs814")
+
+[node name="Dialogue" type="Control" parent="." unique_id=639999269]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -499.0
+offset_top = -230.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Background" type="ColorRect" parent="Dialogue" unique_id=1664621676]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -419.0
+offset_top = -177.0
+offset_right = -45.0
+offset_bottom = -13.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(0.10747976, 0.10747973, 0.10747973, 1)
+
+[node name="Label" type="Label" parent="Dialogue/Background" unique_id=53501194]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = " Text text text text"
+
+[node name="Character" type="TextureRect" parent="Dialogue" unique_id=1114553050]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -248.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("1_s4mrb")

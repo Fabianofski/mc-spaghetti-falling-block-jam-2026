@@ -17,9 +17,8 @@ func finish_day():
 func reload_scene(is_loss: bool = false):
     if is_loss:
         reset()
+
     ScreenFader.change_scene("RELOAD")
-    
-    get_day().start()
     OrderBook.reset_orders()
     
 func reset(): 

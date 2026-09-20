@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://bmxclcj627pwm"]
+
+[ext_resource type="Script" uid="uid://bid1qexhb2tai" path="res://resources/character.gd" id="1_eojrm"]
+
+[resource]
+script = ExtResource("1_eojrm")
+name = "System [tbd]"
+metadata/_custom_type_script = "uid://bid1qexhb2tai"

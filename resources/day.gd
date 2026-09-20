@@ -7,6 +7,8 @@ class_name Day
 @export var meals_per_order: int
 @export var time_per_order: float
 @export var max_parallel_orders: int
+@export var dialogue: Array[Dialogue]
+var dialogue_played: bool = false
 
 signal score_changed(score: int)
 var score: int = 0

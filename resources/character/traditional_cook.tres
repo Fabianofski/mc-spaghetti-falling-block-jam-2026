@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://twf1mplgjulh"]
+
+[ext_resource type="Texture2D" uid="uid://bjwgximx8mp4q" path="res://resources/character/character.png" id="1_n65j3"]
+[ext_resource type="Script" uid="uid://bid1qexhb2tai" path="res://resources/character.gd" id="1_vjb3u"]
+
+[resource]
+script = ExtResource("1_vjb3u")
+name = "Traditional cook [tbd]"
+avatar = ExtResource("1_n65j3")
+metadata/_custom_type_script = "uid://bid1qexhb2tai"

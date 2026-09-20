@@ -5,10 +5,14 @@ class_name OrderGenerator
 
 func _ready() -> void:
     timer.timeout.connect(create_order)
-    timer.start()
+    var day = GameManager.get_day()
+    day.state_changed.connect(func(state): if state == Day.DayState.InProgress: timer.start())
 
 func create_order(): 
     var day = GameManager.get_day()
+    
+    if day.state != Day.DayState.InProgress:
+        return
 
     if OrderBook.total_orders >= day.total_orders: 
         return

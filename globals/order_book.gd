@@ -15,7 +15,7 @@ func reset_orders():
 
 func _process(delta: float) -> void:
     var day = GameManager.get_day()
-    if day.state == Day.DayState.Failed: return
+    if day.state != Day.DayState.InProgress: return
     for order_id in orders:
         var order = orders.get(order_id)
         if order: order.update_timer(delta)

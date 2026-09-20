@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bf0hmwpaoa6xu" path="res://ui/day_end_screen/day_end_screen.tscn" id="11_trtic"]
 [ext_resource type="PackedScene" uid="uid://c7xy4ib56hesm" path="res://ui/meta_data_display/meta_data_display.tscn" id="12_ca42v"]
 [ext_resource type="Texture2D" uid="uid://cyd67odrg1hd5" path="res://art_assets/bar.png" id="14_sww3w"]
+[ext_resource type="PackedScene" uid="uid://ctc7356vtrgcu" path="res://ui/dialogue_manager/dialogue_manager.tscn" id="14_trtic"]
 [ext_resource type="Texture2D" uid="uid://bdipqc1u8v3m1" path="res://art_assets/holder.png" id="15_suyxu"]
 [ext_resource type="PackedScene" uid="uid://c1djhbpqkow8s" path="res://ui/game_over_screen/game_over_screen.tscn" id="16_ca42v"]
 
@@ -163,3 +164,5 @@ visible = false
 
 [node name="GameOverScreen" parent="CanvasLayer" unique_id=296855279 instance=ExtResource("16_ca42v")]
 visible = false
+
+[node name="DialogueManager" parent="CanvasLayer" unique_id=1039098274 instance=ExtResource("14_trtic")]
