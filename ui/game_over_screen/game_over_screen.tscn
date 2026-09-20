@@ -96,6 +96,8 @@ stretch_mode = 5
 
 [node name="Scoring" parent="." unique_id=1978329433 instance=ExtResource("4_c73pu")]
 layout_mode = 1
+offset_top = -30.0
+offset_bottom = 174.0
 
 [connection signal="button_up" from="VBoxContainer/Restart Button" to="." method="restart"]
 [connection signal="button_up" from="VBoxContainer/Main Menu Button" to="." method="_on_main_menu_button_button_up"]

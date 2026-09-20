@@ -57,5 +57,7 @@ stretch_mode = 5
 
 [node name="Scoring" parent="." unique_id=1978329433 instance=ExtResource("5_qdwaa")]
 layout_mode = 1
+offset_top = -30.0
+offset_bottom = 174.0
 
 [connection signal="pressed" from="Button" to="." method="finish_day"]
