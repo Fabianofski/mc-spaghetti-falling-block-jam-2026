@@ -1,4 +1,5 @@
 extends Node
 
-@warning_ignore("unused_signal")
+@warning_ignore_start("unused_signal")
 signal done_cooking
+signal game_state_change

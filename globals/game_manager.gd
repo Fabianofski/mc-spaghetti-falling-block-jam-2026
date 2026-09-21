@@ -19,6 +19,7 @@ func reload_scene(is_loss: bool = false):
 		reset()
 
 	ScreenFader.change_scene("RELOAD")
+	SignalBus.game_state_change.emit("gameplay")
 	OrderBook.reset_orders()
 	
 func reset(): 

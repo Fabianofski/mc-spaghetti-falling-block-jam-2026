@@ -5,6 +5,7 @@ extends Control
 func _ready() -> void:
 	var day = GameManager.get_day()
 	day.failed.connect(func(): visible = true)
+	day.failed.connect(func(): SignalBus.game_state_change.emit("menu"))
 	restart_button.should_oscillate = true
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 

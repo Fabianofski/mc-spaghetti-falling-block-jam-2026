@@ -2,9 +2,17 @@
 
 [ext_resource type="AudioStream" uid="uid://lttce34ha6yt" path="res://audio/italian.ogg" id="1_cgbwi"]
 [ext_resource type="Script" uid="uid://dh8eaqntcfb48" path="res://audio/jukebox.gd" id="2_02n6l"]
+[ext_resource type="AudioStream" uid="uid://cfdc0ynxqxv47" path="res://audio/italianmenu.ogg" id="2_irj34"]
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_831sh"]
+stream_count = 2
+stream_0/stream = ExtResource("1_cgbwi")
+stream_0/volume = -60.0
+stream_1/stream = ExtResource("2_irj34")
+stream_1/volume = 0.0
 
 [node name="Jukebox" type="AudioStreamPlayer2D" unique_id=3539258]
-stream = ExtResource("1_cgbwi")
+stream = SubResource("AudioStreamSynchronized_831sh")
 volume_db = -15.0
 autoplay = true
 script = ExtResource("2_02n6l")

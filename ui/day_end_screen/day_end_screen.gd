@@ -10,6 +10,7 @@ func _ready() -> void:
 	
 func enable_screen():
 	visible = true
+	SignalBus.game_state_change.emit("menu")
 	mouse_filter = Control.MOUSE_FILTER_STOP
 
 func finish_day():
