@@ -7,17 +7,16 @@ class_name DialogueManager
 @onready var character_pivot: Control = $"Character Pivot"
 var current_idx = 0
 var text_tween: Tween
-var current_avatar: Character
+var current_character: Character
 var movement_tween: Tween
 
-const ANIM_TIME: float = 1
+const ANIM_TIME: float = 0.8
 var constant_offset_time: float = 0.0
 var random_offset: float = 0.0
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	random_offset = randf()
-	_play_puppet_animation("appear")
 	next_dialogue()
 
 func _process(delta: float) -> void:
@@ -47,17 +46,18 @@ func next_dialogue():
 		return
 
 	var dialogue = day.dialogue[current_idx]
-	if current_avatar == dialogue.character.avatar:
-		match current_avatar:
+	if current_character != dialogue.character:
+		match current_character:
 			null:
 				print("Dialogue: no character yet, must be just starting")
 				_play_puppet_animation("appear")
-				current_avatar = dialogue.character.avatar
+				current_character = dialogue.character
 				character.texture = dialogue.character.avatar
 			_:
 				print("Dialogue: different character!!!")
 				_play_puppet_animation("launch")
-				current_avatar = dialogue.character.avatar
+				random_offset = randf()
+				current_character = dialogue.character
 				character.texture = dialogue.character.avatar
 				_play_puppet_animation("appear")
 
@@ -81,8 +81,8 @@ func _play_puppet_animation(anim: String = "idle") -> void: # they say you shoul
 			character_pivot.position = Vector2(1232, 1280)
 			character_pivot.rotation_degrees = 0.0
 			if movement_tween: movement_tween.kill()
-			movement_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
-			movement_tween.tween_property(character_pivot, "position", Vector2(1232, 856), 0.5)
+			movement_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+			movement_tween.tween_property(character_pivot, "position", Vector2(1232, 856), 1)
 		"launch": # WARNING: LOOKS BAD
 			if movement_tween: movement_tween.kill()
 			movement_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART).set_parallel()
