@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://danhn4habj1j8"]
+
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="1_2y0ak"]
+[ext_resource type="Resource" uid="uid://cqd616de02tdj" path="res://resources/character/corporate_boss.tres" id="1_iyne6"]
+
+[resource]
+script = ExtResource("1_2y0ak")
+character = ExtResource("1_iyne6")
+text = "You've noticed the exact ingredients you need are dispensed automatically, surely. And you can also re-order 'em if you bungle it."
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

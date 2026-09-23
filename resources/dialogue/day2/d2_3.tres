@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://b7dyp6ke4jycw"]
+
+[ext_resource type="Resource" uid="uid://cqd616de02tdj" path="res://resources/character/corporate_boss.tres" id="1_4yp7s"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_gjf4t"]
+
+[resource]
+script = ExtResource("2_gjf4t")
+character = ExtResource("1_4yp7s")
+text = "Good? Good. Now, chop-chop, and don't go wastin' product. It's coming out of your paycheck."
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

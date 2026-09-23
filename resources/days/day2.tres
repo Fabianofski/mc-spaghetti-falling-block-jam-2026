@@ -4,6 +4,10 @@
 [ext_resource type="Resource" uid="uid://bjhikw6164o4d" path="res://resources/meals/spaghetti.tres" id="2_vocys"]
 [ext_resource type="Script" uid="uid://chnd07y2wn61j" path="res://resources/day.gd" id="3_sutbr"]
 [ext_resource type="Resource" uid="uid://16vtgk38acdj" path="res://resources/meals/cheese.tres" id="3_vocys"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="4_c0m3m"]
+[ext_resource type="Resource" uid="uid://danhn4habj1j8" path="res://resources/dialogue/day2/d2_1.tres" id="5_np075"]
+[ext_resource type="Resource" uid="uid://dfje6rnabngcv" path="res://resources/dialogue/day2/d2_2.tres" id="6_molor"]
+[ext_resource type="Resource" uid="uid://b7dyp6ke4jycw" path="res://resources/dialogue/day2/d2_3.tres" id="7_q6fg4"]
 
 [resource]
 script = ExtResource("3_sutbr")
@@ -13,4 +17,5 @@ total_orders = 4
 meals_per_order = 2
 time_per_order = 20.0
 max_parallel_orders = 2
+dialogue = Array[ExtResource("4_c0m3m")]([ExtResource("5_np075"), ExtResource("6_molor"), ExtResource("7_q6fg4")])
 metadata/_custom_type_script = "uid://chnd07y2wn61j"

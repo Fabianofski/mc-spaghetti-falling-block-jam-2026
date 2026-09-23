@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://dfje6rnabngcv"]
+
+[ext_resource type="Resource" uid="uid://cqd616de02tdj" path="res://resources/character/corporate_boss.tres" id="1_xtv0b"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_f3b4r"]
+
+[resource]
+script = ExtResource("2_f3b4r")
+character = ExtResource("1_xtv0b")
+text = "We run on very tight margins here, so if someone wants pasta with cheese, you give 'em ONE block of pasta and ONE block of cheese. No more, no less."
+metadata/_custom_type_script = "uid://b3fueednaw6q6"
