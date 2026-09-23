@@ -56,6 +56,7 @@ func next_dialogue():
 			_:
 				print("Dialogue: different character!!!")
 				_play_puppet_animation("launch")
+				await movement_tween.finished
 				random_offset = randf()
 				current_character = dialogue.character
 				character.texture = dialogue.character.avatar
@@ -76,7 +77,7 @@ func next_dialogue():
 func _play_puppet_animation(anim: String = "idle") -> void: # they say you should care about code quality, they never said it had to be good quality :)
 	match anim:
 		"idle":
-			pass
+			pass # nvm i do it in process
 		"appear":
 			character_pivot.position = Vector2(1232, 1280)
 			character_pivot.rotation_degrees = 0.0
@@ -88,4 +89,3 @@ func _play_puppet_animation(anim: String = "idle") -> void: # they say you shoul
 			movement_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART).set_parallel()
 			movement_tween.tween_property(character_pivot, "position", Vector2(-16, 1280), 1)
 			movement_tween.tween_property(character_pivot, "rotation_degrees", -45.0, 1)
-			await movement_tween.finished
