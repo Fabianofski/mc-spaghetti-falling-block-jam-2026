@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cg60dwapmdsd8" path="res://entities/meal/meal_creator.gd" id="4_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://dstio4vdku543" path="res://art_assets/pipes.png" id="4_rysoc"]
 [ext_resource type="Texture2D" uid="uid://d1x8wlcu3qv1k" path="res://art_assets/pull_thingy.png" id="4_ssvqc"]
+[ext_resource type="Script" uid="uid://u5qe0h2phkjr" path="res://entities/pull_thingy.gd" id="5_264po"]
 [ext_resource type="Script" uid="uid://dbacan28pfyig" path="res://entities/meal/plate.gd" id="5_iywne"]
 [ext_resource type="Texture2D" uid="uid://bv77um23bl6ft" path="res://art_assets/poof.png" id="6_ssvqc"]
 [ext_resource type="Script" uid="uid://daso08kqcvbp0" path="res://ui/order_viewer/orders_manager.gd" id="6_u5sy4"]
@@ -100,15 +101,7 @@ one_shot = true
 position = Vector2(152, -315)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_ssvqc")
-
-[node name="Button" type="Button" parent="Mixer/MealCreator" unique_id=246252056]
-modulate = Color(1, 1, 1, 0)
-offset_left = 92.0
-offset_top = -280.0
-offset_right = 216.0
-offset_bottom = -187.0
-text = "cook"
-metadata/_edit_use_anchors_ = true
+script = ExtResource("5_264po")
 
 [node name="bottom" type="CollisionShape2D" parent="Mixer" unique_id=1271060047]
 position = Vector2(-184, 247)
@@ -256,5 +249,3 @@ offset_bottom = 56.0
 visible = false
 
 [node name="DialogueManager" parent="CanvasLayer" unique_id=1039098274 instance=ExtResource("14_trtic")]
-
-[connection signal="button_up" from="Mixer/MealCreator/Button" to="Mixer/MealCreator" method="create_meal"]
