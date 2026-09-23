@@ -3,19 +3,34 @@ class_name DialogueManager
 
 @onready var dialogue_node: Node = $Dialogue
 @onready var label: Label = $Dialogue/Background/Label
-@onready var character: TextureRect = $Dialogue/Character
+@onready var character: TextureRect = $"Character Pivot/Character"
+@onready var character_pivot: Control = $"Character Pivot"
 var current_idx = 0
-var tween: Tween
+var text_tween: Tween
+var current_avatar: Character
+var movement_tween: Tween
+
+const ANIM_TIME: float = 1
+var constant_offset_time: float = 0.0
+var random_offset: float = 0.0
 
 func _ready() -> void:
+	mouse_filter = Control.MOUSE_FILTER_STOP
+	random_offset = randf()
 	next_dialogue()
-	
+
+func _process(delta: float) -> void:
+	var offset: float = (sin(constant_offset_time * ANIM_TIME) * 0.15) - (random_offset / 16)
+	constant_offset_time += delta + (random_offset / 8)
+	character_pivot.rotation = offset
+	character_pivot.position += Vector2(-offset, -offset / 4)
+
 func _input(event) -> void:
 	var day = GameManager.get_day()
 	if day.dialogue_played: return
 	if event is InputEventMouseButton and event.is_pressed(): 
-		if tween and tween.is_running():
-			tween.stop()
+		if text_tween and text_tween.is_running():
+			text_tween.stop()
 			label.visible_ratio = 1
 		else: 
 			next_dialogue()
@@ -23,22 +38,53 @@ func _input(event) -> void:
 func next_dialogue(): 
 	var day = GameManager.get_day()
 	if day.dialogue_played or current_idx >= len(day.dialogue):
+		mouse_filter = Control.MOUSE_FILTER_PASS
 		day.start()
 		dialogue_node.visible = false
 		day.dialogue_played = true
+		_play_puppet_animation("launch")
 		return
 
 	var dialogue = day.dialogue[current_idx]
-	character.texture = dialogue.character.avatar
+	if current_avatar == dialogue.character.avatar:
+		match current_avatar:
+			null:
+				print("Dialogue: no character yet, must be just starting")
+				_play_puppet_animation("appear")
+				current_avatar = dialogue.character.avatar
+				character.texture = dialogue.character.avatar
+			_:
+				print("Dialogue: different character!!!")
+				_play_puppet_animation("launch")
+				current_avatar = dialogue.character.avatar
+				character.texture = dialogue.character.avatar
+				_play_puppet_animation("appear")
 
 	label.text = dialogue.text
 
-	if tween: 
-		tween.kill()
-	tween = create_tween()
-	tween.tween_method(func(i): label.visible_ratio = i, 0.0, 1.0, len(dialogue.text) / 50.0)
+	if text_tween: 
+		text_tween.kill()
+	text_tween = create_tween()
+	text_tween.tween_method(func(i): label.visible_ratio = i, 0.0, 1.0, len(dialogue.text) / 50.0)
 
 	if dialogue.action != "":
 		SignalBus.emit_signal(dialogue.action)
 
 	current_idx += 1
+
+func _play_puppet_animation(anim: String = "idle") -> void: # they say you should care about code quality, they never said it had to be good quality :)
+	match anim:
+		"idle":
+			pass
+		"appear":
+			character_pivot.position = Vector2(1232, 1280)
+			character_pivot.rotation_degrees = 0.0
+			if movement_tween: movement_tween.kill()
+			movement_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
+			movement_tween.tween_property(character_pivot, "position", Vector2(1232, 856), 0.5)
+		"launch": # WARNING: LOOKS BAD
+			if movement_tween: movement_tween.kill()
+			movement_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART).set_parallel()
+			movement_tween.tween_property(character_pivot, "position", Vector2(-16, 1280), 1)
+			movement_tween.tween_property(character_pivot, "rotation_degrees", -45.0, 1)
+			await movement_tween.finished

@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Character" format=3 uid="uid://cqd616de02tdj"]
 
 [ext_resource type="Script" uid="uid://bid1qexhb2tai" path="res://resources/character.gd" id="1_vsj87"]
-[ext_resource type="Texture2D" uid="uid://bjwgximx8mp4q" path="res://resources/character/character.png" id="1_wmqn8"]
+[ext_resource type="Texture2D" uid="uid://cvjpsc2rnrvpf" path="res://resources/character/business.png" id="1_wmqn8"]
 
 [resource]
 script = ExtResource("1_vsj87")
-name = "Corporate {tbd}"
+name = "Mr. Ladro"
 avatar = ExtResource("1_wmqn8")
 metadata/_custom_type_script = "uid://bid1qexhb2tai"
