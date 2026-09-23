@@ -17,6 +17,7 @@ var random_offset: float = 0.0
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	random_offset = randf()
+	_play_puppet_animation("appear")
 	next_dialogue()
 
 func _process(delta: float) -> void:
