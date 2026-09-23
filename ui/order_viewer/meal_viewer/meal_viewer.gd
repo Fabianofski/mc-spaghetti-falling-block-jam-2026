@@ -2,18 +2,24 @@ extends Node
 class_name MealViewer
 
 var meal: Meal
-@onready var meal_label: Label = $MealLabel
-@onready var ingredient_label: Label = $IngredientLabel
+@onready var meal_label: RichTextLabel = $MealLabel
+@onready var ingredients: Node = $Ingredients
 
-func format_ingredients(accum: String, i: Ingredient) -> String:
-	return accum + i.name + "\n"
 
-func set_meal(order_id: int, _meal: Meal): 
-	meal = _meal
-	meal_label.text = "#%d %s" % [order_id, meal.name]
-	ingredient_label.text = meal.ingredients.reduce(format_ingredients, "")
-	
-	meal.completed.connect(on_meal_complete)
-	
+func set_meal(_meal: Meal): 
+    meal = _meal
+    meal_label.text = "[color=black]%s" % meal.name
+    
+    for i in meal.ingredients:
+        var tex = TextureRect.new()
+        tex.texture = i.texture
+        tex.expand_mode = TextureRect.EXPAND_FIT_HEIGHT
+        tex.custom_minimum_size = Vector2.ONE * 24
+        ingredients.add_child(tex)
+    
+    meal.completed.connect(on_meal_complete)
+    
 func on_meal_complete():
-	meal_label.text = meal_label.text + " (Done)"
+    meal_label.text = "[i][s][color=black]%s" % meal.name
+    for c in ingredients.get_children():
+        c.queue_free()

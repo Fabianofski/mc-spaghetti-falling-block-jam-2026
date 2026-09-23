@@ -2,14 +2,6 @@
 
 [ext_resource type="Script" uid="uid://b4w8hkll1u4w7" path="res://ui/order_viewer/meal_viewer/meal_viewer.gd" id="1_74xa5"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_74xa5"]
-font_size = 12
-font_color = Color(0.23033306, 0.19378072, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_jww15"]
-font_size = 10
-font_color = Color(0, 0, 0, 1)
-
 [node name="MealViewer" type="VBoxContainer" unique_id=1797635482]
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,13 +11,13 @@ grow_vertical = 2
 size_flags_horizontal = 3
 script = ExtResource("1_74xa5")
 
-[node name="MealLabel" type="Label" parent="." unique_id=174808261]
+[node name="MealLabel" type="RichTextLabel" parent="." unique_id=1518911611]
+custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
-text = "#1 Spaghetti"
-label_settings = SubResource("LabelSettings_74xa5")
+bbcode_enabled = true
+text = "[s][i][color=black]Spaghetti"
+scroll_active = false
 
-[node name="IngredientLabel" type="Label" parent="." unique_id=121089128]
+[node name="Ingredients" type="HBoxContainer" parent="." unique_id=1264157437]
 layout_mode = 2
-text = "Spaghetti 
-Cheese"
-label_settings = SubResource("LabelSettings_jww15")
+theme_override_constants/separation = 4

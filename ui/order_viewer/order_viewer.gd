@@ -29,7 +29,7 @@ func set_order(_order: Order):
 		var meal = order.meals[idx]
 		var mv = meal_viewer.instantiate()
 		meals.add_child(mv)
-		mv.set_meal(idx + 1, meal)
+		mv.set_meal(meal)
 
 	self.global_position.y += randf_range(-8, 8) # NOTE: Doesn't work for some reason...
 
