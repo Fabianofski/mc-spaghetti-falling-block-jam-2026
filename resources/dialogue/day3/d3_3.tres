@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://c4jma1ql5ol5r"]
+
+[ext_resource type="Resource" uid="uid://cqd616de02tdj" path="res://resources/character/corporate_boss.tres" id="1_arucj"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_s4w8m"]
+
+[resource]
+script = ExtResource("2_s4w8m")
+character = ExtResource("1_arucj")
+text = "Keep up the pace, and we'll be--"
+metadata/_custom_type_script = "uid://b3fueednaw6q6"
