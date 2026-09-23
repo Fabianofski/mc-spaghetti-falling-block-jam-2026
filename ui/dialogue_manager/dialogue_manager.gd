@@ -2,7 +2,7 @@ extends Control
 class_name DialogueManager
 
 @onready var dialogue_node: Node = $Dialogue
-@onready var label: Label = $Dialogue/Background/Label
+@onready var label: RichTextLabel = $Dialogue/Background/Label
 @onready var character: TextureRect = $"Character Pivot/Character"
 @onready var character_pivot: Control = $"Character Pivot"
 @onready var animated_background: Polygon2D = $"Dialogue/Animated Background"
@@ -55,7 +55,7 @@ func _input(event) -> void:
 func next_dialogue(): 
 	var day = GameManager.get_day()
 	if day.dialogue_played or current_idx >= len(day.dialogue):
-		mouse_filter = Control.MOUSE_FILTER_PASS
+		mouse_filter = Control.MOUSE_FILTER_IGNORE
 		day.start()
 		dialogue_node.visible = false
 		day.dialogue_played = true

@@ -45,16 +45,16 @@ grow_horizontal = 0
 grow_vertical = 0
 color = Color(1, 0.964, 0.92, 1)
 
-[node name="Label" type="Label" parent="Dialogue/Background" unique_id=53501194]
+[node name="Label" type="RichTextLabel" parent="Dialogue/Background" unique_id=1139065542]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
 text = " Text text text text"
-autowrap_mode = 3
 visible_characters_behavior = 1
 
 [node name="Character Pivot" type="Control" parent="." unique_id=1706784996]
