@@ -5,10 +5,18 @@ class_name DialogueManager
 @onready var label: Label = $Dialogue/Background/Label
 @onready var character: TextureRect = $"Character Pivot/Character"
 @onready var character_pivot: Control = $"Character Pivot"
+@onready var animated_background: Polygon2D = $"Dialogue/Animated Background"
 var current_idx = 0
 var text_tween: Tween
+
 var current_character: Character
 var movement_tween: Tween
+
+var animated_background_points: PackedVector2Array = [Vector2(80.0, 53.0),
+	Vector2(454.0, 53.0),
+	Vector2(454.0, 216.0),
+	Vector2(80.0, 216.0),
+	]
 
 const ANIM_TIME: float = 0.8
 var constant_offset_time: float = 0.0
@@ -24,6 +32,15 @@ func _process(delta: float) -> void:
 	constant_offset_time += delta + (random_offset / 8)
 	character_pivot.rotation = offset
 	character_pivot.position += Vector2(-offset, -offset / 4)
+	
+	# believe it or not only this worked
+	if dialogue_node.visible:
+		var point0: Vector2 = animated_background_points[0] + Vector2(-offset * 4, -offset * 16)
+		var point1: Vector2 = animated_background_points[1] + Vector2(-offset * 16, -offset * 4)
+		var point2: Vector2 = animated_background_points[2] + Vector2(offset * 16, -offset * 8)
+		var point3: Vector2 = animated_background_points[3] + Vector2(offset * 8, offset * 16)
+		var final_anim_bg_points: PackedVector2Array = [point0, point1, point2, point3]
+		animated_background.polygon = final_anim_bg_points
 
 func _input(event) -> void:
 	var day = GameManager.get_day()

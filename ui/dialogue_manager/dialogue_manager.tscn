@@ -27,6 +27,9 @@ offset_bottom = -288.0
 grow_horizontal = 0
 grow_vertical = 0
 
+[node name="Animated Background" type="Polygon2D" parent="Dialogue" unique_id=1317099435]
+color = Color(1, 0.9647059, 0.92156863, 1)
+
 [node name="Background" type="ColorRect" parent="Dialogue" unique_id=1664621676]
 layout_mode = 1
 anchors_preset = 3
@@ -34,10 +37,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -419.0
-offset_top = -177.0
-offset_right = -45.0
-offset_bottom = -13.0
+offset_left = -406.0
+offset_top = -166.0
+offset_right = -58.0
+offset_bottom = -24.0
 grow_horizontal = 0
 grow_vertical = 0
 color = Color(1, 0.964, 0.92, 1)
@@ -47,10 +50,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 14.0
-offset_top = 15.0
-offset_right = -14.0
-offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
