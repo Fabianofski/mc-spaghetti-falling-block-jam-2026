@@ -7,6 +7,8 @@ var init_y: float
 var target_pos: float
 
 @export var max_pullout: float = 100.0 
+@onready var windAudio: AudioStreamPlayer2D = $WindUpAudio
+@onready var springBackAudio: AudioStreamPlayer2D = $SpringBackAudio
 
 var is_pressed: bool 
 var threshold: float = 0.95
@@ -38,9 +40,11 @@ func _unhandled_input(event):
 
 func _process(delta: float) -> void:
     if not _is_pressed_on_sprite: 
+        windAudio.stop()
         target_pos = init_y
         if is_pressed:
             cancelled.emit()
+            springBackAudio.play()
             is_pressed = false
     else:
         var current_global_y = get_global_mouse_position().y
@@ -57,9 +61,15 @@ func _process(delta: float) -> void:
             cancelled.emit()
 
         target_pos = init_y + pullout
+        
+    if target_pos != position.y:
+        if not windAudio.playing:
+            windAudio.play()
+    else:
+        windAudio.stop()
+        springBackAudio.stop()
     
     position.y = lerp(position.y, target_pos, 10.0 * delta)
     
 func release(): 
-    is_pressed = false 
     _is_pressed_on_sprite = false

@@ -1,5 +1,6 @@
 This game uses the following third-party assets:
 "Halftone directional fading transition" by Joey_Bland (https://godotshaders.com/shader/halftone-directional-fading-transition/), licensed under the MIT license (https://mit-license.org/).
 "Chowder – Chroma Key" by superduperc (https://godotshaders.com/shader/chowder-shader-static-background-shader/), licensed under CC0.
+"Wind-up4.aif - timgormly" https://freesound.org/people/timgormly/sounds/162804/, licensed under CC0. 
 
 This game was made using Godot Engine, licensed under the MIT license (https://godotengine.org/license/).

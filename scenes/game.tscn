@@ -9,8 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://d1x8wlcu3qv1k" path="res://art_assets/pull_thingy.png" id="4_ssvqc"]
 [ext_resource type="Script" uid="uid://u5qe0h2phkjr" path="res://entities/pull_thingy.gd" id="5_264po"]
 [ext_resource type="Script" uid="uid://dbacan28pfyig" path="res://entities/meal/plate.gd" id="5_iywne"]
+[ext_resource type="AudioStream" uid="uid://b3hic1g5idptp" path="res://audio/wind-up4.ogg" id="6_1kice"]
 [ext_resource type="Texture2D" uid="uid://bv77um23bl6ft" path="res://art_assets/poof.png" id="6_ssvqc"]
 [ext_resource type="Script" uid="uid://daso08kqcvbp0" path="res://ui/order_viewer/orders_manager.gd" id="6_u5sy4"]
+[ext_resource type="AudioStream" uid="uid://2rs42upc5sf5" path="res://audio/spring-back.ogg" id="7_5newe"]
 [ext_resource type="Script" uid="uid://dnfn4fyka5r8c" path="res://entities/order/order_generator.gd" id="7_u5sy4"]
 [ext_resource type="Script" uid="uid://twvd32ropr1r" path="res://entities/ingredient/ingredient_generator.gd" id="7_vtaks"]
 [ext_resource type="PackedScene" uid="uid://bf0hmwpaoa6xu" path="res://ui/day_end_screen/day_end_screen.tscn" id="11_trtic"]
@@ -102,6 +104,12 @@ position = Vector2(152, -315)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_ssvqc")
 script = ExtResource("5_264po")
+
+[node name="WindUpAudio" type="AudioStreamPlayer2D" parent="Mixer/MealCreator/PullThingy" unique_id=365044611]
+stream = ExtResource("6_1kice")
+
+[node name="SpringBackAudio" type="AudioStreamPlayer2D" parent="Mixer/MealCreator/PullThingy" unique_id=1791092977]
+stream = ExtResource("7_5newe")
 
 [node name="bottom" type="CollisionShape2D" parent="Mixer" unique_id=1271060047]
 position = Vector2(-184, 247)
