@@ -156,14 +156,16 @@ stretch_mode = 5
 
 [node name="Scoring" parent="." unique_id=1978329433 instance=ExtResource("5_qdwaa")]
 layout_mode = 1
+offset_left = -557.0
 offset_top = -30.0
+offset_right = 157.0
 offset_bottom = 174.0
 
 [node name="Upgrades" parent="." unique_id=988611759 instance=ExtResource("6_rdgx4")]
 layout_mode = 0
-offset_left = 1127.0
+offset_left = 900.0
 offset_top = 384.0
-offset_right = 1277.0
-offset_bottom = 475.0
+offset_right = 1104.0
+offset_bottom = 527.0
 
 [connection signal="pressed" from="DaySuccess/Button" to="." method="finish_day"]
