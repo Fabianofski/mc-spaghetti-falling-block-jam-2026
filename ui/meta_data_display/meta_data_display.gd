@@ -10,4 +10,4 @@ func _ready() -> void:
 	day.score_changed.connect(update_score)
 
 func update_score(score: int):
-	score_label.text = "Score: %d" % [score]
+	score_label.text = "Money: %d" % [score]
