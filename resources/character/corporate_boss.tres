@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://bid1qexhb2tai" path="res://resources/character.gd" id="1_vsj87"]
 [ext_resource type="Texture2D" uid="uid://cvjpsc2rnrvpf" path="res://resources/character/business.png" id="1_wmqn8"]
+[ext_resource type="AudioStream" uid="uid://yky2iu2v1wv0" path="res://resources/character/boss.ogg" id="2_kf8wk"]
 
 [resource]
 script = ExtResource("1_vsj87")
 name = "Mr. Ladro"
 avatar = ExtResource("1_wmqn8")
+mumble = ExtResource("2_kf8wk")
 metadata/_custom_type_script = "uid://bid1qexhb2tai"

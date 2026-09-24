@@ -2,9 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://dgq78ga8pp361" path="res://resources/character/cook.png" id="1_n65j3"]
 [ext_resource type="Script" uid="uid://bid1qexhb2tai" path="res://resources/character.gd" id="1_vjb3u"]
+[ext_resource type="AudioStream" uid="uid://cwlntbm016tos" path="res://resources/character/italian.ogg" id="2_px73s"]
 
 [resource]
 script = ExtResource("1_vjb3u")
 name = "Chef Palmieri"
 avatar = ExtResource("1_n65j3")
+mumble = ExtResource("2_px73s")
 metadata/_custom_type_script = "uid://bid1qexhb2tai"
