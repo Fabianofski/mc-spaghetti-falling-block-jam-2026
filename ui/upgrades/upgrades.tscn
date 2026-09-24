@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bfebmommfi2kk"]
+
+[ext_resource type="Script" uid="uid://cyldw2082i0sd" path="res://ui/upgrades/upgrades.gd" id="1_8s0kl"]
+[ext_resource type="Script" uid="uid://70m8ylps8i4p" path="res://ui/button.gd" id="2_micsr"]
+
+[node name="Upgrades" type="VBoxContainer" unique_id=988611759]
+offset_left = 1111.0
+offset_top = 326.0
+offset_right = 1238.0
+offset_bottom = 392.0
+theme_override_constants/separation = 29
+script = ExtResource("1_8s0kl")
+
+[node name="MoneyLabel" type="Label" parent="." unique_id=1468368027]
+layout_mode = 2
+text = "Money: 0"
+
+[node name="CookTimeBtn" type="Button" parent="." unique_id=1248838921]
+layout_mode = 2
+text = "Cook Time / 2 (0)"
+script = ExtResource("2_micsr")
+metadata/_custom_type_script = "uid://70m8ylps8i4p"
+
+[node name="PriceLabel" type="Label" parent="CookTimeBtn" unique_id=152137903]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -19.0
+offset_top = -3.0
+offset_right = 21.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "200 coins"
+
+[node name="OrderTimeBtn" type="Button" parent="." unique_id=602288893]
+layout_mode = 2
+text = "Order Time +5s (0)"
+script = ExtResource("2_micsr")
+metadata/_custom_type_script = "uid://70m8ylps8i4p"
+
+[node name="PriceLabel" type="Label" parent="OrderTimeBtn" unique_id=1435777133]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -19.0
+offset_top = -3.0
+offset_right = 21.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "200 coins"

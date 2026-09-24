@@ -3,8 +3,30 @@
 [ext_resource type="Script" uid="uid://ce436ewbqnir8" path="res://ui/day_end_screen/day_end_screen.gd" id="1_7kuju"]
 [ext_resource type="Theme" uid="uid://ciyqg57wnrs08" path="res://art_assets/theme.tres" id="2_575jq"]
 [ext_resource type="Script" uid="uid://70m8ylps8i4p" path="res://ui/button.gd" id="2_odw1e"]
+[ext_resource type="Texture2D" uid="uid://bbvpffbr1eydt" path="res://art_assets/lose.png" id="3_a0lec"]
 [ext_resource type="Texture2D" uid="uid://blgqmgclejiat" path="res://art_assets/congrats.png" id="4_l3xin"]
 [ext_resource type="PackedScene" uid="uid://cllb7cuhliw8v" path="res://ui/scoring/scoring.tscn" id="5_qdwaa"]
+[ext_resource type="PackedScene" uid="uid://bfebmommfi2kk" path="res://ui/upgrades/upgrades.tscn" id="6_rdgx4"]
+
+[sub_resource type="Theme" id="Theme_7nde7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_epb1y"]
+bg_color = Color(0.22745098, 0.93333334, 0.60784316, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1ua0"]
+bg_color = Color(0.35898665, 0.53, 0.063599996, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_25g70"]
+bg_color = Color(0.100099996, 0.77, 0.27874, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ao2yn"]
+bg_color = Color(1, 0.07058824, 0.41568628, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xwweb"]
+bg_color = Color(0.53, 0.063599996, 0.063599996, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qq3dq"]
+bg_color = Color(0.77, 0.100099996, 0.49087474, 1)
 
 [node name="DayEndScreen" type="Control" unique_id=1980167072]
 layout_mode = 3
@@ -15,7 +37,84 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7kuju")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1699483680]
+[node name="DayFailed" type="Control" parent="." unique_id=1834346077]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="DayFailed" unique_id=1325310744]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15, 0, 0, 0.5058824)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DayFailed" unique_id=7251560]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -112.0
+offset_top = 593.0
+offset_right = 112.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Restart Button" type="Button" parent="DayFailed/VBoxContainer" unique_id=940188293]
+custom_minimum_size = Vector2(128, 48)
+layout_mode = 2
+theme = SubResource("Theme_7nde7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_epb1y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_b1ua0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_25g70")
+text = "Restart"
+script = ExtResource("2_odw1e")
+
+[node name="Main Menu Button" type="Button" parent="DayFailed/VBoxContainer" unique_id=498376147]
+custom_minimum_size = Vector2(128, 32)
+layout_mode = 2
+theme = SubResource("Theme_7nde7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ao2yn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xwweb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qq3dq")
+text = "Main Menu"
+script = ExtResource("2_odw1e")
+
+[node name="TextureRect2" type="TextureRect" parent="DayFailed" unique_id=283352993]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -317.72144
+offset_top = 32.0
+offset_right = 317.72144
+offset_bottom = 328.0
+grow_horizontal = 2
+texture = ExtResource("3_a0lec")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="DaySuccess" type="Control" parent="." unique_id=867292308]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="DaySuccess" unique_id=1699483680]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,7 +123,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.028110001, 0.03, 0.0237, 0.7254902)
 
-[node name="Button" type="Button" parent="." unique_id=663724380]
+[node name="Button" type="Button" parent="DaySuccess" unique_id=663724380]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -41,7 +140,7 @@ theme = ExtResource("2_575jq")
 text = "Go to the next day"
 script = ExtResource("2_odw1e")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1899530997]
+[node name="TextureRect" type="TextureRect" parent="DaySuccess" unique_id=1899530997]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -60,4 +159,11 @@ layout_mode = 1
 offset_top = -30.0
 offset_bottom = 174.0
 
-[connection signal="pressed" from="Button" to="." method="finish_day"]
+[node name="Upgrades" parent="." unique_id=988611759 instance=ExtResource("6_rdgx4")]
+layout_mode = 0
+offset_left = 1127.0
+offset_top = 384.0
+offset_right = 1277.0
+offset_bottom = 475.0
+
+[connection signal="pressed" from="DaySuccess/Button" to="." method="finish_day"]
