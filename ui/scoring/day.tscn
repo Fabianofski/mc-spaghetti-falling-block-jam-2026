@@ -5,6 +5,8 @@ font_color = Color(0, 0, 0, 1)
 
 [node name="Day" type="ColorRect" unique_id=1288587303]
 custom_minimum_size = Vector2(64, 64)
+size_flags_horizontal = 6
+size_flags_vertical = 6
 
 [node name="DayLabel" type="Label" parent="." unique_id=782489240]
 layout_mode = 1

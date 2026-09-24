@@ -1,4 +1,4 @@
-extends HBoxContainer
+extends GridContainer
 class_name Calendar
 
 @onready var day_prefab: PackedScene = preload("res://ui/scoring/day.tscn")
