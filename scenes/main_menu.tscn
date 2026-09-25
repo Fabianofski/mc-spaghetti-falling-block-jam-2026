@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b1apc3lvmiaac" path="res://art_assets/clouds.png" id="7_oa1go"]
 [ext_resource type="Texture2D" uid="uid://bv77um23bl6ft" path="res://art_assets/poof.png" id="8_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://cvjpsc2rnrvpf" path="res://resources/character/business.png" id="9_5dd4i"]
+[ext_resource type="Script" uid="uid://ds5vscktdsamc" path="res://scenes/puppet_spawner.gd" id="9_flqon"]
 [ext_resource type="Script" uid="uid://8rxs68uk47fm" path="res://scenes/wobble.gd" id="9_lgwnu"]
 [ext_resource type="Texture2D" uid="uid://dgq78ga8pp361" path="res://resources/character/cook.png" id="10_lgwnu"]
 
@@ -205,22 +206,36 @@ lifetime = 6.0
 explosiveness = 0.25
 process_material = SubResource("ParticleProcessMaterial_1dcve")
 
-[node name="boss" type="Node2D" parent="." unique_id=135328069]
-position = Vector2(360, 810)
-script = ExtResource("9_lgwnu")
+[node name="Puppets" type="Control" parent="." unique_id=1454684005]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("9_flqon")
+puppet_count = 8
+y_position = 825
 
-[node name="sprite" type="Sprite2D" parent="boss" unique_id=359930118]
+[node name="boss" type="Node2D" parent="Puppets" unique_id=135328069]
+position = Vector2(720, 834)
+script = ExtResource("9_lgwnu")
+is_generic = false
+
+[node name="sprite" type="Sprite2D" parent="Puppets/boss" unique_id=359930118]
 position = Vector2(0, -133)
-scale = Vector2(0.29935795, 0.29935795)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("9_5dd4i")
 
-[node name="cook" type="Node2D" parent="." unique_id=1806709566]
-position = Vector2(1256, 799)
+[node name="cook" type="Node2D" parent="Puppets" unique_id=1806709566]
+position = Vector2(1360, 839)
 script = ExtResource("9_lgwnu")
+is_generic = false
 
-[node name="sprite" type="Sprite2D" parent="cook" unique_id=1848394517]
+[node name="sprite" type="Sprite2D" parent="Puppets/cook" unique_id=1848394517]
 position = Vector2(0, -133)
-scale = Vector2(0.29935795, 0.29935795)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("10_lgwnu")
 
 [connection signal="button_up" from="HBoxContainer/Start Button" to="." method="_on_start_button_button_up"]
