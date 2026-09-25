@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://gd5b7gmv4goa"]
+
+[ext_resource type="Script" uid="uid://cuce1aeiu1eyo" path="res://ui/billing/billing_position.gd" id="1_5dwuk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7nde7"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="Position" type="HBoxContainer" unique_id=2074925195]
+script = ExtResource("1_5dwuk")
+
+[node name="Name" type="Label" parent="." unique_id=515194120]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Order 1:
+Spaghetti
+Plain"
+label_settings = SubResource("LabelSettings_7nde7")
+
+[node name="Earning" type="Label" parent="." unique_id=360366869]
+layout_mode = 2
+size_flags_vertical = 1
+text = "+2£"
+label_settings = SubResource("LabelSettings_7nde7")

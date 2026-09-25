@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://v8d81rmdidmh"]
+
+[ext_resource type="Script" uid="uid://qcji5g5yu0lg" path="res://ui/billing/billing.gd" id="1_wf78n"]
+
+[node name="Billing" type="Control" unique_id=601607963]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 146.0
+offset_top = 213.0
+offset_right = 387.0
+offset_bottom = 564.0
+script = ExtResource("1_wf78n")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1554216222]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.54192966, 0.56850296, 0.5133792, 0.7254902)
+
+[node name="Positions" type="VBoxContainer" parent="." unique_id=622825778]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 59.0
+grow_horizontal = 2
+grow_vertical = 2
