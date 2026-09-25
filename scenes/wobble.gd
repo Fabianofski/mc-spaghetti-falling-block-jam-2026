@@ -17,6 +17,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if global_position.x < -256 or global_position.x > 1536:
+		if is_generic: sprite.frame = randi_range(0, 11)
 		match movement_dir:
 			"Left": global_position.x = -256
 			"Right": global_position.x = 1536
