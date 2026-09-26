@@ -21,11 +21,11 @@ func _on_main_menu_button_button_up() -> void:
 	ScreenFader.change_scene("res://scenes/main_menu.tscn")
 	
 func enable_screen(fail: bool):
+	day_failed.visible = fail
+	day_success.visible = not fail
 	if fail:
-		day_failed.visible = true
 		SignalBus.game_state_change.emit("day_failed")
 	else:
-		day_success.visible = true
 		SignalBus.game_state_change.emit("day_success")
 	
 	visible = true
