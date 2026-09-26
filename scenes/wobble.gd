@@ -43,7 +43,7 @@ func play_anim(anim: String = "appear"):
 	match anim:
 		"appear":
 			var starting_y: int
-			self.position.y += 96
+			self.position.y += 256
 			if movement_tween: movement_tween.kill()
 			movement_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 			movement_tween.tween_property(self, "position:y", starting_y, 1)

@@ -157,23 +157,23 @@ stretch_mode = 5
 
 [node name="Scoring" parent="." unique_id=1978329433 instance=ExtResource("5_qdwaa")]
 layout_mode = 1
-offset_left = -351.0
-offset_top = -18.0
-offset_right = 184.0
-offset_bottom = 186.0
+offset_left = -267.5
+offset_top = -22.0
+offset_right = 267.5
+offset_bottom = 182.0
 
 [node name="Upgrades" parent="." unique_id=988611759 instance=ExtResource("6_rdgx4")]
 layout_mode = 0
-offset_left = 900.0
+offset_left = 1084.0
 offset_top = 384.0
-offset_right = 1104.0
+offset_right = 1288.0
 offset_bottom = 527.0
 
 [node name="Billing" parent="." unique_id=601607963 instance=ExtResource("8_7nde7")]
 layout_mode = 0
 offset_left = 97.0
-offset_top = 309.0
+offset_top = 269.0
 offset_right = 338.0
-offset_bottom = 660.0
+offset_bottom = 620.0
 
 [connection signal="pressed" from="DaySuccess/Button" to="." method="finish_day"]

@@ -40,8 +40,6 @@ bg_color = Color(0.53, 0.063599996, 0.063599996, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa1go"]
 bg_color = Color(0.77, 0.100099996, 0.49087474, 1)
 
-[sub_resource type="Theme" id="Theme_bqqt6"]
-
 [sub_resource type="Curve" id="Curve_jk1qb"]
 _data = [Vector2(0, 1), 0.0, -0.21308218, 0, 0, Vector2(1, 0.06741583), -4.5457444, 0.0, 0, 0]
 point_count = 2
@@ -61,6 +59,8 @@ gravity = Vector3(98, 0, 0)
 scale_min = 0.25
 scale_max = 0.75
 scale_curve = SubResource("CurveTexture_fcidt")
+
+[sub_resource type="Theme" id="Theme_bqqt6"]
 
 [node name="Main Menu" type="Control" unique_id=1029204496]
 layout_mode = 3
@@ -143,6 +143,51 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_oa1go")
 text = "Quit"
 script = ExtResource("3_bqqt6")
 
+[node name="Clouds" type="Sprite2D" parent="." unique_id=1999833815]
+modulate = Color(1, 1, 1, 0.5019608)
+position = Vector2(2690, 720)
+texture = ExtResource("7_oa1go")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1182997669]
+modulate = Color(1, 1, 1, 0.3764706)
+position = Vector2(-51, 21)
+texture = ExtResource("8_tbmy8")
+lifetime = 6.0
+explosiveness = 0.25
+process_material = SubResource("ParticleProcessMaterial_1dcve")
+
+[node name="Puppets" type="Control" parent="." unique_id=1454684005]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("9_flqon")
+puppet_count = 8
+y_position = 825
+
+[node name="boss" type="Node2D" parent="Puppets" unique_id=135328069]
+position = Vector2(720, 834)
+script = ExtResource("9_lgwnu")
+is_generic = false
+
+[node name="sprite" type="Sprite2D" parent="Puppets/boss" unique_id=359930118]
+position = Vector2(0, -133)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_5dd4i")
+
+[node name="cook" type="Node2D" parent="Puppets" unique_id=1806709566]
+position = Vector2(1360, 839)
+script = ExtResource("9_lgwnu")
+is_generic = false
+
+[node name="sprite" type="Sprite2D" parent="Puppets/cook" unique_id=1848394517]
+position = Vector2(0, -133)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("10_lgwnu")
+
 [node name="Credits" type="ColorRect" parent="." unique_id=960400610]
 layout_mode = 1
 anchors_preset = 8
@@ -192,51 +237,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_oa1go")
 text = "X
 "
 script = ExtResource("3_bqqt6")
-
-[node name="Clouds" type="Sprite2D" parent="." unique_id=1999833815]
-modulate = Color(1, 1, 1, 0.5019608)
-position = Vector2(2690, 720)
-texture = ExtResource("7_oa1go")
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1182997669]
-modulate = Color(1, 1, 1, 0.3764706)
-position = Vector2(-51, 21)
-texture = ExtResource("8_tbmy8")
-lifetime = 6.0
-explosiveness = 0.25
-process_material = SubResource("ParticleProcessMaterial_1dcve")
-
-[node name="Puppets" type="Control" parent="." unique_id=1454684005]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("9_flqon")
-puppet_count = 8
-y_position = 825
-
-[node name="boss" type="Node2D" parent="Puppets" unique_id=135328069]
-position = Vector2(720, 834)
-script = ExtResource("9_lgwnu")
-is_generic = false
-
-[node name="sprite" type="Sprite2D" parent="Puppets/boss" unique_id=359930118]
-position = Vector2(0, -133)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("9_5dd4i")
-
-[node name="cook" type="Node2D" parent="Puppets" unique_id=1806709566]
-position = Vector2(1360, 839)
-script = ExtResource("9_lgwnu")
-is_generic = false
-
-[node name="sprite" type="Sprite2D" parent="Puppets/cook" unique_id=1848394517]
-position = Vector2(0, -133)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("10_lgwnu")
 
 [connection signal="button_up" from="HBoxContainer/Start Button" to="." method="_on_start_button_button_up"]
 [connection signal="button_up" from="HBoxContainer/Credits Button" to="." method="_on_credits_button_button_up"]

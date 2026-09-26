@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://hmlvunrl8aov"]
 
+[ext_resource type="Texture2D" uid="uid://wjjfwka4koht" path="res://art_assets/inside_bg.png" id="1_e1j6l"]
 [ext_resource type="Script" uid="uid://bn2axi1blko2p" path="res://entities/portal.gd" id="1_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://nnl58e8ravcv" path="res://art_assets/cooker.png" id="2_ir15t"]
 [ext_resource type="Texture2D" uid="uid://d2etyceqogomi" path="res://icon.svg" id="2_lnu2h"]
@@ -24,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://bdipqc1u8v3m1" path="res://art_assets/holder.png" id="15_suyxu"]
 [ext_resource type="AudioStream" uid="uid://myeq3cf2nl8s" path="res://audio/closingcashregisterandcoins.ogg" id="16_e1j6l"]
 [ext_resource type="Script" uid="uid://bbkfetwlo557c" path="res://entities/customers.gd" id="23_bt5mj"]
+[ext_resource type="Texture2D" uid="uid://dq2tgyartiawa" path="res://art_assets/inside_fore.png" id="25_pl11u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ir15t"]
 bg_color = Color(0, 0, 0, 1)
@@ -78,8 +80,26 @@ size = Vector2(214, 30)
 
 [node name="Game" type="Node2D" unique_id=1532299903]
 
+[node name="BG" type="TextureRect" parent="." unique_id=340333289]
+offset_right = 1408.0
+offset_bottom = 792.0
+texture = ExtResource("1_e1j6l")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Customers" type="Node2D" parent="." unique_id=325288563]
+position = Vector2(957, 813)
+script = ExtResource("23_bt5mj")
+
+[node name="Foreground" type="TextureRect" parent="." unique_id=1285789554]
+offset_right = 1408.0
+offset_bottom = 792.0
+texture = ExtResource("25_pl11u")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="Mixer" type="StaticBody2D" parent="." unique_id=1575278052]
-position = Vector2(747, 413)
+position = Vector2(739, 413)
 collision_layer = 3
 collision_mask = 3
 
@@ -117,7 +137,7 @@ debug_color = Color(0.7, 0.40833336, 0, 0.41960785)
 one_shot = true
 
 [node name="PullThingy" type="Sprite2D" parent="Mixer/MealCreator" unique_id=1107324357]
-position = Vector2(152, -315)
+position = Vector2(184, -315)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_ssvqc")
 script = ExtResource("5_264po")
@@ -130,7 +150,7 @@ stream = ExtResource("7_5newe")
 
 [node name="Pull Thingus Tutorial" type="AnimatedSprite2D" parent="Mixer/MealCreator/PullThingy" unique_id=1050431116]
 top_level = true
-position = Vector2(1030, 224)
+position = Vector2(1038, 216)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_1dcve")
 autoplay = "default"
@@ -279,7 +299,3 @@ ingredient_parent = NodePath("../../Ingredients")
 visible = false
 
 [node name="DialogueManager" parent="CanvasLayer" unique_id=1039098274 instance=ExtResource("14_trtic")]
-
-[node name="Customers" type="Node2D" parent="." unique_id=325288563]
-position = Vector2(957, 877)
-script = ExtResource("23_bt5mj")
