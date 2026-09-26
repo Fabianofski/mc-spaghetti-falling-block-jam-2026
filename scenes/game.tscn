@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://u5qe0h2phkjr" path="res://entities/pull_thingy.gd" id="5_264po"]
 [ext_resource type="Script" uid="uid://dbacan28pfyig" path="res://entities/meal/plate.gd" id="5_iywne"]
 [ext_resource type="AudioStream" uid="uid://b3hic1g5idptp" path="res://audio/wind-up4.ogg" id="6_1kice"]
+[ext_resource type="Shader" uid="uid://c0eabrfnrsseb" path="res://art_assets/shadow.gdshader" id="6_qnb83"]
 [ext_resource type="Texture2D" uid="uid://bv77um23bl6ft" path="res://art_assets/poof.png" id="6_ssvqc"]
 [ext_resource type="Script" uid="uid://daso08kqcvbp0" path="res://ui/order_viewer/orders_manager.gd" id="6_u5sy4"]
 [ext_resource type="AudioStream" uid="uid://2rs42upc5sf5" path="res://audio/spring-back.ogg" id="7_5newe"]
@@ -32,6 +33,11 @@ bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ca42v"]
 bg_color = Color(0.28235295, 0.09803922, 0.02745098, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7nde7"]
+shader = ExtResource("6_qnb83")
+shader_parameter/drop_shadow_color = Color(0.0003089994, 0.036673527, 0.26152566, 0.5019608)
+shader_parameter/shadow_offset = Vector2(0.015, 0.03)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7qkos"]
 size = Vector2(412, 547)
@@ -124,6 +130,7 @@ show_percentage = false
 metadata/_edit_use_anchors_ = true
 
 [node name="Cooker" type="Sprite2D" parent="Mixer/MealCreator" unique_id=2024456692]
+material = SubResource("ShaderMaterial_7nde7")
 position = Vector2(-143, -8)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_ir15t")
@@ -137,6 +144,7 @@ debug_color = Color(0.7, 0.40833336, 0, 0.41960785)
 one_shot = true
 
 [node name="PullThingy" type="Sprite2D" parent="Mixer/MealCreator" unique_id=1107324357]
+material = SubResource("ShaderMaterial_7nde7")
 position = Vector2(184, -315)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_ssvqc")
@@ -225,6 +233,7 @@ shape = SubResource("RectangleShape2D_jww15")
 
 [node name="Pipes" type="Sprite2D" parent="Portal" unique_id=430973036]
 z_index = 1
+material = SubResource("ShaderMaterial_7nde7")
 position = Vector2(138.55153, 307.39996)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_rysoc")
