@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bt556vycjop2e" path="res://art_assets/outside.png" id="2_rtw2f"]
 [ext_resource type="Theme" uid="uid://ciyqg57wnrs08" path="res://art_assets/theme.tres" id="3_8ln24"]
 [ext_resource type="Script" uid="uid://70m8ylps8i4p" path="res://ui/button.gd" id="3_bqqt6"]
+[ext_resource type="Shader" uid="uid://c0eabrfnrsseb" path="res://art_assets/shadow.gdshader" id="3_rcqid"]
 [ext_resource type="Script" uid="uid://h4d834rrxttq" path="res://ui/credits_from_the_main_menu_yaknow.gd" id="4_wu84c"]
 [ext_resource type="Texture2D" uid="uid://b1apc3lvmiaac" path="res://art_assets/clouds.png" id="7_oa1go"]
 [ext_resource type="Texture2D" uid="uid://bv77um23bl6ft" path="res://art_assets/poof.png" id="8_tbmy8"]
@@ -12,6 +13,11 @@
 [ext_resource type="Script" uid="uid://ds5vscktdsamc" path="res://scenes/puppet_spawner.gd" id="9_flqon"]
 [ext_resource type="Script" uid="uid://8rxs68uk47fm" path="res://scenes/wobble.gd" id="9_lgwnu"]
 [ext_resource type="Texture2D" uid="uid://dgq78ga8pp361" path="res://resources/character/cook.png" id="10_lgwnu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ajci"]
+shader = ExtResource("3_rcqid")
+shader_parameter/drop_shadow_color = Color(0.0003089994, 0.036673527, 0.26152566, 0.5019608)
+shader_parameter/shadow_offset = Vector2(0.003, 0.005)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rysoc"]
 bg_color = Color(0.22745098, 0.93333334, 0.60784316, 1)
@@ -81,19 +87,11 @@ grow_vertical = 2
 texture = ExtResource("2_rtw2f")
 expand_mode = 1
 
-[node name="Logo" type="TextureRect" parent="." unique_id=1749544517]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -508.0
-offset_top = -15.0
-offset_right = 75.0
-offset_bottom = 291.0
-grow_horizontal = 2
+[node name="Logo" type="Sprite2D" parent="." unique_id=1274483209]
+material = SubResource("ShaderMaterial_1ajci")
+position = Vector2(489, 135)
+scale = Vector2(0.43194446, 0.43194443)
 texture = ExtResource("1_l6cm7")
-expand_mode = 2
-stretch_mode = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=961711767]
 layout_mode = 1
@@ -157,6 +155,7 @@ explosiveness = 0.25
 process_material = SubResource("ParticleProcessMaterial_1dcve")
 
 [node name="Puppets" type="Control" parent="." unique_id=1454684005]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
