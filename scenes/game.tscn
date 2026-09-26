@@ -93,9 +93,10 @@ texture = ExtResource("1_e1j6l")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Customers" type="Node2D" parent="." unique_id=325288563]
+[node name="Customers" type="Node2D" parent="." unique_id=325288563 node_paths=PackedStringArray("parent")]
 position = Vector2(957, 813)
 script = ExtResource("23_bt5mj")
+parent = NodePath("../CanvasLayer/Earnings")
 
 [node name="Foreground" type="TextureRect" parent="." unique_id=1285789554]
 offset_right = 1408.0
@@ -251,6 +252,15 @@ metadata/_custom_type_script = "uid://dnfn4fyka5r8c"
 stream = ExtResource("16_e1j6l")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1429990996]
+
+[node name="Earnings" type="Control" parent="CanvasLayer" unique_id=226889066]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="MetaDataDisplay" parent="CanvasLayer" unique_id=239118666 instance=ExtResource("12_ca42v")]
 offset_right = 277.0
