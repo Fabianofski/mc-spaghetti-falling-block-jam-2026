@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c7xy4ib56hesm"]
 
 [ext_resource type="Script" uid="uid://d3thc8ijwx4ss" path="res://ui/meta_data_display/meta_data_display.gd" id="1_7wywd"]
-[ext_resource type="Texture2D" uid="uid://bdipqc1u8v3m1" path="res://art_assets/holder.png" id="2_a4gm0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jww15"]
 font_size = 24
@@ -13,27 +12,11 @@ offset_right = 125.0
 offset_bottom = 93.0
 script = ExtResource("1_7wywd")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1958387825]
-layout_mode = 1
-offset_right = 187.0
-offset_bottom = 81.0
-texture = ExtResource("2_a4gm0")
-expand_mode = 2
-
-[node name="DayLabel" type="Label" parent="." unique_id=2002767639]
+[node name="Label" type="Label" parent="." unique_id=2002767639]
 layout_mode = 0
 offset_left = 13.0
 offset_top = 5.0
 offset_right = 56.0
 offset_bottom = 28.0
-text = "Day 1"
-label_settings = SubResource("LabelSettings_jww15")
-
-[node name="ScoreLabel" type="Label" parent="." unique_id=1335757610]
-layout_mode = 0
-offset_left = 13.0
-offset_top = 39.0
-offset_right = 74.0
-offset_bottom = 62.0
-text = "₤0"
+text = "Day 12"
 label_settings = SubResource("LabelSettings_jww15")

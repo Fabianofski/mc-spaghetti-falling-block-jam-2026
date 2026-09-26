@@ -1,13 +1,12 @@
 extends Node
 
-@onready var day_label: Label = $DayLabel 
-@onready var score_label: Label = $ScoreLabel
+@onready var label: Label = $Label
 var day: Day 
 
 func _ready() -> void:
 	day = GameManager.get_day()
-	day_label.text = "Day %d" % [day.day]
+	label.text = "Day %d · ₤%d" % [day.day, GameManager.money]
 	day.score_changed.connect(update_score)
 
 func update_score(score: int):
-	score_label.text = "₤%d" % [GameManager.money + score]
+	label.text = "Day %d · ₤%d" % [day.day, GameManager.money + score]
