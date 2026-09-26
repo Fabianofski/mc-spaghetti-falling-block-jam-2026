@@ -70,7 +70,8 @@ func next_dialogue():
 		day.start()
 		dialogue_node.visible = false
 		day.dialogue_played = true
-		_play_puppet_animation("launch")
+		if current_character: _play_puppet_animation("launch")
+		else: character_pivot.hide()
 		return
 
 	var dialogue = day.dialogue[current_idx]
