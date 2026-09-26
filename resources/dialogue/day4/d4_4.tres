@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://yl4b3ulx3ngo"]
+
+[ext_resource type="Resource" uid="uid://cqd616de02tdj" path="res://resources/character/corporate_boss.tres" id="1_avkd7"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_po2n4"]
+
+[resource]
+script = ExtResource("2_po2n4")
+character = ExtResource("1_avkd7")
+text = "You will be in charge of upgrading the machine. At the end of each day, you'll be using your money on our machine."
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://c61qipv55ttbs"]
+
+[ext_resource type="Resource" uid="uid://cqd616de02tdj" path="res://resources/character/corporate_boss.tres" id="1_dyxe8"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_lfby4"]
+
+[resource]
+script = ExtResource("2_lfby4")
+character = ExtResource("1_dyxe8")
+text = "You might've already been doing this. Quite frankly, I don't care. Just do it, or keep doing it. Whatever."
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

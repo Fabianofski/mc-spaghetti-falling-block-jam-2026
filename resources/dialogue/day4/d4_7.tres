@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://cm8l5rrig2qbp"]
+
+[ext_resource type="Resource" uid="uid://cqd616de02tdj" path="res://resources/character/corporate_boss.tres" id="1_dsq5r"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_54hxx"]
+
+[resource]
+script = ExtResource("2_54hxx")
+character = ExtResource("1_dsq5r")
+text = "Look, it's YOUR paycheck, but it's OUR money. And upgrading the machine will make your job easier. If you scratch my back, I'll scratch yours, understand?"
+metadata/_custom_type_script = "uid://b3fueednaw6q6"
