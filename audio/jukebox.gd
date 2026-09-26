@@ -15,9 +15,13 @@ func _change_music(state: String = "menu"):
 		"menu":
 			stream.set_sync_stream_volume(0, -60.0)
 			stream.set_sync_stream_volume(1, 0.0)
+			winning_sound.stop()
+			loosing_sound.stop()
 		"gameplay":
 			stream.set_sync_stream_volume(0, 0.0)
 			stream.set_sync_stream_volume(1, -60.0)
+			winning_sound.stop()
+			loosing_sound.stop()
 		"day_failed":
 			stream.set_sync_stream_volume(0, -60.0)
 			stream.set_sync_stream_volume(1, -60.0)
