@@ -2,11 +2,14 @@ extends Node2D
 class_name OrderGenerator
 
 @onready var timer: Timer = $OrderTimer
+@onready var sound: AudioStreamPlayer2D = $"OrderFinishedSound"
 
 func _ready() -> void:
 	timer.timeout.connect(create_order)
 	var day = GameManager.get_day()
 	day.state_changed.connect(func(state): if state == Day.DayState.InProgress: timer.start())
+	
+	OrderBook.order_finished.connect(func(): sound.play())
 
 func create_order(): 
 	var day = GameManager.get_day()

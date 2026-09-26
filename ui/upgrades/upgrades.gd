@@ -8,6 +8,8 @@ extends VBoxContainer
 @onready var order_time_btn: Button = $OrderTimeBtn
 @onready var order_time_label: Label = $OrderTimeBtn/PriceLabel
 
+@onready var coin_sound: AudioStreamPlayer = $BuySound
+
 func _ready() -> void:
 	cook_time_btn.pressed.connect(buy_cook_time)
 	order_time_btn.pressed.connect(buy_order_time)
@@ -31,6 +33,7 @@ func buy_cook_time():
 		return
 	GameManager.upgrades.cook_time += 1
 	GameManager.money -= price
+	coin_sound.play()
 	init_buttons()
 
 func buy_order_time():
@@ -39,4 +42,5 @@ func buy_order_time():
 		return
 	GameManager.upgrades.order_time += 1
 	GameManager.money -= price
+	coin_sound.play()
 	init_buttons()

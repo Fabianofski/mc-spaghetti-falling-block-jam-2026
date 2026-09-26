@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cyldw2082i0sd" path="res://ui/upgrades/upgrades.gd" id="1_8s0kl"]
 [ext_resource type="Script" uid="uid://70m8ylps8i4p" path="res://ui/button.gd" id="2_micsr"]
+[ext_resource type="AudioStream" uid="uid://db6qr05x552au" path="res://audio/coins.ogg" id="3_6p80n"]
 
 [node name="Upgrades" type="VBoxContainer" unique_id=988611759]
 offset_left = 1111.0
@@ -56,3 +57,6 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "200 coins"
+
+[node name="BuySound" type="AudioStreamPlayer" parent="." unique_id=59416499]
+stream = ExtResource("3_6p80n")

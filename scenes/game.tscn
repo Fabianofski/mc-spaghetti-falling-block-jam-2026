@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cyd67odrg1hd5" path="res://art_assets/bar.png" id="14_sww3w"]
 [ext_resource type="PackedScene" uid="uid://ctc7356vtrgcu" path="res://ui/dialogue_manager/dialogue_manager.tscn" id="14_trtic"]
 [ext_resource type="Texture2D" uid="uid://bdipqc1u8v3m1" path="res://art_assets/holder.png" id="15_suyxu"]
+[ext_resource type="AudioStream" uid="uid://myeq3cf2nl8s" path="res://audio/closingcashregisterandcoins.ogg" id="16_e1j6l"]
 [ext_resource type="Script" uid="uid://bbkfetwlo557c" path="res://entities/customers.gd" id="23_bt5mj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ir15t"]
@@ -217,7 +218,14 @@ metadata/_custom_type_script = "uid://dnfn4fyka5r8c"
 
 [node name="OrderTimer" type="Timer" parent="OrderGenerator" unique_id=831792266]
 
+[node name="OrderFinishedSound" type="AudioStreamPlayer2D" parent="OrderGenerator" unique_id=200217231]
+stream = ExtResource("16_e1j6l")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1429990996]
+
+[node name="MetaDataDisplay" parent="CanvasLayer" unique_id=239118666 instance=ExtResource("12_ca42v")]
+offset_right = 277.0
+offset_bottom = 52.0
 
 [node name="Bar" type="TextureRect" parent="CanvasLayer" unique_id=825059141]
 z_index = -1
@@ -269,12 +277,6 @@ ingredient_parent = NodePath("../../Ingredients")
 
 [node name="DayEndScreen" parent="CanvasLayer" unique_id=1980167072 instance=ExtResource("11_trtic")]
 visible = false
-
-[node name="MetaDataDisplay" parent="CanvasLayer" unique_id=239118666 instance=ExtResource("12_ca42v")]
-offset_left = 8.0
-offset_top = 4.0
-offset_right = 285.0
-offset_bottom = 56.0
 
 [node name="DialogueManager" parent="CanvasLayer" unique_id=1039098274 instance=ExtResource("14_trtic")]
 
