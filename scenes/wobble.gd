@@ -8,6 +8,8 @@ const ANIM_TIME: float = 0.3
 @export var is_generic: bool = true
 var wait_time: float
 
+var movement_tween: Tween
+
 func _ready() -> void:
 	random_offset = randf()
 	if is_generic: sprite.frame = randi_range(0, 11)
@@ -36,3 +38,22 @@ func _process(delta: float) -> void:
 			global_position.x += delta * (32 + (random_offset * 16))
 			sprite.flip_h = true
 		"Right": global_position.x -= delta * (32 + (random_offset * 16))
+
+func play_anim(anim: String = "appear"):
+	match anim:
+		"appear":
+			var starting_y: int
+			self.position.y += 96
+			if movement_tween: movement_tween.kill()
+			movement_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+			movement_tween.tween_property(self, "position:y", starting_y, 1)
+		"order_done":
+			if movement_tween: movement_tween.kill()
+			movement_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+			movement_tween.tween_property(self, "position:y", self.position.y - 256, 0.25)
+			await movement_tween.finished
+			if movement_tween: movement_tween.kill()
+			movement_tween = create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
+			movement_tween.tween_property(self, "position:y", self.position.y + 496, 0.25)
+			await movement_tween.finished
+			self.queue_free()

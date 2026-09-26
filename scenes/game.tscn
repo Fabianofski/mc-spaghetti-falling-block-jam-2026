@@ -279,5 +279,5 @@ offset_bottom = 56.0
 [node name="DialogueManager" parent="CanvasLayer" unique_id=1039098274 instance=ExtResource("14_trtic")]
 
 [node name="Customers" type="Node2D" parent="." unique_id=325288563]
-position = Vector2(957, 781)
+position = Vector2(957, 877)
 script = ExtResource("23_bt5mj")
