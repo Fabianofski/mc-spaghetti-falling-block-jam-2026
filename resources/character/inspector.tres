@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://bb8nn2brjyjjx"]
+
+[ext_resource type="Texture2D" uid="uid://7iytalvorj6m" path="res://resources/character/inspector.png" id="1_ip14m"]
+[ext_resource type="AudioStream" uid="uid://yky2iu2v1wv0" path="res://resources/character/boss.ogg" id="2_7vwas"]
+[ext_resource type="Script" uid="uid://bid1qexhb2tai" path="res://resources/character.gd" id="3_wrr6y"]
+
+[resource]
+script = ExtResource("3_wrr6y")
+name = "ASL Inspector"
+avatar = ExtResource("1_ip14m")
+mumble = ExtResource("2_7vwas")
+metadata/_custom_type_script = "uid://bid1qexhb2tai"
