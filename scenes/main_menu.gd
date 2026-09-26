@@ -16,7 +16,6 @@ func _process(delta: float) -> void:
 		clouds.global_position.y = randi_range(568, 768)
 
 func _on_start_button_button_up() -> void:
-	GameManager.reset()
 	SignalBus.game_state_change.emit("gameplay")
 	ScreenFader.change_scene("res://scenes/game.tscn")
 

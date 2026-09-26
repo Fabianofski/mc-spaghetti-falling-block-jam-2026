@@ -15,7 +15,7 @@ func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 func restart():
-	GameManager.reload_scene(true)
+	GameManager.reload_scene()
 
 func _on_main_menu_button_button_up() -> void:
 	ScreenFader.change_scene("res://scenes/main_menu.tscn")

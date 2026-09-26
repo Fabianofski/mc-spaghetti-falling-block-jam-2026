@@ -19,18 +19,9 @@ func finish_day():
 	current_day += 1
 	reload_scene()
 	
-func reload_scene(is_loss: bool = false):
-	if is_loss:
-		reset()
-
+func reload_scene():
 	ScreenFader.change_scene("RELOAD")
 	SignalBus.game_state_change.emit("gameplay")
-	OrderBook.reset_orders()
-	
-func reset(): 
-	for day in days:
-		day.reset()
-	current_day = 0
 	OrderBook.reset_orders()
 	
 func get_day(): 
