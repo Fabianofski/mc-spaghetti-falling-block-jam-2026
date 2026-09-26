@@ -7,13 +7,10 @@ extends Control
 
 func _ready() -> void:
 	var day = GameManager.get_day()
-	day.succeeded.connect(enable_screen)
-	day.succeeded.connect(func(): day_success.visible = true)
+	day.succeeded.connect(func(): enable_screen(false))
 	next_day_btn.should_oscillate = true
 
-	day.failed.connect(func(): enable_screen())
-	day.failed.connect(func(): day_failed.visible = true)
-
+	day.failed.connect(func(): enable_screen(true))
 	restart_button.should_oscillate = true
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 
@@ -23,9 +20,15 @@ func restart():
 func _on_main_menu_button_button_up() -> void:
 	ScreenFader.change_scene("res://scenes/main_menu.tscn")
 	
-func enable_screen():
+func enable_screen(fail: bool):
+	if fail:
+		day_failed.visible = true
+		SignalBus.game_state_change.emit("day_failed")
+	else:
+		day_success.visible = true
+		SignalBus.game_state_change.emit("day_success")
+	
 	visible = true
-	SignalBus.game_state_change.emit("menu")
 	mouse_filter = Control.MOUSE_FILTER_STOP
 
 func finish_day():

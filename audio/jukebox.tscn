@@ -3,6 +3,8 @@
 [ext_resource type="AudioStream" uid="uid://lttce34ha6yt" path="res://audio/italian.ogg" id="1_cgbwi"]
 [ext_resource type="Script" uid="uid://dh8eaqntcfb48" path="res://audio/jukebox.gd" id="2_02n6l"]
 [ext_resource type="AudioStream" uid="uid://cfdc0ynxqxv47" path="res://audio/italianmenu.ogg" id="2_irj34"]
+[ext_resource type="AudioStream" uid="uid://8ksopn0cvjnu" path="res://audio/italianwinning.ogg" id="4_olwj8"]
+[ext_resource type="AudioStream" uid="uid://cqrfqsg2n7fns" path="res://audio/italianloosing.ogg" id="5_i4h50"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_831sh"]
 stream_count = 2
@@ -16,3 +18,11 @@ stream = SubResource("AudioStreamSynchronized_831sh")
 volume_db = -15.0
 autoplay = true
 script = ExtResource("2_02n6l")
+
+[node name="WinningSound" type="AudioStreamPlayer2D" parent="." unique_id=223905882]
+stream = ExtResource("4_olwj8")
+volume_db = -15.0
+
+[node name="LoosingSound" type="AudioStreamPlayer2D" parent="." unique_id=1372893861]
+stream = ExtResource("5_i4h50")
+volume_db = -15.0
