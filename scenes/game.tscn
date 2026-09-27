@@ -31,6 +31,7 @@
 [ext_resource type="AudioStream" uid="uid://g37pr57wv1ld" path="res://audio/meal4.ogg" id="16_sww3w"]
 [ext_resource type="Script" uid="uid://bbkfetwlo557c" path="res://entities/customers.gd" id="23_bt5mj"]
 [ext_resource type="Texture2D" uid="uid://dq2tgyartiawa" path="res://art_assets/inside_fore.png" id="25_pl11u"]
+[ext_resource type="Script" uid="uid://b2yt852gj4hf1" path="res://scenes/day_progress_bar.gd" id="32_wljb1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ir15t"]
 bg_color = Color(0, 0, 0, 1)
@@ -335,3 +336,17 @@ ingredient_parent = NodePath("../../Ingredients")
 visible = false
 
 [node name="DialogueManager" parent="CanvasLayer" unique_id=1039098274 instance=ExtResource("14_trtic")]
+
+[node name="DayProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=1066687777]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 458.0
+offset_top = -34.0
+offset_right = -458.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 1.0
+script = ExtResource("32_wljb1")
