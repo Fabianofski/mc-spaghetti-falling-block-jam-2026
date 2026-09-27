@@ -138,6 +138,7 @@ offset_left = -337.0
 offset_top = -264.0
 offset_right = 48.0
 offset_bottom = 238.0
+mouse_filter = 2
 theme = ExtResource("2_rysoc")
 theme_override_styles/background = SubResource("StyleBoxFlat_ir15t")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ca42v")
