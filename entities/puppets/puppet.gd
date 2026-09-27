@@ -13,7 +13,7 @@ var movement_tween: Tween
 
 func _ready() -> void:
 	random_offset = randf()
-	if is_generic: sprite.frame = randi_range(0, 11)
+	if is_generic: sprite.frame = randi_range(0, 19)
 	else:
 		sprite.hframes = 1
 		sprite.vframes = 1
@@ -25,7 +25,7 @@ func override_sprite(char: Texture):
 
 func _process(delta: float) -> void:
 	if global_position.x < -256 or global_position.x > 1536:
-		if is_generic: sprite.frame = randi_range(0, 11)
+		if is_generic: sprite.frame = randi_range(0, 19)
 		match movement_dir:
 			"Left": global_position.x = -256
 			"Right": global_position.x = 1536
