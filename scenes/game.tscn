@@ -5,8 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://nnl58e8ravcv" path="res://art_assets/cooker.png" id="2_ir15t"]
 [ext_resource type="Texture2D" uid="uid://d2etyceqogomi" path="res://icon.svg" id="2_lnu2h"]
 [ext_resource type="Theme" uid="uid://ciyqg57wnrs08" path="res://art_assets/theme.tres" id="2_rysoc"]
+[ext_resource type="Script" uid="uid://cyp6y2kx5hgfi" path="res://resources/scripted_appearance.gd" id="3_suyxu"]
 [ext_resource type="Script" uid="uid://cg60dwapmdsd8" path="res://entities/meal/meal_creator.gd" id="4_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://dstio4vdku543" path="res://art_assets/pipes.png" id="4_rysoc"]
+[ext_resource type="Resource" uid="uid://cmmupf2ohkuig" path="res://resources/scripted_appearances/palmieri.tres" id="4_sgl2t"]
 [ext_resource type="Texture2D" uid="uid://d1x8wlcu3qv1k" path="res://art_assets/pull_thingy.png" id="4_ssvqc"]
 [ext_resource type="Script" uid="uid://u5qe0h2phkjr" path="res://entities/pull_thingy.gd" id="5_264po"]
 [ext_resource type="Script" uid="uid://dbacan28pfyig" path="res://entities/meal/plate.gd" id="5_iywne"]
@@ -97,6 +99,7 @@ stretch_mode = 5
 position = Vector2(957, 813)
 script = ExtResource("23_bt5mj")
 parent = NodePath("../CanvasLayer/Earnings")
+scripted_appearance = Array[ExtResource("3_suyxu")]([ExtResource("4_sgl2t")])
 
 [node name="Foreground" type="TextureRect" parent="." unique_id=1285789554]
 offset_right = 1408.0

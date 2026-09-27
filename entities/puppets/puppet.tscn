@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b4sn3d3wmss2s"]
 
-[ext_resource type="Script" uid="uid://8rxs68uk47fm" path="res://scenes/wobble.gd" id="1_nnllt"]
+[ext_resource type="Script" uid="uid://8rxs68uk47fm" path="res://entities/puppets/puppet.gd" id="1_nnllt"]
 [ext_resource type="Texture2D" uid="uid://bdj36etluqpbu" path="res://art_assets/passerby.png" id="2_nnllt"]
 
 [node name="Puppet" type="Node2D" unique_id=1047075624]

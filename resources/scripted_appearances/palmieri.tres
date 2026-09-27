@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ScriptedAppearance" format=3 uid="uid://cmmupf2ohkuig"]
+
+[ext_resource type="Script" uid="uid://cyp6y2kx5hgfi" path="res://resources/scripted_appearance.gd" id="1_ltqwu"]
+[ext_resource type="Texture2D" uid="uid://dgq78ga8pp361" path="res://resources/character/cook.png" id="2_20gau"]
+
+[resource]
+script = ExtResource("1_ltqwu")
+day = 1
+no_customer = 2
+sprite = ExtResource("2_20gau")
+metadata/_custom_type_script = "uid://cyp6y2kx5hgfi"

@@ -1,4 +1,5 @@
 extends Node2D
+class_name Puppet
 
 @onready var sprite: Sprite2D = $sprite
 var constant_offset_time: float = 0.0
@@ -16,6 +17,11 @@ func _ready() -> void:
 	else:
 		sprite.hframes = 1
 		sprite.vframes = 1
+
+func override_sprite(char: Texture):
+	sprite.texture = char
+	sprite.hframes = 1 
+	sprite.vframes = 1 
 
 func _process(delta: float) -> void:
 	if global_position.x < -256 or global_position.x > 1536:

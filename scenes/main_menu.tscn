@@ -10,8 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://b1apc3lvmiaac" path="res://art_assets/clouds.png" id="7_oa1go"]
 [ext_resource type="Texture2D" uid="uid://bv77um23bl6ft" path="res://art_assets/poof.png" id="8_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://cvjpsc2rnrvpf" path="res://resources/character/business.png" id="9_5dd4i"]
-[ext_resource type="Script" uid="uid://ds5vscktdsamc" path="res://scenes/puppet_spawner.gd" id="9_flqon"]
-[ext_resource type="Script" uid="uid://8rxs68uk47fm" path="res://scenes/wobble.gd" id="9_lgwnu"]
+[ext_resource type="Script" uid="uid://ds5vscktdsamc" path="res://entities/puppets/puppet_spawner.gd" id="9_flqon"]
+[ext_resource type="Script" uid="uid://8rxs68uk47fm" path="res://entities/puppets/puppet.gd" id="9_lgwnu"]
 [ext_resource type="Texture2D" uid="uid://dgq78ga8pp361" path="res://resources/character/cook.png" id="10_lgwnu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1ajci"]
