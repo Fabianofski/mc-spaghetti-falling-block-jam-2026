@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ScriptedAppearance" format=3 uid="uid://cjum13cg5831i"]
+
+[ext_resource type="Script" uid="uid://cyp6y2kx5hgfi" path="res://resources/scripted_appearance.gd" id="1_s6cid"]
+[ext_resource type="Texture2D" uid="uid://d2ylxisjfmk4d" path="res://resources/character/business_incognito.png" id="2_s6cid"]
+
+[resource]
+script = ExtResource("1_s6cid")
+day = 7
+no_customer = 2
+sprite = ExtResource("2_s6cid")
+metadata/_custom_type_script = "uid://cyp6y2kx5hgfi"
