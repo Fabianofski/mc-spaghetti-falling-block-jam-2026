@@ -9,6 +9,6 @@
 [resource]
 script = ExtResource("3_xroxs")
 id = "vegan"
-name = "All-Vegan"
+name = "Tutto Verde™"
 ingredients = Array[ExtResource("1_3qus5")]([ExtResource("2_wb78e"), ExtResource("3_yawlg"), ExtResource("4_m6jke")])
 metadata/_custom_type_script = "uid://djqtt882te1b"
