@@ -14,7 +14,6 @@ const WHOOSH = preload("uid://rwwt6casln2o")
 var current_character: Character
 var movement_tween: Tween
 var extra_tween_just_for_launching: Tween
-var tweening_out: bool
 var launch_speed: float = 1.0
 
 var animated_background_points: PackedVector2Array = [Vector2(80.0, 53.0),
@@ -31,13 +30,13 @@ func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	random_offset = randf()
 	next_dialogue()
+	
 
 func _process(delta: float) -> void:
 	var offset: float = (sin(constant_offset_time * ANIM_TIME) * 0.15) - (random_offset / 16)
 	constant_offset_time += delta + (random_offset / 8)
-	if not tweening_out:
-		character_pivot.rotation = offset
-		character_pivot.position += Vector2(-offset, -offset / 4)
+	character_pivot.rotation = offset
+	character_pivot.position += Vector2(-offset, -offset / 4)
 	
 	# believe it or not only this worked
 	if dialogue_node.visible:
@@ -64,6 +63,7 @@ func _input(event) -> void:
 			next_dialogue()
 		
 func next_dialogue(): 
+	if extra_tween_just_for_launching and extra_tween_just_for_launching.is_running(): return
 	var day = GameManager.get_day()
 	if day.dialogue_played or current_idx >= len(day.dialogue):
 		mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -80,7 +80,6 @@ func next_dialogue():
 			null:
 				print("Dialogue: no character yet, must be just starting")
 				_play_puppet_animation("appear")
-				tweening_out = false
 				current_character = dialogue.character
 				character.texture = dialogue.character.avatar
 			_:
@@ -92,7 +91,6 @@ func next_dialogue():
 				character.texture = dialogue.character.avatar
 				launch_speed = max(0.5, launch_speed - 0.1)
 				_play_puppet_animation("appear")
-				tweening_out = false
 
 	if text_tween: 
 		text_tween.kill()
@@ -108,7 +106,6 @@ func next_dialogue():
 	current_idx += 1
 
 func _play_puppet_animation(anim: String = "idle") -> void: # they say you should care about code quality, they never said it had to be good quality :)
-	tweening_out = true
 	match anim:
 		"idle":
 			pass # nvm i do it in process
