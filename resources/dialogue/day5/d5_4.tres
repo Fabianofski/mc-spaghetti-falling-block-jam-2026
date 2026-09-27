@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://dwlvybhcs36v1"]
+
+[ext_resource type="Resource" uid="uid://twf1mplgjulh" path="res://resources/character/traditional_cook.tres" id="1_2j4v6"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_ctvcs"]
+
+[resource]
+script = ExtResource("2_ctvcs")
+character = ExtResource("1_2j4v6")
+text = "If it's OK, I'd like to ask how... sanitary... is everything here. Is there anything you'd describe as... odd?"
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

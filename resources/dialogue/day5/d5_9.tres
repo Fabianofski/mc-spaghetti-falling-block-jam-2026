@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://kdxgbb7luf46"]
+
+[ext_resource type="Resource" uid="uid://twf1mplgjulh" path="res://resources/character/traditional_cook.tres" id="1_rxni1"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_ns12y"]
+
+[resource]
+script = ExtResource("2_ns12y")
+character = ExtResource("1_rxni1")
+text = "Anyway. Thank you for your time. I know you're just a minimum wage employee and they don't pay you to think of these things, but if a food safety inspector ever... happened to show up?"
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

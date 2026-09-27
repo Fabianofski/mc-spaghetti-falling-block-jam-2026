@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://due58hfurqnft"]
+
+[ext_resource type="Resource" uid="uid://baq6q7ndp838n" path="res://resources/character/customer.tres" id="1_1ox3x"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_tr146"]
+
+[resource]
+script = ExtResource("2_tr146")
+character = ExtResource("1_1ox3x")
+text = "Is it normal for the spaghetti to, like... not move? When you move the plate?"
+metadata/_custom_type_script = "uid://b3fueednaw6q6"
