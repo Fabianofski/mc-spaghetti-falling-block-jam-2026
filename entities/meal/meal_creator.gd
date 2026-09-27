@@ -6,6 +6,10 @@ var cooking: bool = false
 @onready var timer: Timer = $CookTimer
 @onready var progress_bar: ProgressBar = $ProgressBar
 
+@onready var smoke_sound: AudioStreamPlayer2D = $SmokeSound
+@onready var press_sound: AudioStreamPlayer2D = $PressSound
+@onready var cook_failed_sound: AudioStreamPlayer2D = $CookFailedSound
+
 @onready var pull_thingy: PullThingy = $PullThingy
 var _pull_tween: Tween = null
 
@@ -56,6 +60,10 @@ func create_meal():
 	_pull_tween.tween_property(pull_thingy, "position:y", -215.0, 0.45).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
 
 	cooking = true
+	if press_sound.stream:
+		var sound_length = press_sound.stream.get_length()
+		press_sound.pitch_scale = sound_length / timer.wait_time
+	press_sound.play()
 	timer.start()
 
 	print("Cooking")
@@ -69,13 +77,19 @@ func cancel_meal():
 		
 func finish_meal(): 
 	var orders = OrderBook.get_orders()
+	var correct: bool = false
 	for order_id in orders:
 		var order = orders[order_id]
 
 		var meal_idx = order.needs_ingredients(ingredients)
 		if meal_idx != -1: 
 			order.complete_meal(meal_idx)
+			smoke_sound.play()
+			correct = true
 			break
+		
+	if not correct:
+		cook_failed_sound.play()
 
 	for i in ingredients:
 		i.queue_free()
@@ -85,5 +99,6 @@ func finish_meal():
 	_pull_tween.tween_property(pull_thingy, "position:y", -315.0, 0.45).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
 
 	SignalBus.done_cooking.emit()
+
 	cooking = false
 	cancel_time = wait_time

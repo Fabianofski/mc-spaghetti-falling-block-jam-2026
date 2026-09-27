@@ -7,12 +7,13 @@ class_name Plate
 var order: Order
 
 func _ready():
-	SignalBus.done_cooking.connect(_spoof_out_clouds)
 	OrderBook.new_order.connect(add_order)
 
 func add_order(_order: Order):
 	order = _order
 	for m in order.meals:
-		m.completed.connect(func(): audio.play())
+		m.completed.connect(_spoof_out_clouds)
 
-func _spoof_out_clouds(): particles.emitting = true
+func _spoof_out_clouds(): 
+	audio.play()
+	particles.emitting = true

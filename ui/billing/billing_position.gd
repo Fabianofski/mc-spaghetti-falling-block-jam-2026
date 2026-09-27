@@ -10,6 +10,6 @@ func set_billing_position(name_text: String, earnings: int) -> void:
 		earning_label.label_settings = null
 		earning_label.add_theme_color_override("font_color", Color.RED)
 	else:
-		earning_label.text = "£%d" % earnings
+		earning_label.text = "+£%d" % earnings
 		earning_label.label_settings = null
 		earning_label.add_theme_color_override("font_color", Color.GREEN)
