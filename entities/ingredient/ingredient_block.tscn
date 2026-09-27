@@ -19,6 +19,10 @@ shader_parameter/color_match_threshold = 0.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7qkos"]
 size = Vector2(128, 128)
 
+[sub_resource type="LabelSettings" id="LabelSettings_ep3m6"]
+outline_size = 12
+outline_color = Color(0.21, 0.21, 0.21, 1)
+
 [node name="Ingredient" type="CharacterBody2D" unique_id=439704425]
 collision_layer = 2
 script = ExtResource("1_4pvkf")
@@ -39,3 +43,16 @@ pitch_scale = 3.0
 [node name="GrabReleaseSound" type="AudioStreamPlayer2D" parent="." unique_id=907179588]
 stream = ExtResource("5_s7gwm")
 pitch_scale = 3.0
+
+[node name="Label" type="Label" parent="." unique_id=756121080]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.5
+offset_top = -48.0
+offset_right = 40.5
+offset_bottom = -25.0
+grow_horizontal = 2
+text = "Ingredient"
+label_settings = SubResource("LabelSettings_ep3m6")
+horizontal_alignment = 1

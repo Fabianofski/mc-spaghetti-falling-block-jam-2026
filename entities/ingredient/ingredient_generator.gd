@@ -43,6 +43,7 @@ func buy_ingredient(btn: JuicyButtonAwwYiss, ingredient: Ingredient):
 func generate_ingredient(ingredient: Ingredient):
 	var i = ingredient_block.instantiate()
 	ingredient_parent.add_child(i)
+	i.readable_name = ingredient.name
 	i.id = ingredient.id
 	i.global_position = ingredient_parent.global_position
 	i.global_position.x += randi_range(-rand_x, rand_x)

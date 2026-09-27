@@ -3,6 +3,7 @@ class_name IngredientBlock
 
 static var currently_dragged: IngredientBlock = null
 
+var readable_name: String
 var id: String
 var gravity = 15000.0
 var drag_speed = 20.0
@@ -18,8 +19,11 @@ var scale_tween: Tween
 @onready var grab_sound = $GrabSound
 @onready var grab_release_sound = $GrabReleaseSound
 
+@onready var label: Label = $Label
+
 func _ready() -> void:
 	input_pickable = true
+	label.text = ""
 	
 func set_texture(tex: Texture): 
 	var mat = sprite.material.duplicate()
@@ -31,6 +35,7 @@ func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> vo
 		if event.pressed and currently_dragged == null:
 			currently_dragged = self
 			grab_sound.play()
+			label.text = readable_name
 			is_dragging = true
 			drag_offset = global_position - get_global_mouse_position()
 			last_position = global_position 
@@ -39,6 +44,7 @@ func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> vo
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if not event.pressed and currently_dragged == self:
+			label.text = ""
 			currently_dragged = null
 			is_dragging = false
 			grab_release_sound.play()
