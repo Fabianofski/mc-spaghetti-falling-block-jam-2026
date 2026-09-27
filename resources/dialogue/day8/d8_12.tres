@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://bcr7d7rdon2ba"]
+
+[ext_resource type="Resource" uid="uid://cqd616de02tdj" path="res://resources/character/corporate_boss.tres" id="1_miymb"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_gscgc"]
+
+[resource]
+script = ExtResource("2_gscgc")
+character = ExtResource("1_miymb")
+text = "And YOU. You're on thin ice. So you'd better prove yourself."
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

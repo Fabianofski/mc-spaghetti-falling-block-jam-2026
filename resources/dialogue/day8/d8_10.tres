@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://ybtvswy5jp58"]
+
+[ext_resource type="Resource" uid="uid://twf1mplgjulh" path="res://resources/character/traditional_cook.tres" id="1_ygji5"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_bxvij"]
+
+[resource]
+script = ExtResource("2_bxvij")
+character = ExtResource("1_ygji5")
+text = "Competition? Remind me who originally wanted to buy out my re--"
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

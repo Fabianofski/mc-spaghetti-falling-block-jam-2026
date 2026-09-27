@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://yoihvriewic3"]
+
+[ext_resource type="Resource" uid="uid://twf1mplgjulh" path="res://resources/character/traditional_cook.tres" id="1_d3kgi"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_u66u2"]
+
+[resource]
+script = ExtResource("2_u66u2")
+character = ExtResource("1_d3kgi")
+text = "Enough is enough, Ladro. You can't serve this garbage to people!"
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

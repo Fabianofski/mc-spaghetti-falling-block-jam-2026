@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://dfuvktie5y5lj"]
+
+[ext_resource type="Resource" uid="uid://cqd616de02tdj" path="res://resources/character/corporate_boss.tres" id="1_iqu86"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_bywli"]
+
+[resource]
+script = ExtResource("2_bywli")
+character = ExtResource("1_iqu86")
+text = "No, no, I'm right here. [wave](Hey. You. We'll talk later.)[/wave]"
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

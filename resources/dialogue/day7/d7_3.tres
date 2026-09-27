@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://75imxt2t56n"]
+
+[ext_resource type="Resource" uid="uid://bb8nn2brjyjjx" path="res://resources/character/inspector.tres" id="1_1b80l"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_c3gvf"]
+
+[resource]
+script = ExtResource("2_c3gvf")
+character = ExtResource("1_1b80l")
+text = "...\"meeting with corporate\", you say? Well then, who's in charge?"
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

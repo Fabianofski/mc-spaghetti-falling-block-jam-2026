@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_s6cid")
-day = 7
+day = 6
 no_customer = 2
 sprite = ExtResource("2_s6cid")
 metadata/_custom_type_script = "uid://cyp6y2kx5hgfi"

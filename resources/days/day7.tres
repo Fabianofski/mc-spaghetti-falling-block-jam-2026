@@ -7,6 +7,13 @@
 [ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="3_qwh3c"]
 [ext_resource type="Resource" uid="uid://cekv1lfgh86eo" path="res://resources/meals/sauce.tres" id="4_2uhbu"]
 [ext_resource type="Resource" uid="uid://16vtgk38acdj" path="res://resources/meals/cheese.tres" id="5_4nbwh"]
+[ext_resource type="Resource" uid="uid://d0yxi6a2dmcpy" path="res://resources/dialogue/day7/d7_1.tres" id="7_4nbwh"]
+[ext_resource type="Resource" uid="uid://x6353dnfdcgg" path="res://resources/dialogue/day7/d7_2.tres" id="8_txbps"]
+[ext_resource type="Resource" uid="uid://75imxt2t56n" path="res://resources/dialogue/day7/d7_3.tres" id="9_4pctc"]
+[ext_resource type="Resource" uid="uid://dfuvktie5y5lj" path="res://resources/dialogue/day7/d7_4.tres" id="10_ixdmc"]
+[ext_resource type="Resource" uid="uid://drwtcp2tkhu2t" path="res://resources/dialogue/day7/d7_5.tres" id="11_b6rth"]
+[ext_resource type="Resource" uid="uid://b3fhxqwcgcq7a" path="res://resources/dialogue/day7/d7_6.tres" id="12_8i7pi"]
+[ext_resource type="Resource" uid="uid://u1cbbjhuseju" path="res://resources/dialogue/day7/d7_7.tres" id="13_phob8"]
 
 [resource]
 script = ExtResource("2_b5d11")
@@ -16,4 +23,5 @@ total_orders = 5
 meals_per_order = 1
 time_per_order = 15.0
 max_parallel_orders = 3
+dialogue = Array[ExtResource("3_qwh3c")]([ExtResource("7_4nbwh"), ExtResource("8_txbps"), ExtResource("9_4pctc"), ExtResource("10_ixdmc"), ExtResource("11_b6rth"), ExtResource("12_8i7pi"), ExtResource("13_phob8")])
 metadata/_custom_type_script = "uid://chnd07y2wn61j"

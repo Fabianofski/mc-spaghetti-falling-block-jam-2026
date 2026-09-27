@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://b3fhxqwcgcq7a"]
+
+[ext_resource type="Resource" uid="uid://cqd616de02tdj" path="res://resources/character/corporate_boss.tres" id="1_hrsmb"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_24l7f"]
+
+[resource]
+script = ExtResource("2_24l7f")
+character = ExtResource("1_hrsmb")
+text = "...and you, keep working."
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

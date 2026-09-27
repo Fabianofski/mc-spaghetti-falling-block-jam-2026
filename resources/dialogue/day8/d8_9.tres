@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://b85sspgl86hj8"]
+
+[ext_resource type="Resource" uid="uid://cqd616de02tdj" path="res://resources/character/corporate_boss.tres" id="1_a4tqs"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_ugrjk"]
+
+[resource]
+script = ExtResource("2_ugrjk")
+character = ExtResource("1_a4tqs")
+text = "Geez, afraid of progress AND afraid of competition? That's kind of pathetic, Palmieri..."
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

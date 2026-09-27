@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://dss52kde3dbx8"]
+
+[ext_resource type="Resource" uid="uid://cqd616de02tdj" path="res://resources/character/corporate_boss.tres" id="1_4m5ao"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_rqh0m"]
+
+[resource]
+script = ExtResource("2_rqh0m")
+character = ExtResource("1_4m5ao")
+text = "Just because your little restaurant is failing doesn't mean you have to put others down, you know?"
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://dygm2h5qn6ji"]
+
+[ext_resource type="Resource" uid="uid://cqd616de02tdj" path="res://resources/character/corporate_boss.tres" id="1_gg1nl"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_wh0nc"]
+
+[resource]
+script = ExtResource("2_wh0nc")
+character = ExtResource("1_gg1nl")
+text = "Enough. You will not impede my empire from growing. Tube-based cooking is the future, whether you're ready for it or not."
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

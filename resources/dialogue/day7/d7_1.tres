@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://d0yxi6a2dmcpy"]
+
+[ext_resource type="Resource" uid="uid://bb8nn2brjyjjx" path="res://resources/character/inspector.tres" id="1_knobs"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="1_tn3q3"]
+
+[resource]
+script = ExtResource("1_tn3q3")
+character = ExtResource("1_knobs")
+text = "Good evening, I'm with the Local Health Authority. We received an anonymous call, so we're just here to do a quick inspection."
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

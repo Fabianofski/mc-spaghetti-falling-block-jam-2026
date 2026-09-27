@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://ddh5nwsq2udqn"]
+
+[ext_resource type="Resource" uid="uid://twf1mplgjulh" path="res://resources/character/traditional_cook.tres" id="1_0rwuy"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_6e6if"]
+
+[resource]
+script = ExtResource("2_6e6if")
+character = ExtResource("1_0rwuy")
+text = "The only reason business has been so slow is because you popped up right next to me! You've taken all my customers!"
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

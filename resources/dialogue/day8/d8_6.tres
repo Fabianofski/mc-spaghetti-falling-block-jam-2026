@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://gi805pfkgs44"]
+
+[ext_resource type="Resource" uid="uid://cqd616de02tdj" path="res://resources/character/corporate_boss.tres" id="1_egcns"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_1iilt"]
+
+[resource]
+script = ExtResource("2_1iilt")
+character = ExtResource("1_egcns")
+text = "Palmieri. I know you're afraid of progress, but this is low, even for you."
+metadata/_custom_type_script = "uid://b3fueednaw6q6"
