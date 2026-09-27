@@ -2,6 +2,7 @@ extends Node2D
 
 var days: Array[Day] = []
 var current_day: int = 0
+var days_beyond_final: int = 0
 
 var money: int = 0
 var upgrades: Upgrades
@@ -16,7 +17,8 @@ func _ready() -> void:
 	upgrades = Upgrades.new()
 
 func finish_day():
-	current_day += 1
+	if current_day < 11: current_day += 1
+	else: days_beyond_final += 1
 	reload_scene()
 	
 func reload_scene():

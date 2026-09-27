@@ -18,6 +18,7 @@ func restart():
 	GameManager.reload_scene()
 
 func _on_main_menu_button_button_up() -> void:
+	GameManager.days_beyond_final = 0
 	ScreenFader.change_scene("res://scenes/main_menu.tscn")
 	
 func enable_screen(fail: bool):
@@ -26,6 +27,7 @@ func enable_screen(fail: bool):
 	if fail:
 		SignalBus.game_state_change.emit("day_failed")
 	else:
+		if GameManager.days_beyond_final > 0: next_day_btn.text = "Continue (Endless Mode)"
 		SignalBus.game_state_change.emit("day_success")
 	
 	visible = true

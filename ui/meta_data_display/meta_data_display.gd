@@ -5,8 +5,8 @@ var day: Day
 
 func _ready() -> void:
 	day = GameManager.get_day()
-	label.text = "Day %d · ₤%d" % [day.day, 0]
+	label.text = "Day %d · ₤%d" % [day.day + GameManager.days_beyond_final, 0]
 	day.score_changed.connect(update_score)
 
 func update_score(score: int):
-	label.text = "Day %d · ₤%d" % [day.day, score]
+	label.text = "Day %d · ₤%d" % [day.day + GameManager.days_beyond_final, score]
