@@ -4,6 +4,7 @@ extends Control
 @onready var positions: Node = $Positions
 @onready var total: Label = $Positions/Total
 @onready var header: Label = $Positions/Header
+@onready var color_rect: ColorRect = $ColorRect
 
 func _ready() -> void:
 	var day = GameManager.get_day()
@@ -52,6 +53,8 @@ func create_billing() -> void:
 
 	total.text = "Total: £%d" % total_earning
 	animate_entry(total, index)
+	
+	if positions.size.y > color_rect.size.y: color_rect.size.y = positions.size.y + 32
 
 func animate_entry(node: Control, index: float) -> void:
 	var tween = create_tween().set_parallel(true)
