@@ -18,7 +18,7 @@ func _ready() -> void:
 		var btn = JuicyButtonAwwYiss.new()
 		add_child(btn)
 		btn.text = ingredient.name
-		btn.pressed.connect(generate_ingredient.bind(btn, ingredient))
+		btn.pressed.connect(buy_ingredient.bind(btn, ingredient))
 		btn.custom_minimum_size = Vector2(128, 32)
 		btn.disabled = needed_ingredients.find_custom(func(i): return i.id == ingredient.id) == -1
 	
@@ -27,19 +27,23 @@ func _ready() -> void:
 func generate_order_ingredients(order: Order):
 	for m in order.meals:
 		for i in m.ingredients:
-			generate_ingredient(null, i)
+			generate_ingredient(i)
 			await get_tree().create_timer(1).timeout
 		
-func generate_ingredient(btn: JuicyButtonAwwYiss, ingredient: Ingredient): 
+func buy_ingredient(btn: JuicyButtonAwwYiss, ingredient: Ingredient): 
+	var day = GameManager.get_day()
+	day.add_expense("Buy: " + ingredient.name, 50)
+	
+	generate_ingredient(ingredient)
+
+	btn.disabled = true
+	await get_tree().create_timer(0.1).timeout
+	btn.disabled = false
+	
+func generate_ingredient(ingredient: Ingredient):
 	var i = ingredient_block.instantiate()
 	ingredient_parent.add_child(i)
 	i.id = ingredient.id
 	i.global_position = ingredient_parent.global_position
 	i.global_position.x += randi_range(-rand_x, rand_x)
-	
 	i.set_texture(ingredient.texture)
-
-	if not btn: return
-	btn.disabled = true
-	await get_tree().create_timer(0.1).timeout
-	btn.disabled = false

@@ -14,6 +14,8 @@ signal score_changed(score: int)
 var score: int = 0
 var max_score: int = 0
 
+var expenses: Dictionary[String, int]
+
 enum DayState { Open, InProgress, Failed, Success}
 var state: = DayState.Open
 signal state_changed(state: DayState)
@@ -77,3 +79,9 @@ func get_grade() -> String:
 	var grade = get_grade_from_percentage(percentage)
 	return grade
 	
+func add_expense(expense_name: String, expense: int):
+	if not expense_name in expenses:
+		expenses[expense_name] = 0
+	expenses[expense_name] += expense
+	score -= expense
+	score_changed.emit(score)

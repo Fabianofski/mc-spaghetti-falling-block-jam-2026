@@ -26,6 +26,15 @@ func create_billing() -> void:
 			summary[m.name]["earnings"] += score_per_meal
 
 		total_earning += o.calc_score()
+		
+	var expenses = GameManager.get_day().expenses
+	for expense_name in expenses:
+		var expense = expenses.get(expense_name)
+		summary[expense_name] = { 
+			"count": 1,
+			"earnings": -expense
+		}
+		total_earning -= expense
 
 	header.text = "Total Orders: %d" % total_orders
 	animate_entry(header, 0)

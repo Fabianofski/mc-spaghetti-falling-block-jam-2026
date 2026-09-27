@@ -10,7 +10,7 @@ func _ready() -> void:
 	for day_file in ResourceLoader.list_directory("res://resources/days"):
 		var day_path = "res://resources/days/" + day_file
 		var day = ResourceLoader.load(day_path)
-		day.completed.connect(func(): money += day.score)
+		day.completed.connect(func(): if day.score >= 0: money += day.score)
 		days.append(day)
 	days.sort_custom(func(a, b): return a.day < b.day)
 	upgrades = Upgrades.new()
