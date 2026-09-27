@@ -20,7 +20,7 @@ func init_buttons() -> void:
 	order_time_label.text = "₤%d" % GameManager.upgrades.order_time_price()
 
 	cook_time_btn.disabled = GameManager.money < GameManager.upgrades.cook_time_price()
-	cook_time_btn.text = "Halve cook time (%d)" % GameManager.upgrades.cook_time
+	cook_time_btn.text = "-20%% cook time (%d)" % GameManager.upgrades.cook_time
 
 	order_time_btn.disabled = GameManager.money < GameManager.upgrades.order_time_price()
 	order_time_btn.text = "+5s to order time (%d)" % GameManager.upgrades.order_time
@@ -28,7 +28,7 @@ func init_buttons() -> void:
 	money_label.text = "Your money: ₤%d" % GameManager.money
 	
 func buy_cook_time():
-	var price = GameManager.upgrades.order_time_price()
+	var price = GameManager.upgrades.cook_time_price()
 	if GameManager.money < price:
 		return
 	GameManager.upgrades.cook_time += 1

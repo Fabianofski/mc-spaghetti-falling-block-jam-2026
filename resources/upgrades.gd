@@ -2,9 +2,9 @@ extends Resource
 class_name Upgrades
 
 var order_time: int = 0
-var order_time_base_price: int = 100
+var order_time_base_price: int = 400
 var cook_time: int = 0
-var cook_time_base_price: int = 100
+var cook_time_base_price: int = 200
 
 func cook_time_price() -> int:
 	if cook_time == 0: return cook_time_base_price

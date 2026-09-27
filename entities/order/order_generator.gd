@@ -10,6 +10,7 @@ func _ready() -> void:
 	day.state_changed.connect(func(state): if state == Day.DayState.InProgress: timer.start())
 	
 	OrderBook.order_finished.connect(func(): sound.play())
+	OrderBook.order_finished.connect(func(): timer.start())
 
 func create_order(): 
 	var day = GameManager.get_day()
@@ -21,7 +22,6 @@ func create_order():
 		return
 	
 	if OrderBook.get_parallel_order_count() >= day.max_parallel_orders:
-		timer.start()
 		return
 
 	var order = Order.new()
@@ -33,4 +33,8 @@ func create_order():
 	order.time = day.time_per_order + GameManager.upgrades.order_time * 5 # + 5 seconds with every upgrade
 	
 	OrderBook.add_order(order)
+	timer.start()
+
+func start_timer():
+	timer.wait_time = randf() * 2
 	timer.start()

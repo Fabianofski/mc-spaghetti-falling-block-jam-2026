@@ -16,7 +16,7 @@ func _ready() -> void:
 	body_entered.connect(on_ingredient_entered)
 	body_exited.connect(on_ingredient_exited)
 	
-	timer.wait_time *= pow(0.5, GameManager.upgrades.cook_time) # Half with every upgrade
+	timer.wait_time *= pow(0.8, GameManager.upgrades.cook_time) # -20% with every upgrade
 	wait_time = timer.wait_time 
 	timer.timeout.connect(finish_meal)
 	
