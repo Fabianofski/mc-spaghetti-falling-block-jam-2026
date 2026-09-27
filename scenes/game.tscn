@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://ctc7356vtrgcu" path="res://ui/dialogue_manager/dialogue_manager.tscn" id="14_trtic"]
 [ext_resource type="Texture2D" uid="uid://bdipqc1u8v3m1" path="res://art_assets/holder.png" id="15_suyxu"]
 [ext_resource type="AudioStream" uid="uid://myeq3cf2nl8s" path="res://audio/closingcashregisterandcoins.ogg" id="16_e1j6l"]
+[ext_resource type="AudioStream" uid="uid://g37pr57wv1ld" path="res://audio/meal4.ogg" id="16_sww3w"]
 [ext_resource type="Script" uid="uid://bbkfetwlo557c" path="res://entities/customers.gd" id="23_bt5mj"]
 [ext_resource type="Texture2D" uid="uid://dq2tgyartiawa" path="res://art_assets/inside_fore.png" id="25_pl11u"]
 
@@ -205,6 +206,9 @@ explosiveness = 0.9
 randomness = 0.5
 fixed_fps = 12
 process_material = SubResource("ParticleProcessMaterial_rysoc")
+
+[node name="PlateSound" type="AudioStreamPlayer2D" parent="Plate" unique_id=1442367932]
+stream = ExtResource("16_sww3w")
 
 [node name="Portal" type="Node2D" parent="." unique_id=1754100449]
 position = Vector2(8, 120)
