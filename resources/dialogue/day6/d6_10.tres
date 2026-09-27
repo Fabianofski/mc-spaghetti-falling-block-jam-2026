@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://cyfada7iu4iqo"]
+
+[ext_resource type="Resource" uid="uid://twf1mplgjulh" path="res://resources/character/traditional_cook.tres" id="1_7sn45"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_ecjnt"]
+
+[resource]
+script = ExtResource("2_ecjnt")
+character = ExtResource("1_7sn45")
+text = "Well, I'd appreciate your help."
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

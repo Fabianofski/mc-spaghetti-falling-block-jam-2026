@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://chwjvjbtdu8os"]
+
+[ext_resource type="Resource" uid="uid://twf1mplgjulh" path="res://resources/character/traditional_cook.tres" id="1_sqauw"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_vd5y2"]
+
+[resource]
+script = ExtResource("2_vd5y2")
+character = ExtResource("1_sqauw")
+text = "No? Oh, thank God."
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

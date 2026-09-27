@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://qwch0hbw62gb"]
+
+[ext_resource type="Resource" uid="uid://twf1mplgjulh" path="res://resources/character/traditional_cook.tres" id="1_d5nft"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="1_s5djh"]
+
+[resource]
+script = ExtResource("1_s5djh")
+character = ExtResource("1_d5nft")
+text = "Good evening, is Mr. Ladro around?"
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

@@ -7,6 +7,16 @@
 [ext_resource type="Script" uid="uid://chnd07y2wn61j" path="res://resources/day.gd" id="5_5mvk1"]
 [ext_resource type="Resource" uid="uid://maibagr2ifjh" path="res://resources/meals/bolognese.tres" id="5_o8onl"]
 [ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="6_6pwg8"]
+[ext_resource type="Resource" uid="uid://qwch0hbw62gb" path="res://resources/dialogue/day6/d6_1.tres" id="7_xwotm"]
+[ext_resource type="Resource" uid="uid://chwjvjbtdu8os" path="res://resources/dialogue/day6/d6_2.tres" id="8_4icot"]
+[ext_resource type="Resource" uid="uid://cgk86sauh1d81" path="res://resources/dialogue/day6/d6_3.tres" id="9_y0pay"]
+[ext_resource type="Resource" uid="uid://bdmn7yl2jhsmj" path="res://resources/dialogue/day6/d6_4.tres" id="10_st3ya"]
+[ext_resource type="Resource" uid="uid://dwj5y57o2boso" path="res://resources/dialogue/day6/d6_5.tres" id="11_2gmre"]
+[ext_resource type="Resource" uid="uid://hvfgvwmkfypq" path="res://resources/dialogue/day6/d6_6.tres" id="12_dkbrc"]
+[ext_resource type="Resource" uid="uid://by6q7a3lycnav" path="res://resources/dialogue/day6/d6_7.tres" id="13_4qkqq"]
+[ext_resource type="Resource" uid="uid://dyx3bcx8l1xu7" path="res://resources/dialogue/day6/d6_8.tres" id="14_q67wh"]
+[ext_resource type="Resource" uid="uid://hsf3h2qm477e" path="res://resources/dialogue/day6/d6_9.tres" id="15_t51m2"]
+[ext_resource type="Resource" uid="uid://cyfada7iu4iqo" path="res://resources/dialogue/day6/d6_10.tres" id="16_gcben"]
 
 [resource]
 script = ExtResource("5_5mvk1")
@@ -16,4 +26,5 @@ total_orders = 6
 meals_per_order = 3
 time_per_order = 18.0
 max_parallel_orders = 3
+dialogue = Array[ExtResource("6_6pwg8")]([ExtResource("7_xwotm"), ExtResource("8_4icot"), ExtResource("9_y0pay"), ExtResource("10_st3ya"), ExtResource("11_2gmre"), ExtResource("12_dkbrc"), ExtResource("13_4qkqq"), ExtResource("14_q67wh"), ExtResource("15_t51m2"), ExtResource("16_gcben")])
 metadata/_custom_type_script = "uid://chnd07y2wn61j"

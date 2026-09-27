@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://dyx3bcx8l1xu7"]
+
+[ext_resource type="Resource" uid="uid://twf1mplgjulh" path="res://resources/character/traditional_cook.tres" id="1_ejyye"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_q6q21"]
+
+[resource]
+script = ExtResource("2_q6q21")
+character = ExtResource("1_ejyye")
+text = "OK, that's perfect. But also really sad. To desecrate good pasta like this..."
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

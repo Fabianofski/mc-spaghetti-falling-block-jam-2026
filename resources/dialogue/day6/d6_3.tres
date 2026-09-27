@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://cgk86sauh1d81"]
+
+[ext_resource type="Resource" uid="uid://twf1mplgjulh" path="res://resources/character/traditional_cook.tres" id="1_bq5us"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_fyike"]
+
+[resource]
+script = ExtResource("2_fyike")
+character = ExtResource("1_bq5us")
+text = "I'm Valerio Palmieri, chef and owner of Palmieri's Pizza e Pasta. You know, the little restaurant next door!"
+metadata/_custom_type_script = "uid://b3fueednaw6q6"
