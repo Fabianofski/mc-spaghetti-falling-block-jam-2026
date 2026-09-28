@@ -25,7 +25,7 @@
 script = ExtResource("3_sutbr")
 day = 8
 available_meals = Array[ExtResource("1_jus2c")]([ExtResource("3_vocys"), ExtResource("3_v2bgh"), ExtResource("4_a0k7e"), ExtResource("5_a0k7e"), ExtResource("6_sbkpv")])
-total_orders = 6
+total_orders = 7
 meals_per_order = 2
 time_per_order = 15.0
 max_parallel_orders = 3
