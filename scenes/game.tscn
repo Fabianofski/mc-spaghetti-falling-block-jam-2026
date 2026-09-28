@@ -31,6 +31,7 @@
 [ext_resource type="AudioStream" uid="uid://g37pr57wv1ld" path="res://audio/meal4.ogg" id="16_sww3w"]
 [ext_resource type="Script" uid="uid://bbkfetwlo557c" path="res://entities/customers.gd" id="23_bt5mj"]
 [ext_resource type="Texture2D" uid="uid://dq2tgyartiawa" path="res://art_assets/inside_fore.png" id="25_pl11u"]
+[ext_resource type="AudioStream" uid="uid://bmi3pdssbvljg" path="res://audio/cashregister.ogg" id="31_v2yb1"]
 [ext_resource type="Script" uid="uid://b2yt852gj4hf1" path="res://scenes/day_progress_bar.gd" id="32_wljb1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ir15t"]
@@ -188,6 +189,7 @@ volume_db = -10.0
 
 [node name="SmokeSound" type="AudioStreamPlayer2D" parent="Mixer/MealCreator" unique_id=1621772219]
 stream = ExtResource("15_sgl2t")
+volume_db = -10.0
 
 [node name="PressSound" type="AudioStreamPlayer2D" parent="Mixer/MealCreator" unique_id=25380583]
 stream = ExtResource("16_qouja")
@@ -358,6 +360,9 @@ theme_override_constants/v_separation = 8
 alignment = 1
 script = ExtResource("7_vtaks")
 ingredient_parent = NodePath("../../Ingredients")
+
+[node name="BuySound" type="AudioStreamPlayer2D" parent="CanvasLayer/IngredientGenerator" unique_id=717006777]
+stream = ExtResource("31_v2yb1")
 
 [node name="DayEndScreen" parent="CanvasLayer" unique_id=1980167072 instance=ExtResource("11_trtic")]
 visible = false

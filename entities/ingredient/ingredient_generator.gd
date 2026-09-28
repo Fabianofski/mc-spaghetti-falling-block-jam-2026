@@ -3,6 +3,8 @@ extends FlowContainer
 @export var ingredient_parent: Node2D
 @export var rand_x: int = 50
 @onready var ingredient_block = preload("res://entities/ingredient/ingredient_block.tscn")
+@onready var buy_sound : AudioStreamPlayer2D = $BuySound
+@onready var expense: PackedScene = preload("res://ui/expense.tscn")
 
 func _ready() -> void:
 	var day = GameManager.get_day()
@@ -33,12 +35,20 @@ func generate_order_ingredients(order: Order):
 func buy_ingredient(btn: JuicyButtonAwwYiss, ingredient: Ingredient): 
 	var day = GameManager.get_day()
 	day.add_expense("Buy: " + ingredient.name, 50)
+	show_expense(btn, 50)
+	buy_sound.play()
 	
 	generate_ingredient(ingredient)
 
 	btn.disabled = true
 	await get_tree().create_timer(0.1).timeout
 	btn.disabled = false
+	
+func show_expense(btn: Node, expenses: int):
+	var e = expense.instantiate()
+	e.text = "-₤%d" % [expenses]
+	e.global_position = btn.global_position
+	get_parent().add_child(e)
 	
 func generate_ingredient(ingredient: Ingredient):
 	var i = ingredient_block.instantiate()
