@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://b2amgs386fyud"]
+
+[ext_resource type="Resource" uid="uid://cqd616de02tdj" path="res://resources/character/corporate_boss.tres" id="1_uqywt"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_kjifi"]
+
+[resource]
+script = ExtResource("2_kjifi")
+character = ExtResource("1_uqywt")
+text = "Of course, sir. Business as usual."
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

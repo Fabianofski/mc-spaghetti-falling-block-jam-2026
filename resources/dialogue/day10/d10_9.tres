@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://b8iays72dflua"]
+
+[ext_resource type="Resource" uid="uid://twf1mplgjulh" path="res://resources/character/traditional_cook.tres" id="1_1g0or"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_h8n3b"]
+
+[resource]
+script = ExtResource("2_h8n3b")
+character = ExtResource("1_1g0or")
+text = "Oh, I won't have done enough until your business is on the ground!"
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

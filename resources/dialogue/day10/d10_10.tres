@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://dgugdlrww6t7j"]
+
+[ext_resource type="Resource" uid="uid://twf1mplgjulh" path="res://resources/character/traditional_cook.tres" id="1_drc3d"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_dxojo"]
+
+[resource]
+script = ExtResource("2_dxojo")
+character = ExtResource("1_drc3d")
+text = "It's immoral! There's no love in what you're doing!"
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

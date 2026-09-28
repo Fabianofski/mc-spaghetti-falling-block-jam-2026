@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://c5hek1guoe0o5"]
+
+[ext_resource type="Resource" uid="uid://bb8nn2brjyjjx" path="res://resources/character/inspector.tres" id="1_vkmsu"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_s8o2m"]
+
+[resource]
+script = ExtResource("2_s8o2m")
+character = ExtResource("1_vkmsu")
+text = "OK, Mr. Ladro, we have the results of our inspection."
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

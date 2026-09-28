@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://ckv3yad7p345h"]
+
+[ext_resource type="Resource" uid="uid://cqd616de02tdj" path="res://resources/character/corporate_boss.tres" id="1_oie65"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_0ptlh"]
+
+[resource]
+script = ExtResource("2_0ptlh")
+character = ExtResource("1_oie65")
+text = "...hm. You almost made me laugh for the first time in three decades."
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

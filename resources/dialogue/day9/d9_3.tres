@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://ce8oesl2qxrye"]
+
+[ext_resource type="Resource" uid="uid://cqd616de02tdj" path="res://resources/character/corporate_boss.tres" id="1_px5ak"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_u5066"]
+
+[resource]
+script = ExtResource("2_u5066")
+character = ExtResource("1_px5ak")
+text = "I read on social media that positive encouragement makes workers more productive, you see. I'd better see that effect today, OK?"
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

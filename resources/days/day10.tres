@@ -11,6 +11,22 @@
 [ext_resource type="Resource" uid="uid://c5rtk4bsgcxs7" path="res://resources/meals/vegan.tres" id="7_0dbo3"]
 [ext_resource type="Resource" uid="uid://ck7hit4cbmbxt" path="res://resources/meals/carnivore.tres" id="8_1fpgh"]
 [ext_resource type="Resource" uid="uid://bjhikw6164o4d" path="res://resources/meals/spaghetti.tres" id="9_2eco8"]
+[ext_resource type="Resource" uid="uid://dchq0e1g2p82r" path="res://resources/dialogue/day10/d10_1.tres" id="11_pufjo"]
+[ext_resource type="Resource" uid="uid://dqgavdd4l5yaj" path="res://resources/dialogue/day10/d10_2.tres" id="12_ni43x"]
+[ext_resource type="Resource" uid="uid://dwlnbirfi2s00" path="res://resources/dialogue/day10/d10_3.tres" id="13_us0hs"]
+[ext_resource type="Resource" uid="uid://n8lbdhm1stsc" path="res://resources/dialogue/day10/d10_4.tres" id="14_tfcab"]
+[ext_resource type="Resource" uid="uid://dytcnp2gl380w" path="res://resources/dialogue/day10/d10_5.tres" id="15_p2xi3"]
+[ext_resource type="Resource" uid="uid://ciw6bpycuo7qn" path="res://resources/dialogue/day10/d10_6.tres" id="16_4qejm"]
+[ext_resource type="Resource" uid="uid://bb5gc3awhyyjw" path="res://resources/dialogue/day10/d10_7.tres" id="17_56avp"]
+[ext_resource type="Resource" uid="uid://d16ji3t018466" path="res://resources/dialogue/day10/d10_8.tres" id="18_8ilx1"]
+[ext_resource type="Resource" uid="uid://b8iays72dflua" path="res://resources/dialogue/day10/d10_9.tres" id="19_2kbdc"]
+[ext_resource type="Resource" uid="uid://dgugdlrww6t7j" path="res://resources/dialogue/day10/d10_10.tres" id="20_q52y2"]
+[ext_resource type="Resource" uid="uid://bp52mmjrf1d5s" path="res://resources/dialogue/day10/d10_11.tres" id="21_ncepw"]
+[ext_resource type="Resource" uid="uid://ckv3yad7p345h" path="res://resources/dialogue/day10/d10_12.tres" id="22_7o6yo"]
+[ext_resource type="Resource" uid="uid://dky1p87h6qli0" path="res://resources/dialogue/day10/d10_13.tres" id="23_qf4yf"]
+[ext_resource type="Resource" uid="uid://dt8yjo4ylm8ou" path="res://resources/dialogue/day10/d10_14.tres" id="24_evsmm"]
+[ext_resource type="Resource" uid="uid://wh2y56ka2oc4" path="res://resources/dialogue/day10/d10_15.tres" id="25_7prej"]
+[ext_resource type="Resource" uid="uid://512fmhnem8w2" path="res://resources/dialogue/day10/d10_16.tres" id="26_46sog"]
 
 [resource]
 script = ExtResource("3_h511q")
@@ -20,4 +36,5 @@ total_orders = 6
 meals_per_order = 2
 time_per_order = 15.0
 max_parallel_orders = 3
+dialogue = Array[ExtResource("5_c3wlq")]([ExtResource("11_pufjo"), ExtResource("12_ni43x"), ExtResource("13_us0hs"), ExtResource("14_tfcab"), ExtResource("15_p2xi3"), ExtResource("16_4qejm"), ExtResource("17_56avp"), ExtResource("18_8ilx1"), ExtResource("19_2kbdc"), ExtResource("20_q52y2"), ExtResource("21_ncepw"), ExtResource("22_7o6yo"), ExtResource("23_qf4yf"), ExtResource("24_evsmm"), ExtResource("25_7prej"), ExtResource("26_46sog")])
 metadata/_custom_type_script = "uid://chnd07y2wn61j"

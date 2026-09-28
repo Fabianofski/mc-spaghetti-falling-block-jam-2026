@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://d14656gwqfh8b"]
+
+[ext_resource type="Resource" uid="uid://cqd616de02tdj" path="res://resources/character/corporate_boss.tres" id="1_y5lsx"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_vg08s"]
+
+[resource]
+script = ExtResource("2_vg08s")
+character = ExtResource("1_y5lsx")
+text = "No more fooling around. I have money to make here, and I don't much appreciate that being impeded."
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

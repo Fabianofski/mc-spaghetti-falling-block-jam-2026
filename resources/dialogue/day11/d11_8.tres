@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://77fric1ww4ig"]
+
+[ext_resource type="Resource" uid="uid://cqd616de02tdj" path="res://resources/character/corporate_boss.tres" id="1_1ku43"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_i43gw"]
+
+[resource]
+script = ExtResource("2_i43gw")
+character = ExtResource("1_1ku43")
+text = "I'll leave you to it, then."
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

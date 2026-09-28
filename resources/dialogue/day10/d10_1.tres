@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://dchq0e1g2p82r"]
+
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="1_7rv13"]
+[ext_resource type="Resource" uid="uid://cqd616de02tdj" path="res://resources/character/corporate_boss.tres" id="1_dr37a"]
+
+[resource]
+script = ExtResource("1_7rv13")
+character = ExtResource("1_dr37a")
+text = "So, I bet you did not even notice, on account of my cunning disguise. But, a few days ago, I posed as a customer and ordered from the menu."
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

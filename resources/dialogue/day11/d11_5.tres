@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://i5643wrurxhs"]
+
+[ext_resource type="Resource" uid="uid://cqd616de02tdj" path="res://resources/character/corporate_boss.tres" id="1_cggjy"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_86uem"]
+
+[resource]
+script = ExtResource("2_86uem")
+character = ExtResource("1_cggjy")
+text = "You know, minimum wage employee, these have been some very entertaining past few days."
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

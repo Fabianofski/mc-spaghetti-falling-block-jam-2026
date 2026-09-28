@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://cw8tvm8186bxl"]
+
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="1_6c18g"]
+[ext_resource type="Resource" uid="uid://cqd616de02tdj" path="res://resources/character/corporate_boss.tres" id="1_eo5yd"]
+
+[resource]
+script = ExtResource("1_6c18g")
+character = ExtResource("1_eo5yd")
+text = "...I apologise for my outburst yesterday. Not that you didn't deserve it, but it was unprofessional [wave](I guess...)[/wave]."
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://dky1p87h6qli0"]
+
+[ext_resource type="Resource" uid="uid://cqd616de02tdj" path="res://resources/character/corporate_boss.tres" id="1_ntku6"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_gqvaj"]
+
+[resource]
+script = ExtResource("2_gqvaj")
+character = ExtResource("1_ntku6")
+text = "Of course there's \"love\". I love money. Our clients love fast service. It's a win-win, although I don't expect you to understand."
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

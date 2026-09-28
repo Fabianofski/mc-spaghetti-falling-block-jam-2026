@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ScriptedAppearance" format=3 uid="uid://dnv8jhg2wj54c"]
+
+[ext_resource type="Script" uid="uid://cyp6y2kx5hgfi" path="res://resources/scripted_appearance.gd" id="1_54tfm"]
+[ext_resource type="Texture2D" uid="uid://7iytalvorj6m" path="res://resources/character/inspector.png" id="2_54tfm"]
+
+[resource]
+script = ExtResource("1_54tfm")
+day = 9
+no_customer = 4
+sprite = ExtResource("2_54tfm")
+metadata/_custom_type_script = "uid://cyp6y2kx5hgfi"

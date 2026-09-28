@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://6sl2esca0md7"]
+
+[ext_resource type="Resource" uid="uid://bb8nn2brjyjjx" path="res://resources/character/inspector.tres" id="1_elf2h"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_dqn34"]
+
+[resource]
+script = ExtResource("2_dqn34")
+character = ExtResource("1_elf2h")
+text = "OK, Mr. Ladro. As I've discussed with you before, I will be needing to sample some of your product today."
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

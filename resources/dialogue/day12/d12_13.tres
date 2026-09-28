@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://dnrtispyrg3kq"]
+
+[ext_resource type="Resource" uid="uid://bb8nn2brjyjjx" path="res://resources/character/inspector.tres" id="1_0roby"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_ahcm4"]
+
+[resource]
+script = ExtResource("2_ahcm4")
+character = ExtResource("1_0roby")
+text = "Congratulations on managing such a successful, sanitary establishment."
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

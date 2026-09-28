@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://cggdn5isgq5qe"]
+
+[ext_resource type="Resource" uid="uid://twf1mplgjulh" path="res://resources/character/traditional_cook.tres" id="1_upf8t"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_n4uis"]
+
+[resource]
+script = ExtResource("2_n4uis")
+character = ExtResource("1_upf8t")
+text = "...did you say rats?"
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

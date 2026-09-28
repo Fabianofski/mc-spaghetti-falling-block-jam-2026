@@ -13,6 +13,26 @@
 [ext_resource type="Resource" uid="uid://bjhikw6164o4d" path="res://resources/meals/spaghetti.tres" id="9_xv73l"]
 [ext_resource type="Resource" uid="uid://dg6d2rbihk72a" path="res://resources/meals/cheese_snack.tres" id="10_oltf8"]
 [ext_resource type="Resource" uid="uid://cdedpvdlcfq6t" path="res://resources/meals/chesto.tres" id="11_l4qev"]
+[ext_resource type="Resource" uid="uid://c2hj7c2bvpu0j" path="res://resources/dialogue/day12/d12_1.tres" id="13_i8y24"]
+[ext_resource type="Resource" uid="uid://cvd2khvwu12r" path="res://resources/dialogue/day12/d12_2.tres" id="14_x5s21"]
+[ext_resource type="Resource" uid="uid://c5hek1guoe0o5" path="res://resources/dialogue/day12/d12_3.tres" id="15_npu14"]
+[ext_resource type="Resource" uid="uid://7ei5r6mdumhe" path="res://resources/dialogue/day12/d12_4.tres" id="16_flnpd"]
+[ext_resource type="Resource" uid="uid://wwy81a72ky6j" path="res://resources/dialogue/day12/d12_5.tres" id="17_hu8xi"]
+[ext_resource type="Resource" uid="uid://du7okx86mg80u" path="res://resources/dialogue/day12/d12_6.tres" id="18_1bqo3"]
+[ext_resource type="Resource" uid="uid://cggdn5isgq5qe" path="res://resources/dialogue/day12/d12_7.tres" id="19_stlwa"]
+[ext_resource type="Resource" uid="uid://vhnn6l1t5fxi" path="res://resources/dialogue/day12/d12_8.tres" id="20_uaowu"]
+[ext_resource type="Resource" uid="uid://cn5jdhw8tmdb0" path="res://resources/dialogue/day12/d12_9.tres" id="21_mjfpi"]
+[ext_resource type="Resource" uid="uid://do277xncfw5ca" path="res://resources/dialogue/day12/d12_10.tres" id="22_coygy"]
+[ext_resource type="Resource" uid="uid://idu2re18kpmq" path="res://resources/dialogue/day12/d12_11.tres" id="23_3fh2q"]
+[ext_resource type="Resource" uid="uid://ddol6yphclwc4" path="res://resources/dialogue/day12/d12_12.tres" id="24_1m28a"]
+[ext_resource type="Resource" uid="uid://dnrtispyrg3kq" path="res://resources/dialogue/day12/d12_13.tres" id="25_v80u8"]
+[ext_resource type="Resource" uid="uid://cdmrym4vjfe81" path="res://resources/dialogue/day12/d12_14.tres" id="26_nttmq"]
+[ext_resource type="Resource" uid="uid://mf51q3emmfck" path="res://resources/dialogue/day12/d12_15.tres" id="27_t0u5y"]
+[ext_resource type="Resource" uid="uid://b71xpkjs1kaex" path="res://resources/dialogue/day12/d12_16.tres" id="28_ibtcx"]
+[ext_resource type="Resource" uid="uid://dphhgjhh68qri" path="res://resources/dialogue/day12/d12_17.tres" id="29_ha23k"]
+[ext_resource type="Resource" uid="uid://c132j5pb7ufhc" path="res://resources/dialogue/day12/d12_18.tres" id="30_8ohj8"]
+[ext_resource type="Resource" uid="uid://j7lpmhalpau" path="res://resources/dialogue/day12/d12_19.tres" id="31_73yj8"]
+[ext_resource type="Resource" uid="uid://cc7t2mdfjcc1a" path="res://resources/dialogue/day12/d12_20.tres" id="32_ok2c8"]
 
 [resource]
 script = ExtResource("5_5mvk1")
@@ -22,4 +42,5 @@ total_orders = 16
 meals_per_order = 2
 time_per_order = 12.0
 max_parallel_orders = 3
+dialogue = Array[ExtResource("6_6pwg8")]([ExtResource("13_i8y24"), ExtResource("14_x5s21"), ExtResource("15_npu14"), ExtResource("16_flnpd"), ExtResource("17_hu8xi"), ExtResource("18_1bqo3"), ExtResource("19_stlwa"), ExtResource("20_uaowu"), ExtResource("21_mjfpi"), ExtResource("22_coygy"), ExtResource("23_3fh2q"), ExtResource("24_1m28a"), ExtResource("25_v80u8"), ExtResource("26_nttmq"), ExtResource("27_t0u5y"), ExtResource("28_ibtcx"), ExtResource("29_ha23k"), ExtResource("30_8ohj8"), ExtResource("31_73yj8"), ExtResource("32_ok2c8")])
 metadata/_custom_type_script = "uid://chnd07y2wn61j"

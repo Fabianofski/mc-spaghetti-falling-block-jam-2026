@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://cn5jdhw8tmdb0"]
+
+[ext_resource type="Resource" uid="uid://cqd616de02tdj" path="res://resources/character/corporate_boss.tres" id="1_6lti2"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_rckvg"]
+
+[resource]
+script = ExtResource("2_rckvg")
+character = ExtResource("1_6lti2")
+text = "Listen. Listen to me. It's cheap and we have tight margins. Meat is meat, right? Right?"
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

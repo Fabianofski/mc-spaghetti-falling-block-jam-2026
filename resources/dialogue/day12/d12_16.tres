@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://b71xpkjs1kaex"]
+
+[ext_resource type="Resource" uid="uid://cqd616de02tdj" path="res://resources/character/corporate_boss.tres" id="1_d512t"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_tu1i8"]
+
+[resource]
+script = ExtResource("2_tu1i8")
+character = ExtResource("1_d512t")
+text = "And that's the moral of the story. I'm kidding, of course, there's no such thing."
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

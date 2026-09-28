@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://dytcnp2gl380w"]
+
+[ext_resource type="Resource" uid="uid://cqd616de02tdj" path="res://resources/character/corporate_boss.tres" id="1_a7y5q"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_u6vr0"]
+
+[resource]
+script = ExtResource("2_u6vr0")
+character = ExtResource("1_a7y5q")
+text = "If you mess this up for me, I swear to every god in heaven, I will--"
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://n8lbdhm1stsc"]
+
+[ext_resource type="Resource" uid="uid://cqd616de02tdj" path="res://resources/character/corporate_boss.tres" id="1_pxtcs"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_krt77"]
+
+[resource]
+script = ExtResource("2_krt77")
+character = ExtResource("1_pxtcs")
+text = "But yesterday, whatever you gave the inspector must've been particularly bad. He took one bite, and then sealed it in a hazardous materials bag for \"lab examination\"."
+metadata/_custom_type_script = "uid://b3fueednaw6q6"

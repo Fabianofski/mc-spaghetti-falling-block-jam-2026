@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://cvd2khvwu12r"]
+
+[ext_resource type="Resource" uid="uid://cqd616de02tdj" path="res://resources/character/corporate_boss.tres" id="1_2asmf"]
+[ext_resource type="Script" uid="uid://b3fueednaw6q6" path="res://resources/dialogue.gd" id="2_4bnqi"]
+
+[resource]
+script = ExtResource("2_4bnqi")
+character = ExtResource("1_2asmf")
+text = "You can't stop progress, Palmieri. And hey, would look who it is."
+metadata/_custom_type_script = "uid://b3fueednaw6q6"
