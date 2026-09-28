@@ -10,7 +10,7 @@ class_name DialogueManager
 var current_idx = 0
 var text_tween: Tween
 
-const WHOOSH = preload("uid://rwwt6casln2o")
+const WHOOSH = preload("res://audio/audio_whoosh.ogg")
 var current_character: Character
 var movement_tween: Tween
 var extra_tween_just_for_launching: Tween

@@ -1,12 +1,28 @@
 [gd_scene format=3 uid="uid://ck1yy6gmxosxw"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_jww15"]
-font_color = Color(0, 0, 0, 1)
+[ext_resource type="Texture2D" uid="uid://d4a3l1t1nk38q" path="res://ui/scoring/day.png" id="1_lro0a"]
+[ext_resource type="FontFile" uid="uid://bu44yn54vujye" path="res://ui/scoring/Bristol.otf" id="2_0pqsw"]
 
-[node name="Day" type="ColorRect" unique_id=1288587303]
+[sub_resource type="LabelSettings" id="LabelSettings_pabby"]
+outline_size = 3
+outline_color = Color(0.41598046, 0.41598043, 0.4159804, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jww15"]
+font = ExtResource("2_0pqsw")
+font_size = 25
+font_color = Color(1, 0, 0, 1)
+outline_size = 4
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.36862746)
+
+[node name="Day" type="TextureRect" unique_id=1489243817]
 custom_minimum_size = Vector2(64, 64)
+offset_right = 64.0
+offset_bottom = 64.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
+texture = ExtResource("1_lro0a")
+expand_mode = 2
 
 [node name="DayLabel" type="Label" parent="." unique_id=782489240]
 layout_mode = 1
@@ -16,14 +32,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Day 1"
-label_settings = SubResource("LabelSettings_jww15")
+label_settings = SubResource("LabelSettings_pabby")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="DayGrade" type="Label" parent="." unique_id=1794462626]
 layout_mode = 1
-offset_right = 9.0
-offset_bottom = 23.0
+offset_left = 5.0
+offset_top = -8.0
+offset_right = 21.0
+offset_bottom = 30.0
+rotation = 0.24085544
 text = "F"
 label_settings = SubResource("LabelSettings_jww15")
 horizontal_alignment = 1

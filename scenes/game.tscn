@@ -21,9 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://c6jadwcpbmatr" path="res://art_assets/hold.png" id="9_e1j6l"]
 [ext_resource type="PackedScene" uid="uid://bf0hmwpaoa6xu" path="res://ui/day_end_screen/day_end_screen.tscn" id="11_trtic"]
 [ext_resource type="PackedScene" uid="uid://c7xy4ib56hesm" path="res://ui/meta_data_display/meta_data_display.tscn" id="12_ca42v"]
-[ext_resource type="AudioStream" uid="uid://b7hykfbm5c6s" path="res://audio/cook_failed.ogg" id="14_suyxu"]
 [ext_resource type="Texture2D" uid="uid://cyd67odrg1hd5" path="res://art_assets/bar.png" id="14_sww3w"]
 [ext_resource type="PackedScene" uid="uid://ctc7356vtrgcu" path="res://ui/dialogue_manager/dialogue_manager.tscn" id="14_trtic"]
+[ext_resource type="AudioStream" uid="uid://yqfdjen55yie" path="res://audio/cook error.ogg" id="14_wljb1"]
 [ext_resource type="AudioStream" uid="uid://cmdt2hqrr8r54" path="res://audio/smoke.ogg" id="15_sgl2t"]
 [ext_resource type="Texture2D" uid="uid://bdipqc1u8v3m1" path="res://art_assets/holder.png" id="15_suyxu"]
 [ext_resource type="AudioStream" uid="uid://myeq3cf2nl8s" path="res://audio/closingcashregisterandcoins.ogg" id="16_e1j6l"]
@@ -183,7 +183,8 @@ sprite_frames = SubResource("SpriteFrames_1dcve")
 autoplay = "default"
 
 [node name="CookFailedSound" type="AudioStreamPlayer2D" parent="Mixer/MealCreator" unique_id=148228165]
-stream = ExtResource("14_suyxu")
+stream = ExtResource("14_wljb1")
+volume_db = -10.0
 
 [node name="SmokeSound" type="AudioStreamPlayer2D" parent="Mixer/MealCreator" unique_id=1621772219]
 stream = ExtResource("15_sgl2t")
