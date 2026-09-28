@@ -27,7 +27,7 @@ func enable_screen(fail: bool):
 	if fail:
 		SignalBus.game_state_change.emit("day_failed")
 	else:
-		if GameManager.days_beyond_final > 0: next_day_btn.text = "Continue (Endless Mode)"
+		if GameManager.current_day >= len(GameManager.days) - 1: next_day_btn.text = "Continue (Endless Mode)"
 		SignalBus.game_state_change.emit("day_success")
 	
 	visible = true
